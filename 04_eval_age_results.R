@@ -15,6 +15,12 @@ degradeStats = degradeStats[names(geneAgeStats),]
 ## focus on age ##
 head(geneAgeStats)
 
+## write out for CSV
+out = mcols(geneAgeStats)
+out = out[,c(14,17,1:12, 13,15,16,18,20)]
+out = as.data.frame(out)
+write.csv(out, file = "tables/ageStats_geneLevel_allTested.csv",row.names=FALSE)
+
 # dg stats
 sum(geneAgeStats$adj.P.Val_Age_DG < 0.05)
 table(sign(geneAgeStats$t_Age_DG[geneAgeStats$adj.P.Val_Age_DG < 0.05]))
@@ -141,6 +147,7 @@ save(gsDat, gsDatQ, keggEnr, goEnr, file = "rdas/age_gene_set_results.rda")
 ## make plots ###
 #################
 load( "rdas/age_gene_set_results.rda")
+write.csv(gsDat, file = "tables/ageStats_Pvalues_geneSet_results.csv")
 
 colSums(gsDatQ[,-ncol(gsDatQ)] < 0.05,na.rm=TRUE)
 table(rowSums(gsDatQ[,-ncol(gsDatQ)] < 0.05,na.rm=TRUE))

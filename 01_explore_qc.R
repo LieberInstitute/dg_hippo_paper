@@ -1,32 +1,58 @@
-###
-###
+######
 
 ## load libraries
 library(jaffelab)
 library(SummarizedExperiment)
-library(edgeR)
-library(recount)
-library(genefilter)
+library(readxl)
+library(RColorBrewer)
 
+## load DG
+load("count_data/astellas_dg_hg38_rseGene_n263.rda")
+rse_gene_dg = rse_gene
+pdDg = colData(rse_gene_dg)
+pdDg$Dataset = "DG-GCL"
+for(i in grep("integer", sapply(pdDg,class))) pdDg[,i] = as.numeric(pdDg[,i])
+pdDg$trimmed = as.character(pdDg$trimmed) # to match
+pdDg$Protocol = "RiboZeroGold"
 
-## load data
-load("count_data/dgPlusHippo_hg38_rseGene_n256.rda")
+## hippo
+load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
+rse_gene = merge_rse_metrics(rse_gene) # from jaffelab
 
+## add kit info
+hipxl <- read_excel('/dcl01/lieber/ajaffe/lab/brainseq_phase2/misc/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
+rse_gene$Protocol = hipxl$Protocol[match(rse_gene$RNum, paste0("R", hipxl$RNum))]
 
-## check nestin and DCX
-ii = match(c("DCX", "NES") ,rowData(rse_gene_joint)$Symbol)
-checkTwo  = t(getRPKM(rse_gene_joint, "Length")[ii,])
+pdH = colData(rse_gene)
+pdH$Dataset = "Hippo"
 
-## ratio
-dat = colData(rse_gene_joint)
-dat= cbind(dat,checkTwo)
-dcx_ratio = tapply(dat$ENSG00000077279.17, dat$BrNum, function(x) log2(x[1]+1) - log2(x[2]+1))
-nes_ratio = tapply(dat$ENSG00000132688.10, dat$BrNum, function(x) log2(x[1]+1) - log2(x[2]+1))
+## fix character lists
+classH = sapply(pdH,class)
+for(i in grep("CharacterList", classH)) pdH[,i] = sapply(pdH[,i], paste, collapse=";")
+for(i in grep("LogicalList", classH)) pdH[,i] = sapply(pdH[,i], paste, collapse=";")
+for(i in grep("NumericList", classH)) pdH[,i] = sapply(pdH[,i], mean)
+for(i in grep("IntegerList", classH)) pdH[,i] = as.numeric(sapply(pdH[,i], mean))
+
+## make phenotype columns merge-able 
+n = intersect(colnames(pdDg), colnames(pdH))
+colData(rse_gene_dg) = pdDg[,n]
+colData(rse_gene) = pdH[,n]
+
+### match up
+mm = match(pdDg$BrNum, pdH$BrNum)
+table(!is.na(mm)) # 129
+
+mcols(rse_gene)$meanExprs = mcols(rse_gene_dg)$meanExprs = NULL
+rse_gene_joint = cbind(rse_gene_dg[,!is.na(mm)], rse_gene[,mm[!is.na(mm)]])
+
+rse_gene_joint$Dataset = factor(rse_gene_joint$Dataset, 
+	levels = c("Hippo", "DG-GCL"))
 
 ############################
 ## explore, this becomes a figure for QC
 bIndexes = splitit(rse_gene_joint$BrNum)
 
+dir.create("qcChecks")
 pdf("qcChecks/quality_by_cellType.pdf")
 par(mar=c(5,6,3,2), cex.axis=1.5,cex.lab=2,cex.main=2)
 palette(brewer.pal(5,"Set2"))
@@ -39,7 +65,7 @@ for(i in seq(along=bIndexes)) {
 		subset=bIndexes[[i]], col ="grey",lwd=0.4)
 }
 points(	mitoRate ~ xx,	data=colData(rse_gene_joint),
-	bg = factor(rse_gene_joint$LibraryType), pch =21)
+	bg = factor(rse_gene_joint$Protocol), pch =21)
 legend("topright", c("Gold", "HMR"), col = 1:2, pch = 15,cex=2,nc=1)
 boxplot(rRNA_rate ~ Dataset, data=colData(rse_gene_joint),
 	ylab = "rRNA Gene Map Rate",outline=FALSE,
@@ -49,7 +75,7 @@ for(i in seq(along=bIndexes)) {
 		subset=bIndexes[[i]], col ="grey",lwd=0.4)
 }
 points(	rRNA_rate ~ xx,	data=colData(rse_gene_joint),
-	bg = factor(rse_gene_joint$LibraryType), pch =21)
+	bg = factor(rse_gene_joint$Protocol), pch =21)
 
 boxplot(RIN ~ Dataset, data=colData(rse_gene_joint), ylab = "RIN",
 	outline=FALSE, ylim = range(rse_gene_joint$RIN, na.rm=TRUE)) # hippo > dg
@@ -58,7 +84,7 @@ for(i in seq(along=bIndexes)) {
 		subset=bIndexes[[i]], col ="grey",lwd=0.4)
 }
 points(	RIN ~ xx,	data=colData(rse_gene_joint),
-	bg = factor(rse_gene_joint$LibraryType), pch =21)
+	bg = factor(rse_gene_joint$Protocol), pch =21)
 
 
 boxplot(overallMapRate ~ Dataset, data=colData(rse_gene_joint),
@@ -69,7 +95,7 @@ for(i in seq(along=bIndexes)) {
 		subset=bIndexes[[i]], col ="grey",lwd=0.4)
 }
 points(	overallMapRate ~ xx,	data=colData(rse_gene_joint),
-	bg = factor(rse_gene_joint$LibraryType), pch =21)
+	bg = factor(rse_gene_joint$Protocol), pch =21)
 
 	
 boxplot(totalAssignedGene ~ Dataset, data=colData(rse_gene_joint),
@@ -80,7 +106,7 @@ for(i in seq(along=bIndexes)) {
 		subset=bIndexes[[i]], col ="grey",lwd=0.4)
 }
 points(	totalAssignedGene ~ xx,	data=colData(rse_gene_joint),
-	bg = factor(rse_gene_joint$LibraryType), pch =21)
+	bg = factor(rse_gene_joint$Protocol), pch =21)
 
 dev.off()
 
