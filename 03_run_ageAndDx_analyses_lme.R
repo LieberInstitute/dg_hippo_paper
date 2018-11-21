@@ -36,7 +36,7 @@ mod = model.matrix(~Dx + Region + totalAssignedGene + Sex + Age +
 				data = colData(rse_gene_joint))
 # do qSVA
 covCount = assays(rse_deg_joint[rowData(rse_deg_joint)$bonfSig,])$counts
-k = num.sv(log2(covCount+1), mod)
+k = num.sv(log2(covCount+1), mod) # 
 qSVs = prcomp(t(log2(covCount+1)))$x[,1:k]
 colnames(qSVs) = paste0("qSV", 1:k)
 

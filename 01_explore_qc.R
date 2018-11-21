@@ -1,4 +1,17 @@
 ###
+###
+
+## load libraries
+library(jaffelab)
+library(SummarizedExperiment)
+library(edgeR)
+library(recount)
+library(genefilter)
+
+
+## load data
+load("count_data/dgPlusHippo_hg38_rseGene_n256.rda")
+
 
 ## check nestin and DCX
 ii = match(c("DCX", "NES") ,rowData(rse_gene_joint)$Symbol)

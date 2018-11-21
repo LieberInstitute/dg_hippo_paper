@@ -82,7 +82,7 @@ j = intersect(rownames(rse_jxn), rownames(rse_jxn_dg))
 rse_jxn_joint = cbind(rse_jxn_dg[j,!is.na(mm)], rse_jxn[j,mm[!is.na(mm)]])
 
 # merge tx data
-rse_tx_joint = cbind(rse_tx_dg, rse_tx)
+rse_tx_joint = cbind(rse_tx_dg[,!is.na(mm)], rse_tx[,mm[!is.na(mm)]])
 
 ## save
 save(rse_gene_joint, file = paste0("count_data/dgPlusHippo_hg38_rseGene_n",
