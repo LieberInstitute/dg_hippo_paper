@@ -3,3 +3,4 @@ count_data/
 dg_neurons/
 eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo.rda
 rdas/cleaned_exprs_data_twoData_eQTL.rda
+genotype_data/
