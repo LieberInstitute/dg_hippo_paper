@@ -15,7 +15,7 @@ mds_dg = mds
 ### load data ####
 ######################
 
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 rse_gene = rse_gene_joint
 rse_exon = rse_exon_joint
@@ -26,7 +26,7 @@ pd = colData(rse_gene)
 
 
 ## load SNP data
-load("/dcl01/ajaffe/data/lab/dg_hippo/genotype_data/merged_dg_hippo_allSamples_n596.rda")
+load("../genotype_data/merged_dg_hippo_allSamples_n596.rda")
 snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 
 ## drop rs10708380:150158001:TG:T (missing info in snpMap (and dbSNP))

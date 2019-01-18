@@ -15,7 +15,7 @@ mds_dg = mds
 ### load data ####
 ######################
 
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 rse_gene = rse_gene_joint
 rse_exon = rse_exon_joint
@@ -26,7 +26,7 @@ pd = colData(rse_gene)
 
 
 ## load SNP data
-load("/dcl01/ajaffe/data/lab/dg_hippo/genotype_data/merged_dg_hippo_allSamples_n596.rda")
+load("../genotype_data/merged_dg_hippo_allSamples_n596.rda")
 snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 
 ## drop rs10708380:150158001:TG:T (missing info in snpMap (and dbSNP))
@@ -44,7 +44,7 @@ snp = snp[,pd$BrNum]
 rownames(mds) = colnames(snp) = pd$RNum
 
 ## risk loci from PGC paper + rAggr proxy markers
-riskLoci = read.csv("/dcl01/lieber/ajaffe/lab/brainseq_phase2/eQTL_GWAS_riskSNPs/rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
+riskLoci = read.csv("rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
 ## only keep African and European results based on races present in data
 riskLoci =riskLoci[which(riskLoci$Population %in% c("ACB+ASW+ESN+GWD+LWK+MSL+YRI","CEU+FIN+GBR+IBS+TSI")),]
 colnames(riskLoci) = gsub("\\.", "_", colnames(riskLoci))

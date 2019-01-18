@@ -27,17 +27,17 @@ pdDg$trimmed = as.character(pdDg$trimmed) # to match
 ### HIPPO ############
 ######################
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseTx_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseTx_merged_n447.rda")
 rse_tx_hippo = rse_tx
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
 rse_gene_hippo = rse_gene
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseExon_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseExon_merged_n447.rda")
 rse_exon_hippo = rse_exon
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseJxn_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseJxn_merged_n447.rda")
 rse_jxn_hippo = rse_jxn
 
 ## add kit info
-hipxl <- read_excel('/dcl01/lieber/ajaffe/lab/brainseq_phase2/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
+hipxl <- read_excel('count_data/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
 rse_gene_hippo$Protocol = hipxl$Protocol[match(rse_gene_hippo$RNum, paste0("R", hipxl$RNum))]
 
 ## filter to adults, age 17, no gold
@@ -105,10 +105,10 @@ rse_tx_joint = rse_tx_joint[txIndex,]
 ## add qSVs ###################
 ###############################
 
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/degradation_rse_dg_hippo_n263.rda")
+load("count_data/degradation_rse_dg_hippo_n263.rda")
 rse_deg_dg = cov_rse
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/degradation_rse_phase2_hippo.rda")
+load("count_data/degradation_rse_phase2_hippo.rda")
 rse_deg_hippo = cov_rse_hippo
 colnames(rse_deg_hippo) = ss(colnames(rse_deg_hippo), "_", 1)
 identical(granges(rse_deg_dg), granges(rse_deg_hippo)) # TRUE

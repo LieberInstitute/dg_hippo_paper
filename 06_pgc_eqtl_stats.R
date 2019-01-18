@@ -6,7 +6,7 @@ library(SummarizedExperiment)
 library(RColorBrewer)
 
 ## load eQTLs
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
+load("eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
 
 sigEqtl$Type = factor(sigEqtl$Type, levels = c("Gene", "Exon",  "Jxn", "Tx"))
 sigEqtl$EnsemblGeneID = ss(sigEqtl$EnsemblGeneID, "\\.")
@@ -57,7 +57,7 @@ as.data.frame(dgEqtlOnlyTop[,c("Symbol", "lab","ind")])
 # ### load data ####
 # ######################
 
-# load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+# load("count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 # rse_gene = rse_gene_joint
 # rse_exon = rse_exon_joint
@@ -67,7 +67,7 @@ as.data.frame(dgEqtlOnlyTop[,c("Symbol", "lab","ind")])
 # pd = colData(rse_gene)
 
 # ## load SNP data
-# load("/dcl01/ajaffe/data/lab/dg_hippo/genotype_data/merged_dg_hippo_allSamples_n596.rda")
+# load("genotype_data/merged_dg_hippo_allSamples_n596.rda")
 # snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 
 # ## drop rs10708380:150158001:TG:T (missing info in snpMap (and dbSNP))
@@ -121,7 +121,7 @@ r[r=="DentateGyrus"] = "DG-GCL"
 r = factor(r, levels = c("HIPPO", "DG-GCL"))
 
 ## update exon ID
-load("/dcl01/lieber/ajaffe/Emily/RNAseq-pipeline/Annotation/GENCODE/exon_names_hg19_hg38.rda",verbose=TRUE)
+load("rdas/exon_names_hg19_hg38.rda",verbose=TRUE)
 dgEqtlOnly$FeatLabel = dgEqtlOnly$gene
 mmExon = match(dgEqtlOnly$FeatLabel, hg38_exons$hg38_eID)
 dgEqtlOnly$FeatLabel[!is.na(mmExon)] = hg38_exons$gencode_exonID[mmExon[!is.na(mmExon)]]

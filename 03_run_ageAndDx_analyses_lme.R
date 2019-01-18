@@ -15,11 +15,11 @@ load("count_data/merged_dg_hippo_allSamples_n596.rda")
 colnames(rse_deg_joint) = colnames(rse_gene_joint)
 
 ##### get MDS #####
-mds_dg = read.table("/dcl01/ajaffe/data/lab/dg_hippo/genotype_data/Astellas_DG_Genotypes_n263_maf05_geno10_hwe1e6.mds",
+mds_dg = read.table("../genotype_data/Astellas_DG_Genotypes_n263_maf05_geno10_hwe1e6.mds",
 	header=TRUE,as.is=TRUE,row.names=1)[,-(1:2)]
 mds_dg = mds_dg[rse_gene_joint$BrNum[rse_gene_joint$Dataset == "DG"],1:5]
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/mds_extracted_from_BrainSeq_Phase2_RiboZero_Genotypes_n551.Rdata",ver=TRUE)
+load("genotype_data/mds_extracted_from_BrainSeq_Phase2_RiboZero_Genotypes_n551.Rdata",ver=TRUE)
 mds_hippo = mds[rse_gene_joint$BrNum[rse_gene_joint$Dataset == "Hippo"],1:5]
 colnames(mds_dg) = colnames(mds_hippo)
 mds = rbind(mds_dg, mds_hippo)

@@ -129,7 +129,7 @@ prop.table(tt,2)
 # ### load data ####
 # ######################
 
-# load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+# load("count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 # rse_gene = rse_gene_joint
 # rse_exon = rse_exon_joint
@@ -139,7 +139,7 @@ prop.table(tt,2)
 # pd = colData(rse_gene)
 
 # ## load SNP data
-# load("/dcl01/ajaffe/data/lab/dg_hippo/genotype_data/merged_dg_hippo_allSamples_n596.rda")
+# load("genotype_data/merged_dg_hippo_allSamples_n596.rda")
 # snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 
 # ## drop rs10708380:150158001:TG:T (missing info in snpMap (and dbSNP))
@@ -189,7 +189,7 @@ r[r=="DentateGyrus"] = "DG-GCL"
 r = factor(r, levels = c("HIPPO", "DG-GCL"))
 
 ## update exon ID
-load("/dcl01/lieber/ajaffe/Emily/RNAseq-pipeline/Annotation/GENCODE/exon_names_hg19_hg38.rda",verbose=TRUE)
+load("rdas/exon_names_hg19_hg38.rda",verbose=TRUE)
 topIntEqtls$FeatLabel = topIntEqtls$gene
 mmExon = match(topIntEqtls$FeatLabel, hg38_exons$hg38_eID)
 topIntEqtls$FeatLabel[!is.na(mmExon)] = hg38_exons$gencode_exonID[mmExon[!is.na(mmExon)]]

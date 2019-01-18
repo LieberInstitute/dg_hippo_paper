@@ -15,7 +15,7 @@ snpMap_dg = snpMap
 ######################
 
 ## load DG
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 ## keep adult samples & correct region
 # min(rse_gene_joint$Age)
@@ -29,7 +29,7 @@ rse_tx = rse_tx_joint[,keepInd]
 pd = colData(rse_gene)
 
 ## load SNP data
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 
 ## drop rs10708380:150158001:TG:T (missing info in snpMap (and dbSNP))

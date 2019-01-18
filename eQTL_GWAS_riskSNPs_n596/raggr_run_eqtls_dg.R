@@ -6,7 +6,7 @@ library(sva)
 library(recount)
 
 ## overlapping snps
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 snpMap_hippo = snpMap
 
@@ -15,7 +15,7 @@ snpMap_hippo = snpMap
 ######################
 
 ## load DG
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 # # Venn of sample overlaps
 # library(VennDiagram)
@@ -58,7 +58,7 @@ snp = snp[,pd$BrNum]
 rownames(mds) = colnames(snp) = pd$RNum
 
 ## risk loci from PGC paper + rAggr proxy markers
-riskLoci = read.csv("/dcl01/lieber/ajaffe/lab/brainseq_phase2/eQTL_GWAS_riskSNPs/rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
+riskLoci = read.csv("rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
 ## only keep African and European results based on races present in data
 riskLoci =riskLoci[which(riskLoci$Population %in% c("ACB+ASW+ESN+GWD+LWK+MSL+YRI","CEU+FIN+GBR+IBS+TSI")),]
 colnames(riskLoci) = gsub("\\.", "_", colnames(riskLoci))

@@ -3,12 +3,12 @@
 library(GenomicRanges)
 
 ## get DG eQTLs
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_dg_raggr_4features.rda",verbose=TRUE)
+load("eqtl_tables/mergedEqtl_output_dg_raggr_4features.rda",verbose=TRUE)
 allEqtl$ID = paste0(allEqtl$snps, ";", allEqtl$gene)
 
 ########################
 ## get hippo eQTLs
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/matrixEqtl_output_hippo_raggr_4features.rda")
+load("eqtl_tables/matrixEqtl_output_hippo_raggr_4features.rda")
 
 # extract
 geneEqtlH = meGene$cis$eqtls
@@ -47,7 +47,7 @@ allEqtl = cbind(allEqtl, hippoStats)
 ### interaction ##################
 ##################################
 
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/matrixEqtl_output_interaction_4features.rda")
+load("eqtl_tables/matrixEqtl_output_interaction_4features.rda")
 
 # extract
 geneEqtlInt = meGene$cis$eqtls
@@ -94,7 +94,7 @@ snpMap1 = snpMap
 snpMap1$hg19POS = paste0(snpMap1$CHR,":",snpMap1$POS)
 snpMap1 = snpMap1[which(rownames(snpMap1) %in% allEqtl$snps),c("SNP","chr_hg38","pos_hg38","hg19POS")]
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap2 = snpMap
 snpMap2$hg19POS = paste0(snpMap2$CHR,":",snpMap2$POS)
 snpMap2 = snpMap2[which(rownames(snpMap2) %in% allEqtl$snps),c("SNP","chr_hg38","pos_hg38","hg19POS")]
@@ -102,7 +102,7 @@ snpMap2 = snpMap2[which(rownames(snpMap2) %in% allEqtl$snps),c("SNP","chr_hg38",
 snpMap = snpMap1[snpMap1$hg19POS %in% snpMap2$hg19POS,]
 
 ## risk loci from PGC paper + rAggr proxy markers
-riskLoci = read.csv("/dcl01/lieber/ajaffe/lab/brainseq_phase2/eQTL_GWAS_riskSNPs/rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
+riskLoci = read.csv("rAggr_results_179.csv", stringsAsFactors=FALSE)	# 10,981 snps
 ## only keep African and European results based on races present in data
 riskLoci =riskLoci[which(riskLoci$Population %in% c("ACB+ASW+ESN+GWD+LWK+MSL+YRI","CEU+FIN+GBR+IBS+TSI")),]
 colnames(riskLoci) = gsub("\\.", "_", colnames(riskLoci))
@@ -115,7 +115,7 @@ colnames(snpMapMerge) = gsub("SNP2_", "Proxy_", colnames(snpMapMerge))
 
 ## featMap
 library(SummarizedExperiment)
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 gMap = as.data.frame(rowRanges(rse_gene_joint))[,c("seqnames","start","end","strand","Class")]
 eMap = as.data.frame(rowRanges(rse_exon_joint))[,c("seqnames","start","end","strand","Class")]
@@ -134,12 +134,12 @@ geneMap = as.data.frame(rowRanges(rse_gene_joint))[,c("gencodeID","Symbol","ense
 allEqtlMerge = cbind(allEqtl, snpMapMerge[match(allEqtl$snps, rownames(snpMapMerge)),])
 length(unique(allEqtlMerge$snps))# 6277
 length(unique(allEqtlMerge$Index_Name))	# 156 tested
-save(allEqtlMerge, file = "/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo.rda")
+save(allEqtlMerge, file = "eqtl_tables/mergedEqtl_output_withHippo.rda")
 
 ## FDR in any
 fdrMat = as.data.frame(allEqtlMerge[,grep("FDR", colnames(allEqtlMerge))]) < 0.05
 sigEqtl = allEqtlMerge[which(rowSums(fdrMat, na.rm=TRUE) > 0),]
 
 ### save
-save(sigEqtl, file = "/dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
+save(sigEqtl, file = "eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
 

@@ -6,7 +6,7 @@ library(sva)
 library(recount)
 
 ## overlapping snps
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
 snpMap_hippo = snpMap
 
@@ -15,7 +15,7 @@ snpMap_hippo = snpMap
 ######################
 
 ## load DG
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 # # Venn of sample overlaps
 # library(VennDiagram)

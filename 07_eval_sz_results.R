@@ -4,12 +4,12 @@ library(clusterProfiler)
 library(limma)
 
 ## load results
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/geneLevel_dxEffects_dg.rda")
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/geneLevel_ageAndSzInteraction.rda")
+load("rdas/geneLevel_dxEffects_dg.rda")
+load("rdas/geneLevel_ageAndSzInteraction.rda")
 rm(geneAgeStats)
 
 ## load DEqual plot stats
-load("/dcl01/lieber/ajaffe/lab/degradation_experiments/Hippo_RiboZero/Hippocampus_geneLevel_degradationStats_forDEqual_hg38.rda")
+load("rdas/Hippocampus_geneLevel_degradationStats_forDEqual_hg38.rda")
 degradeStats = degradeStats[names(geneSzStats),]
 
 #######################
@@ -97,7 +97,7 @@ plot(geneSzStats$logFC_SZ_DG, degradeStats$logFC)
 plot(geneSzStats$t_SZ_Hippo, degradeStats$t)
 
 ## compare to brainseq phase2 results
-load("/dcl01/ajaffe/data/lab/qsva_brain/brainseq_phase2_qsv/rdas/dxStats_hippo_filtered_qSVA_noHGoldQSV_matchHIPPO.rda",verbose=TRUE)
+load("rdas/dxStats_hippo_filtered_qSVA_noHGoldQSV_matchHIPPO.rda",verbose=TRUE)
 rm(outExon, outJxn, outTx)
 outGene = outGene[names(geneSzStats),]
 plot(geneSzStats$t_SZ_Hippo, outGene$t)
@@ -186,7 +186,7 @@ table(abs(geneSzStats$logFC_Sz_DG[intIndexMarg]) >
 
 
 hist(geneSzStats$logFC_Sz_DG[intIndexMarg] - geneSzStats$logFC_Sz_Hippo[intIndexMarg])
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/exonLevel_ageAndSzInteraction.rda")
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/jxLevel_ageAndSzInteraction.rda")
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/txLevel_ageAndSzInteraction.rda")
+load("rdas/exonLevel_ageAndSzInteraction.rda")
+load("rdas/jxLevel_ageAndSzInteraction.rda")
+load("rdas/txLevel_ageAndSzInteraction.rda")
 rm(geneAgeStats, exonAgeStats, jxAgeStats, txAgeStats)

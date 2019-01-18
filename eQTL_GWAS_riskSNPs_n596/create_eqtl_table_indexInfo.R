@@ -12,7 +12,7 @@ snpMap1 = snpMap
 snpMap1$hg19POS = paste0(snpMap1$CHR,":",snpMap1$POS)
 # snpMap1 = snpMap1[which(rownames(snpMap1) %in% c(hippo$snps,dg$snps) ),c("SNP","chr_hg38","pos_hg38","hg19POS")]
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap2 = snpMap
 snpMap2$hg19POS = paste0(snpMap2$CHR,":",snpMap2$POS)
 # snpMap2 = snpMap2[which(rownames(snpMap2) %in% c(hippo$snps,dg$snps) ),c("SNP","chr_hg38","pos_hg38","hg19POS")]
@@ -21,7 +21,7 @@ snpMap = snpMap1[snpMap1$hg19POS %in% snpMap2$hg19POS,]
 snpMap$pos_hg19 = snpMap$POS
 
 ## risk loci from PGC paper
-indexLoci = read.csv("/dcl01/lieber/ajaffe/lab/brainseq_phase2/eQTL_GWAS_riskSNPs/pgc_riskLoci.csv", stringsAsFactors=FALSE) ## 179
+indexLoci = read.csv("pgc_riskLoci.csv", stringsAsFactors=FALSE) ## 179
 indexLoci$hg19POS = paste0(indexLoci$snp_chr,":",indexLoci$snp_pos_hg19)
 indexIndex = which(snpMap$hg19POS %in% indexLoci$hg19POS)	# keep 133
 

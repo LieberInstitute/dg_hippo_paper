@@ -16,11 +16,11 @@ pdDg$trimmed = as.character(pdDg$trimmed) # to match
 pdDg$Protocol = "RiboZeroGold"
 
 ## hippo
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
 rse_gene = merge_rse_metrics(rse_gene) # from jaffelab
 
 ## add kit info
-hipxl <- read_excel('/dcl01/lieber/ajaffe/lab/brainseq_phase2/misc/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
+hipxl <- read_excel('count_data/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
 rse_gene$Protocol = hipxl$Protocol[match(rse_gene$RNum, paste0("R", hipxl$RNum))]
 
 pdH = colData(rse_gene)

@@ -22,13 +22,13 @@ for(i in grep("integer", sapply(pdDg,class))) pdDg[,i] = as.numeric(pdDg[,i])
 pdDg$trimmed = as.character(pdDg$trimmed) # to match
 
 ## load hippocampus bulk
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseTx_merged_n447.rda")
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseJxn_merged_n447.rda")
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseExon_merged_n447.rda")
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseTx_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseJxn_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseExon_merged_n447.rda")
+load("count_data/hippo_brainseq_phase2_hg38_rseGene_merged_n447.rda")
 
 ## add kit info
-hipxl <- read_excel('/dcl01/lieber/ajaffe/lab/brainseq_phase2/misc/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
+hipxl <- read_excel('count_data/LIBD_PhaseII_HIPPO_RiboZero_sample_list_01_28_2015.xlsx')
 rse_gene$Protocol = hipxl$Protocol[match(rse_gene$RNum, paste0("R", hipxl$RNum))]
 
 ## filter to adults, age 17, no gold

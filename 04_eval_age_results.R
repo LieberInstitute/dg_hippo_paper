@@ -5,10 +5,10 @@ library(jaffelab)
 library(VennDiagram)
 
 ## load results
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/geneLevel_ageAndSzInteraction.rda")
+load("rdas/geneLevel_ageAndSzInteraction.rda")
 
 ## load DEqual plot stats
-load("/dcl01/lieber/ajaffe/lab/degradation_experiments/Hippo_RiboZero/Hippocampus_geneLevel_degradationStats_forDEqual_hg38.rda")
+load("rdas/Hippocampus_geneLevel_degradationStats_forDEqual_hg38.rda")
 degradeStats = degradeStats[names(geneAgeStats),]
 
 ##################
@@ -246,7 +246,7 @@ library(sva)
 library(jaffelab)
 
 ## load counts
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 rm(rse_exon_joint, rse_tx_joint, rse_jxn_joint)
 
 #############
@@ -279,7 +279,7 @@ dev.off()
 #############################
 ## other features ###########
 #############################
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/exonLevel_ageAndSzInteraction.rda")
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/jxLevel_ageAndSzInteraction.rda")
-load("/dcl01/ajaffe/data/lab/dg_hippo/rdas/txLevel_ageAndSzInteraction.rda")
+load("rdas/exonLevel_ageAndSzInteraction.rda")
+load("rdas/jxLevel_ageAndSzInteraction.rda")
+load("rdas/txLevel_ageAndSzInteraction.rda")
 rm(geneSzStats, exonSzStats, jxSzStats, txSzStats)

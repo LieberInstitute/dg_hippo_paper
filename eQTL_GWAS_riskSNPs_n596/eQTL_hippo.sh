@@ -8,7 +8,7 @@
 echo "**** Job starts ****"
 date
 
-Rscript /dcl01/ajaffe/data/lab/dg_hippo/eQTL_GWAS_riskSNPs_n596/raggr_run_eqtls_hippo.R
+Rscript /dcl01/ajaffe/data/lab/dg_hippo_paper/eQTL_GWAS_riskSNPs_n596/raggr_run_eqtls_hippo.R
 
 echo "**** Job ends ****"
 date

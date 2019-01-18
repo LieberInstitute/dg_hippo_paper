@@ -64,7 +64,7 @@ snpMap1 = snpMap
 snpMap1$hg19POS = paste0(snpMap1$CHR,":",snpMap1$POS)
 snpMap1 = snpMap1[which(rownames(snpMap1) %in% c(hippo$snps,dg$snps) ),c("SNP","chr_hg38","pos_hg38","hg19POS")]
 
-load("/dcl01/lieber/ajaffe/lab/brainseq_phase2/genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
 snpMap2 = snpMap
 snpMap2$hg19POS = paste0(snpMap2$CHR,":",snpMap2$POS)
 snpMap2 = snpMap2[which(rownames(snpMap2) %in% c(hippo$snps,dg$snps) ),c("SNP","chr_hg38","pos_hg38","hg19POS")]
@@ -72,7 +72,7 @@ snpMap2 = snpMap2[which(rownames(snpMap2) %in% c(hippo$snps,dg$snps) ),c("SNP","
 snpMap = snpMap1[snpMap1$hg19POS %in% snpMap2$hg19POS,]
 
 ## featMap
-load("/dcl01/ajaffe/data/lab/dg_hippo/count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 
 gMap = as.data.frame(rowRanges(rse_gene_joint))[,c("seqnames","start","end","strand","Class")]
 eMap = as.data.frame(rowRanges(rse_exon_joint))[,c("seqnames","start","end","strand","Class")]

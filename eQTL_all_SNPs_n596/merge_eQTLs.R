@@ -3,12 +3,12 @@
 library(GenomicRanges)
 
 ## get DG eQTLs
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_all_SNPs_n596/eqtl_tables/mergedEqtl_output_dg_4features_fdr01.rda")
+load("eqtl_tables/mergedEqtl_output_dg_4features_fdr01.rda")
 sigEqtl$ID = paste0(sigEqtl$snps, ";", sigEqtl$gene)
 
 ########################
 ## get hippo eQTLs
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_all_SNPs_n596/eqtl_tables/matrixEqtl_output_hippo_4features_dgMatched.rda")
+load("eqtl_tables/matrixEqtl_output_hippo_4features_dgMatched.rda")
 
 # extract
 geneEqtlH = meGene$cis$eqtls
