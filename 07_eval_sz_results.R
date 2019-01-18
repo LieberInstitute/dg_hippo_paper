@@ -2,6 +2,7 @@
 library(GenomicRanges)
 library(clusterProfiler)
 library(limma)
+library(RColorBrewer)
 
 ## load results
 load("rdas/geneLevel_dxEffects_dg.rda")

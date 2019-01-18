@@ -9,6 +9,7 @@ library(genefilter)
 library(clusterProfiler)
 library(org.Hs.eg.db)
 library(readxl)
+library(RColorBrewer)
 
 ## make tables
 dir.create("plots")

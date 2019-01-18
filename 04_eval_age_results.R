@@ -3,6 +3,7 @@ library(GenomicRanges)
 library(clusterProfiler)
 library(jaffelab)
 library(VennDiagram)
+library(RColorBrewer)
 
 ## load results
 load("rdas/geneLevel_ageAndSzInteraction.rda")
