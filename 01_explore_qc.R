@@ -53,7 +53,7 @@ rse_gene_joint$Dataset = factor(rse_gene_joint$Dataset,
 bIndexes = splitit(rse_gene_joint$BrNum)
 
 dir.create("qcChecks")
-pdf("qcChecks/quality_by_cellType.pdf")
+pdf("qcChecks/quality_by_cellType.pdf", useDingbats=FALSE)
 par(mar=c(5,6,3,2), cex.axis=1.5,cex.lab=2,cex.main=2)
 palette(brewer.pal(5,"Set2"))
 boxplot(mitoRate ~ Dataset, data=colData(rse_gene_joint),

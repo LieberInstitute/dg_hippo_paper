@@ -40,13 +40,18 @@ getOR(table(geneAgeStats$adj.P.Val_Age_DG < 0.05,
 	geneAgeStats$adj.P.Val_Age_Hippo < 0.05,
 	dnn = c("DG", "HIPPO")))
 
+## same direction?
+	
 eitherIndex = which(geneAgeStats$adj.P.Val_Age_DG < 0.05 | geneAgeStats$adj.P.Val_Age_Hippo < 0.05)
+bothIndex = which(geneAgeStats$adj.P.Val_Age_DG < 0.05 & geneAgeStats$adj.P.Val_Age_Hippo < 0.05)
 length(eitherIndex)
 tt = table(sign(geneAgeStats$t_Age_DG[eitherIndex]),sign(geneAgeStats$t_Age_Hippo[eitherIndex]) )
 sum(diag(tt))
 sum(diag(tt))/sum(tt)
 (sum(tt)-sum(diag(tt)))
 (sum(tt)-sum(diag(tt)))/sum(tt)
+ttBoth = table(sign(geneAgeStats$t_Age_DG[bothIndex]),sign(geneAgeStats$t_Age_Hippo[bothIndex]) )
+
 ## colors
 cols = rep(1, length(geneAgeStats))
 cols[geneAgeStats$adj.P.Val_Age_DG > 0.05 & geneAgeStats$adj.P.Val_Age_Hippo < 0.05] = 2
@@ -70,6 +75,7 @@ plot(geneAgeStats$logFC_Age_DG, geneAgeStats$logFC_Age_Hippo,
 dev.off()
 
 table(abs(geneAgeStats$logFC_Age_DG) > abs(geneAgeStats$logFC_Age_Hippo))
+table(abs(geneAgeStats$logFC_Age_DG[eitherIndex]) > abs(geneAgeStats$logFC_Age_Hippo[eitherIndex]))
 table(abs(geneAgeStats$logFC_Age_DG[eitherIndex]) > abs(geneAgeStats$logFC_Age_Hippo[eitherIndex]))
 
 ## interaction
@@ -97,6 +103,20 @@ plot(geneAgeStats$t_Age_DG, degradeStats$t)
 cor(geneAgeStats$logFC_Age_DG, degradeStats$logFC)
 plot(geneAgeStats$logFC_Age_DG, degradeStats$logFC)
 plot(geneAgeStats$t_Age_Hippo, degradeStats$t)
+
+
+## venn diagram
+
+gsPlot = apply(gsDatQ, 2, function(x) rownames(gsDatQ)[which(x < 0.05)])
+names(gsPlot) = gsub("_", ":", names(gsPlot))
+v = venn.diagram(gsPlot[1:4], 
+	fill = c("darkblue", "darkgreen", "lightblue", "lightgreen"), 
+	main="", main.pos = c(.5, .2), cat.cex = 1.8, cex=3,
+	margin = 0.4, filename = NULL)
+pdf("plots/age_geneSet_vennDiagram.pdf")
+grid.draw(v)
+dev.off()
+
 #####################
 ### gene ontology ###
 geneUniverse = geneAgeStats$EntrezID
@@ -266,6 +286,25 @@ pdf("plots/ageEffect_example_genes.pdf")
 par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2, cex.main=2)
 palette(brewer.pal(5,"Set1"))
 for(i in exampleIndex) {
+	plot(geneExprs[i,] ~ rse_gene_joint$Age,
+		pch=21,bg = rse_gene_joint$Dataset,
+		xlab= "Age", ylab = "Expression (log2)")
+	for(j in seq(along=rIndexes)) {
+		abline(lm(geneExprs[i,] ~ rse_gene_joint$Age, 
+			subset=rIndexes[[j]]),col=j,lwd=5)
+	}
+	legend("topright", rowData(rse_gene_joint)$Symbol[i], bty="n",cex=2.5)
+}
+dev.off()
+
+## plots
+exampleIndexInt = which(geneAgeStats$adj.P.Val_Age_DG > 0.05 & 
+	geneAgeStats$adj.P.Val_Age_Hippo > 0.05 & geneAgeStats$adj.P.Val_Age_Inter < 0.05)
+
+pdf("plots/ageEffect_example_genes_interaction.pdf")
+par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2, cex.main=2)
+palette(brewer.pal(5,"Set1"))
+for(i in exampleIndexInt) {
 	plot(geneExprs[i,] ~ rse_gene_joint$Age,
 		pch=21,bg = rse_gene_joint$Dataset,
 		xlab= "Age", ylab = "Expression (log2)")

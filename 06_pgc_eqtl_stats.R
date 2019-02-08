@@ -11,6 +11,9 @@ load("eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_fdr05any.r
 sigEqtl$Type = factor(sigEqtl$Type, levels = c("Gene", "Exon",  "Jxn", "Tx"))
 sigEqtl$EnsemblGeneID = ss(sigEqtl$EnsemblGeneID, "\\.")
 
+## write out
+sigEqtlOut = as.data.frame(sigEqtl)
+
 ## get the region-specific ones
 dgEqtl = sigEqtl[sigEqtl$FDR < 0.01,]
 hippoEqtl = sigEqtl[sigEqtl$hippo_FDR < 0.01,]

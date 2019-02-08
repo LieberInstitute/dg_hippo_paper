@@ -4,6 +4,7 @@ library(VennDiagram)
 library(jaffelab)
 library(SummarizedExperiment)
 library(RColorBrewer)
+library(readxl)
 
 ## load eQTLs
 load("eQTL_all_SNPs_n596/eqtl_tables/mergedEqtl_output_dg_4features_fdr01_withHippo.rda")
@@ -173,6 +174,7 @@ prop.table(tt,2)
 # snpMap2 = snpMap[rownames(snpMap) %in% sigEqtl$snps,]
 # save(exprsClean, snp2, snpMap2, pd, file = "rdas/cleaned_exprs_data_twoData_eQTL.rda")
 
+### load data back in
 load("rdas/cleaned_exprs_data_twoData_eQTL.rda")
 
 ## which to plot??
@@ -263,3 +265,21 @@ for(i in 1:100) {
 }
 dev.off()
 
+
+######
+## check dopamine results
+dop = read_excel("tables/41593_2018_223_MOESM9_ESM.xls",skip=2)
+colnames(dop) = gsub(" ", "_", colnames(dop))
+dop = as.data.frame(dop)
+dop = dop[grep("^rs", dop[,1]),]
+
+## filter down
+sigEqtl$snpRsNum = snpMap2$name[match(sigEqtl$snps, snpMap2$SNP)]
+sigEqtlDop = sigEqtl[sigEqtl$snpRsNum %in% dop$SNP_ID..1,]
+
+length(unique(sigEqtlDop$snpRsNum))
+
+sigEqtlDop[which(sigEqtlDop$snpRsNum == "rs642803"),]
+sigEqtlDop[which(sigEqtlDop$snpRsNum == "rs393152"),]
+
+Indexes = lapply(dop$SNP_ID..1, grep, x=sigEqtl$snps)
