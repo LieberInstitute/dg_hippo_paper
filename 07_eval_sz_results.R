@@ -169,25 +169,135 @@ gsDat = as.data.frame(gsDat)
 gsDat$Description = gsDf$Description[match(uniqueIDs, gsDf$ID)]
 save(gsDat, keggEnr, goEnr, file = "rdas/sz_gene_set_results.rda")
 
-#################
-## make plots ###
-#################
-load( "rdas/age_gene_set_results.rda")
 
-gsDat[which(gsDat$DG_Down < 1e-4 & gsDat$Hippo_Down > 0.05),]
-gsDat[which(gsDat$DG_Up < 1e-4 & gsDat$Hippo_Up > 0.05),]
-gsDat[which(gsDat$Hippo_Down < 1e-4 & gsDat$DG_Down > 0.05),]
-gsDat[which(gsDat$Hippo_Up < 1e-4 & gsDat$DG_Up > 0.05),]
+##########################
+## plots some examples ###
+##########################
+library(SummarizedExperiment)
+library(recount)
+library(sva)
+library(jaffelab)
+library(edgeR)
+library(limma)
+
+## load counts
+load("count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
+rm(rse_exon_joint, rse_tx_joint, rse_jxn_joint)
+colnames(rse_deg_joint) = colnames(rse_gene_joint)
+
+##### get MDS #####
+mds_dg = read.table("genotype_data/Astellas_DG_Genotypes_n263_maf05_geno10_hwe1e6.mds",
+	header=TRUE,as.is=TRUE,row.names=1)[,-(1:2)]
+mds_dg = mds_dg[rse_gene_joint$BrNum[rse_gene_joint$Dataset == "DG"],1:5]
+
+load("genotype_data/mds_extracted_from_BrainSeq_Phase2_RiboZero_Genotypes_n551.Rdata",ver=TRUE)
+mds_hippo = mds[rse_gene_joint$BrNum[rse_gene_joint$Dataset == "Hippo"],1:5]
+colnames(mds_dg) = colnames(mds_hippo)
+mds = rbind(mds_dg, mds_hippo)
+
+# relevel
+rse_gene_joint$Dx = factor(rse_gene_joint$Dx, levels = c("Control", "Schizo", "Bipolar", "MDD"))
+
+#####################
+## get qSVs #########
+#####################
+
+mod = model.matrix(~Dx + Region + totalAssignedGene + Sex + Age + 
+				mitoRate + as.matrix(mds[,1:5]),
+				data = colData(rse_gene_joint))
+# do qSVA
+covCount = assays(rse_deg_joint[rowData(rse_deg_joint)$bonfSig,])$counts
+k = num.sv(log2(covCount+1), mod) # 
+qSVs = prcomp(t(log2(covCount+1)))$x[,1:k]
+colnames(qSVs) = paste0("qSV", 1:k)
+
+# library(LIBDpheno) # internal db
+# pheno = toxicant[[1]]
+# pheno$BrNum = paste0("Br", pheno$brnumerical) 
+# pheno = pheno[pheno$BrNum%in% rse_gene_joint$BrNum,]
+# pheno = pheno[,c("BrNum", "antidepressants_ssris", "antipsychotics")]
+# write.csv(pheno, file = "tables/subject_drug_hx.csv", row.names=FALSE)
+drug = read.csv("tables/subject_drug_hx.csv",as.is=TRUE)
+rse_gene_joint$SSRI = drug$antidepressants_ssris[match(rse_gene_joint$BrNum, drug$BrNum)]
+rse_gene_joint$antipsychotics = drug$antipsychotics[match(rse_gene_joint$BrNum, drug$BrNum)]
+
+## split out dg
+rse_gene_dg = rse_gene_joint[,rse_gene_joint$Dataset == "DG"]
+qSVs_dg = as.matrix(qSVs[colnames(rse_gene_dg),])
+mds_dg = as.matrix(mds[rse_gene_dg$BrNum,])
+
+#############################
+## modeling for drugs #######
+#############################
+
+######### MDD ################
+ind = rse_gene_dg$Dx %in% c("Control", "MDD")
+rse_gene_mdd = rse_gene_dg[,ind]
+rse_gene_mdd$Dx = droplevels(rse_gene_mdd$Dx)
+rse_gene_mdd$MDD = NA
+rse_gene_mdd$MDD[rse_gene_mdd$Dx == "Control"] = "Control"
+rse_gene_mdd$MDD[rse_gene_mdd$Dx == "MDD" &  rse_gene_mdd$SSRI] = "MDD_SSRI"
+rse_gene_mdd$MDD[rse_gene_mdd$Dx == "MDD" &  ! rse_gene_mdd$SSRI] = "MDD"
+
+mod_dg_ssri = model.matrix(~ MDD + Age + totalAssignedGene + Sex + mitoRate + 
+				mds_dg[ind,] + qSVs_dg[ind,],
+				data = colData(rse_gene_mdd))
+rse_gene_mdd = rse_gene_mdd[,rownames(mod_dg_ssri)]
+
+dge_ssri <- DGEList(counts = assays(rse_gene_mdd)$counts, genes = rowData(rse_gene_mdd))
+dge_ssri <- calcNormFactors(dge_ssri)
+vGene_ssri <- voom(dge_ssri, mod_dg_ssri, plot = TRUE)
+geneFit_ssri = lmFit(vGene_ssri, mod_dg_ssri)
+geneFit_ssri = eBayes(geneFit_ssri)
+
+ssri_effect = topTable(geneFit_ssri, coef = 3, n = nrow(dge_ssri), sort="none")
+mdd_effect = topTable(geneFit_ssri, coef = 2, n = nrow(dge_ssri), sort="none")
+
+sum(ssri_effect$adj.P.Val < 0.1)
+sum(mdd_effect$adj.P.Val < 0.1)
+
+ssri_sig = topTable(geneFit_ssri, coef = 3, n = nrow(dge_ssri), p.value = 0.1)
+cat(ssri_sig$Symbol, sep = ", ")
+names(geneDxStats_dg)[geneDxStats_dg$MD_sig] %in% rownames(ssri_sig)
+
+plot(ssri_effect$t, mdd_effect$t)
+
+######### SCZD ################
+ind2 = rse_gene_dg$Dx %in% c("Control", "Schizo")
+rse_gene_sz = rse_gene_dg[,ind2]
+rse_gene_sz$Dx = droplevels(rse_gene_sz$Dx)
+rse_gene_sz$SZ = NA
+rse_gene_sz$SZ[rse_gene_sz$Dx == "Control"] = "Control"
+rse_gene_sz$SZ[rse_gene_sz$Dx == "Schizo" &  rse_gene_sz$antipsychotics] = "SZCD_AP"
+rse_gene_sz$SZ[rse_gene_sz$Dx == "Schizo" &  ! rse_gene_sz$antipsychotics] = "SCZD"
+table(rse_gene_sz$SZ)
+
+mod_dg_ap = model.matrix(~ SZ + Age + totalAssignedGene + Sex + mitoRate + 
+				mds_dg[ind2,] + qSVs_dg[ind2,],
+				data = colData(rse_gene_sz))
+rse_gene_sz = rse_gene_sz[,rownames(mod_dg_ap)]
+
+dge_ap <- DGEList(counts = assays(rse_gene_sz)$counts, genes = rowData(rse_gene_sz))
+dge_ap <- calcNormFactors(dge_ap)
+vGene_ap <- voom(dge_ap, mod_dg_ap, plot = TRUE)
+geneFit_ap = lmFit(vGene_ap, mod_dg_ap)
+geneFit_ap = eBayes(geneFit_ap)
+
+ap_effect = topTable(geneFit_ap, coef = 3, n = nrow(dge_ap), sort="none")
+
+ap_sig = topTable(geneFit_ap, coef = 3, n = nrow(dge_ap), p.value = 0.1)
+noap_sig = topTable(geneFit_ap, coef = 2, n = nrow(dge_ap), p.value = 0.1)
+cat(ap_sig$Symbol, sep = ", ")
+
+table(names(geneDxStats_dg)[geneDxStats_dg$SZ_sig] %in% rownames(ap_sig))
+
+save(ap_sig, ssri_sig, file = "rdas/de_drug_effects.rda")
+
+## write out
 
 
+#############
+## expression
+geneExprs = log2(getRPKM(rse_gene_joint, "Length")+1)
+geneExprs = geneExprs[names(geneAgeStats),]
 
-
-table(abs(geneSzStats$logFC_Sz_DG[intIndexMarg]) > 
-	abs(geneSzStats$logFC_Sz_Hippo[intIndexMarg]))
-
-
-hist(geneSzStats$logFC_Sz_DG[intIndexMarg] - geneSzStats$logFC_Sz_Hippo[intIndexMarg])
-load("rdas/exonLevel_ageAndSzInteraction.rda")
-load("rdas/jxLevel_ageAndSzInteraction.rda")
-load("rdas/txLevel_ageAndSzInteraction.rda")
-rm(geneAgeStats, exonAgeStats, jxAgeStats, txAgeStats)

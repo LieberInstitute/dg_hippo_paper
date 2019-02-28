@@ -1,0 +1,986 @@
+21833	Thra	Survival	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		20709911
+142980	Tlr3	Numbers	New neuron	Negative	Gene manipulation	Mouse		20713712
+142980	Tlr3	Survival	Precursor	Negative	Gene manipulation	Mouse		20713712
+21833	Thra	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20709911
+18128	Notch1	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		20685991
+18128	Notch1	Dendritogenesis	New neuron	Positive	Gene manipulation	Mouse		20685991
+21833	Thra	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20709911
+18128	Notch1	Numbers	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		20685991
+18128	Notch1	Numbers	New neuron	Positive	Gene manipulation	Mouse		20685991
+18128	Notch1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		20685991
+18128	Notch1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		20685991
+17131	Smad7	Numbers	Precursor	Positive	Gene manipulation	Mouse		20621052
+17131	Smad7	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20621052
+27386	Npas3	Numbers	New neuron	Positive	Gene manipulation	Mouse		20603013
+12166	Bmpr1a	Numbers	Precursor	Positive	Gene manipulation	Mouse		20621052
+12166	Bmpr1a	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20621052
+27386	Npas3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		20603013
+27386	Npas3	Survival	Immature neuron	Positive	Gene manipulation	Mouse		20603013
+21803	Tgfb1	Proliferation	Precursor	Positive	Protein or gene expression	Rat		20600816
+319757	Smo	Proliferation	Precursor	Positive	Protein manipulation	Rat		20600593
+319757	Smo	Survival	BrdU immunoreactive cell	Positive	Protein manipulation	Rat		20600593
+11441	Chrna7	Dendritogenesis	Immature neuron	Positive	Gene manipulation	Mouse		20592195
+11441	Chrna7	Survival	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		20592195
+11441	Chrna7	Function	Immature neuron	Positive	Gene manipulation	Mouse		20592195
+11441	Chrna7	Maturation	Immature neuron	Positive	Gene manipulation	Mouse		20592195
+21648	Dynlt1b	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		20575070
+21648	Dynlt1b	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		20575070
+21648	Dynlt1b	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		20575070
+21648	Dynlt1b	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		20575070
+12801	Cnr1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20565726
+12801	Cnr1	Survival	New neuron	Positive	Gene manipulation	Mouse		20565726
+12801	Cnr1	Numbers	New neuron	Positive	Gene manipulation	Mouse		20565726
+20720	Serpine2	Differentiation	New neuron	Neutral	Gene manipulation	Mouse		20529321
+20720	Serpine2	Survival	New neuron	Negative	Gene manipulation	Mouse		20529321
+20720	Serpine2	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20529321
+13839	Epha5	Proliferation	Precursor	Positive	Gene manipulation	Mouse		20474079
+13839	Epha5	Numbers	New neuron	Positive	Gene manipulation	Mouse		20474079
+18128	Notch1	Proliferation	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		20452319
+19664	Rbpj	Numbers	Precursor	Negative	Gene manipulation	Mouse		20452319
+18128	Notch1	Proliferation	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		20452319
+18128	Notch1	Numbers	New neuron	Positive	Gene manipulation	Mouse		20452319
+18128	Notch1	Proliferation	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		20452319
+14265	Fmr1	Proliferation	Determined progenitor (Type 2b)	Negative	Gene manipulation	Mouse		20386739
+18128	Notch1	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		20452319
+14265	Fmr1	Proliferation	Undetermined progenitor (Type 2a)	Negative	Gene manipulation	Mouse		20386739
+14265	Fmr1	Differentiation	Astrocyte	Negative	Gene manipulation	Mouse		20386739
+14265	Fmr1	Numbers	New neuron	Positive	Gene manipulation	Mouse		20386739
+14265	Fmr1	Differentiation	New neuron	Positive	Gene manipulation	Mouse		20386739
+14265	Fmr1	Proliferation	Stem cell (Type 1)	Negative	Gene manipulation	Mouse		20386739
+12048	Bcl2l1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20156439
+21354	Tap1	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		20147861
+21354	Tap1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20147861
+19225	Ptgs2	Proliferation	Precursor	Positive	Protein manipulation	Mouse		20136845
+18033	Nfkb1	Proliferation	Precursor	Negative	Protein manipulation	Rat		20133768
+109648	Npy	Proliferation	Precursor	Positive	Protein manipulation	Rat		20132466
+109648	Npy	Proliferation	Precursor	Positive	Protein manipulation	Mouse		20095007
+109648	Npy	Numbers	New neuron	Positive	Protein manipulation	Mouse		20095007
+13166	Dbh	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20089918
+11553	Adra2c	Numbers	New neuron	Neutral	Gene manipulation	Mouse		20089918
+11553	Adra2c	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20089918
+11551	Adra2a	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20089918
+11551	Adra2a	Numbers	New neuron	Neutral	Gene manipulation	Mouse		20089918
+11607	Agtr1a	Proliferation	Precursor	Neutral	Protein manipulation	Rat		20041759
+18792	Plau	Numbers	Doublecortin immunoreactive cell	Negative	Protein manipulation	Mouse		20026272
+11607	Agtr1a	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		20041759
+11816	Apoe	Maturation	New neuron	Positive	Gene manipulation	Mouse		19951691
+11816	Apoe	Differentiation	New neuron	Positive	Gene manipulation	Mouse		19951691
+11816	Apoe	Differentiation	Astrocyte	Negative	Gene manipulation	Mouse		19951691
+11651	Akt1	Proliferation	Precursor	Neutral	Protein manipulation	Mouse		19936256
+11651	Akt1	Survival	BrdU immunoreactive cell	Positive	Protein manipulation	Mouse		19936256
+15901	Id1	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		19896442
+15901	Id1	Expression	Vertical astrocyte (Type 0)	Positive	Protein or gene expression	Mouse		19896442
+15901	Id1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		19896442
+12159	Bmp4	Proliferation	Precursor	Negative	Gene manipulation	Mouse		19841742
+12159	Bmp4	Numbers	New neuron	Negative	Gene manipulation	Mouse		19841742
+22215	Ube3a	Numbers	New neuron	Neutral	Gene manipulation	Mouse		19782683
+22215	Ube3a	Differentiation	New neuron	Negative	Gene manipulation	Mouse		19782683
+108686	Ccdc88a	Migration	Immature neuron	Negative	Gene manipulation	Mouse		19778507
+22215	Ube3a	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19782683
+108686	Ccdc88a	Axonogenesis	Immature neuron	Positive	Gene manipulation	Mouse		19778507
+56717	Mtor	Dendritogenesis	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19778506
+20674	Sox2	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		19734891
+20674	Sox2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		19734891
+20674	Sox2	Numbers	New neuron	Positive	Gene manipulation	Mouse		19734891
+11820	App	Proliferation	Precursor	Negative	Gene manipulation	Mouse		19714567
+11820	App	Numbers	New neuron	Positive	Gene manipulation	Mouse		19714567
+11820	App	Survival	New neuron	Positive	Gene manipulation	Mouse		19714567
+14265	Fmr1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19666116
+14265	Fmr1	Survival	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		19666116
+14102	Fas	Proliferation	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19664992
+14102	Fas	Differentiation	New neuron	Neutral	Gene manipulation	Mouse		19664992
+16601	Klf9	Differentiation	New neuron	Neutral	Gene manipulation	Mouse		19657039
+16601	Klf9	Function	Immature neuron	Positive	Gene manipulation	Mouse		19657039
+16601	Klf9	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19657039
+14815	Nr3c1	Proliferation	Precursor	Neutral	Protein manipulation	Rat		19644729
+21926	Tnf	Proliferation	Precursor	Negative	Protein manipulation	Mouse		19557094
+22339	Vegfa	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		19571140
+12912	Creb1	Dendritogenesis	Immature neuron	Positive	Gene manipulation	Mouse		19553437
+12912	Creb1	Survival	Immature neuron	Positive	Gene manipulation	Mouse		19553437
+22784	Slc30a3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		19536073
+22784	Slc30a3	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19536073
+18803	Plcg1	Proliferation	Precursor	Positive	Gene manipulation	Rat		19505325
+20666	Sox11	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		19490090
+22416	Wnt3a	Numbers	New neuron	Negative	Protein manipulation	Rat		19418460
+22416	Wnt3a	Proliferation	Precursor	Positive	Protein manipulation	Rat		19418460
+18667	Pgr	Proliferation	Precursor	Positive	Protein manipulation	Rat		19359388
+18667	Pgr	Expression	Precursor	Positive	Protein manipulation	Rat		19359388
+18627	Per2	Expression	Calretinin immunoreactive cell	Negative	Gene manipulation	Mouse		19327139
+18627	Per2	Proliferation	Precursor	Negative	Gene manipulation	Mouse		19327139
+18627	Per2	Expression	Stem cell (Type 1)	Negative	Gene manipulation	Mouse		19327139
+18627	Per2	Numbers	New neuron	Neutral	Gene manipulation	Mouse		19327139
+18627	Per2	Survival	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		19327139
+18627	Per2	Expression	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19327139
+18012	Neurod1	Numbers	New neuron	Positive	Gene manipulation	Mouse		19274100
+18012	Neurod1	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		19274100
+11924	Neurog2	Numbers	New neuron	Positive	Gene manipulation	Mouse		19274100
+11924	Neurog2	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		19274100
+13405	Dmd	Numbers	New neuron	Positive	Gene manipulation	Mouse		19237426
+13405	Dmd	Proliferation	Precursor	Negative	Gene manipulation	Mouse		19237426
+20512	Slc1a3	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		19124008
+11838	Arc	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		19156854
+19109	Prl	Proliferation	Precursor	Positive	Protein manipulation	Mouse		19211889
+17873	Gadd45b	Proliferation	Precursor	Positive	Gene manipulation	Mouse		19119186
+17873	Gadd45b	Dendritogenesis	Immature neuron	Positive	Gene manipulation	Mouse		19119186
+14164	Fgf1	Proliferation	Precursor	Positive	Protein manipulation	Mouse		19119186
+20848	Stat3	Numbers	New neuron	Positive	Gene manipulation	Mouse		19023034
+20848	Stat3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		19023034
+20848	Stat3	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		19023034
+16878	Lif	Numbers	New neuron	Neutral	Gene manipulation	Mouse		19023034
+16878	Lif	Numbers	Stem cell (Type 1)	Neutral	Gene manipulation	Mouse		19023034
+12803	Cntf	Proliferation	Precursor	Positive	Gene manipulation	Mouse		19023034
+16878	Lif	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19023034
+12569	Cdk5r1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19017796
+12803	Cntf	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		19023034
+12803	Cntf	Numbers	New neuron	Positive	Gene manipulation	Mouse		19023034
+12568	Cdk5	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19017796
+56637	Gsk3b	Proliferation	Precursor	Negative	Protein manipulation	Rat		19005466
+12568	Cdk5	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		19017796
+12568	Cdk5	Dendritogenesis	Immature neuron	Negative	Gene manipulation	Mouse		18998770
+12568	Cdk5	Migration	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		18998770
+11829	Aqp4	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		18923397
+11829	Aqp4	Expression	Precursor	Positive	Gene manipulation	Mouse		18923397
+18121	Nog	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18784300
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		18728187
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		18728187
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Rat		18728187
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Rat		18728187
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Mouse		18728187
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Rat		18728187
+12064	Bdnf	Proliferation	Precursor	Negative	Gene manipulation	Mouse		18718867
+14632	Gli1	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		18728187
+12064	Bdnf	Survival	New neuron	Neutral	Gene manipulation	Mouse		18718867
+12064	Bdnf	Numbers	Calretinin immunoreactive cell	Positive	Gene manipulation	Mouse		18718867
+12064	Bdnf	Numbers	Calbindin immunoreactive cell	Negative	Gene manipulation	Mouse		18718867
+22339	Vegfa	Proliferation	Precursor	Positive	Protein manipulation	Rat		18682560
+12064	Bdnf	Migration	Immature neuron	Positive	Gene manipulation	Mouse		18718867
+12064	Bdnf	Dendritogenesis	New neuron	Positive	Gene manipulation	Mouse		18718867
+16542	Kdr	Numbers	New neuron	Positive	Gene manipulation	Mouse		18682560
+16542	Kdr	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18682560
+17172	Ascl1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		18585058
+17172	Ascl1	Differentiation	Oligodendrocyte	Positive	Gene manipulation	Mouse		18587391
+14812	Grin2b	Proliferation	Precursor	Negative	Protein manipulation	Mouse		18624924
+17172	Ascl1	Differentiation	New neuron	Positive	Protein or gene expression	Mouse		18585058
+17390	Mmp2	Expression	Immature neuron	Positive	Protein or gene expression	Monkey		18566964
+17395	Mmp9	Expression	Immature neuron	Positive	Protein or gene expression	Monkey		18566964
+17257	Mecp2	Differentiation	New neuron	Positive	Gene manipulation	Mouse		18566964
+17257	Mecp2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18566964
+216233	Socs2	Survival	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		18566962
+216233	Socs2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		18566962
+14600	Ghr	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		18566962
+74318	Hopx	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18507846
+74318	Hopx	Survival	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18507846
+74318	Hopx	Survival	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18507846
+74318	Hopx	Numbers	New neuron	Negative	Gene manipulation	Mouse		18507846
+74318	Hopx	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18507846
+74318	Hopx	Proliferation	Stem cell (Type 1)	Neutral	Gene manipulation	Mouse		18507846
+19130	Prox1	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		18502050
+19130	Prox1	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		18502050
+19130	Prox1	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		18502050
+19130	Prox1	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Mouse		18502050
+20315	Cxcl12	Function	Immature neuron	Positive	Protein manipulation	Rat		18434527
+12767	Cxcr4	Numbers	New neuron	Positive	Protein manipulation	Rat		18434527
+12767	Cxcr4	Expression	Precursor	Positive	Protein manipulation	Rat		18434527
+12767	Cxcr4	Expression	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		18434527
+12767	Cxcr4	Survival	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		18434527
+78920	Dlst	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18423880
+18033	Nfkb1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		18400889
+13382	Dld	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18423880
+18033	Nfkb1	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		18400889
+18033	Nfkb1	Numbers	Calretinin immunoreactive cell	Positive	Gene manipulation	Mouse		18400889
+18033	Nfkb1	Numbers	New neuron	Positive	Gene manipulation	Mouse		18400889
+18033	Nfkb1	Survival	New neuron	Positive	Gene manipulation	Mouse		18400889
+21375	Tbr1	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		18385329
+18508	Pax6	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		18385329
+21375	Tbr1	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		18385329
+18508	Pax6	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		18385329
+13813	Eomes	Expression	Calretinin immunoreactive cell	Negative	Protein or gene expression	Mouse		18385329
+13813	Eomes	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		18385329
+13813	Eomes	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		18385329
+13813	Eomes	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		18385329
+20674	Sox2	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		18371391
+74026	Msl1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		18371391
+20674	Sox2	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		18371391
+16847	Lepr	Expression	Precursor	Positive	Protein or gene expression	Mouse		18367451
+16846	Lep	Proliferation	Precursor	Positive	Protein manipulation	Mouse		18367451
+16846	Lep	Numbers	New neuron	Neutral	Protein manipulation	Mouse		18367451
+20660	Sorl1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		18362153
+20660	Sorl1	Survival	New neuron	Positive	Gene manipulation	Mouse		18362153
+20660	Sorl1	Numbers	New neuron	Positive	Gene manipulation	Mouse		18362153
+319757	Smo	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18297065
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		18297065
+319757	Smo	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18297065
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Rat		18297065
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Rat		18297065
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		18297065
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Mouse		18297065
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Rat		18297065
+16568	Kif3a	Numbers	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18297065
+16568	Kif3a	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18297065
+27204	Syn3	Expression	Immature neuron	Positive	Gene manipulation	Mouse		18271024
+16568	Kif3a	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18297065
+27204	Syn3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18271024
+18212	Ntrk2	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		18240316
+18212	Ntrk2	Expression	Determined progenitor (Type 2b)	Negative	Protein or gene expression	Mouse		18240316
+18212	Ntrk2	Expression	Undetermined progenitor (Type 2a)	Negative	Protein or gene expression	Mouse		18240316
+18212	Ntrk2	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		18240316
+18212	Ntrk2	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		18240316
+21907	Nr2e1	Numbers	New neuron	Positive	Gene manipulation	Mouse		18235445
+21907	Nr2e1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18235445
+12575	Cdkn1a	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18172194
+53626	Insm1	Expression	Precursor	Positive	Protein or gene expression	Mouse		18205207
+12575	Cdkn1a	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18172194
+12575	Cdkn1a	Expression	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18172194
+18128	Notch1	Expression	Neuroblast-like cell (Type 3)	Negative	Gene manipulation	Mouse		18077357
+18128	Notch1	Dendritogenesis	New neuron	Positive	Gene manipulation	Mouse		18077357
+18128	Notch1	Expression	Immature neuron	Positive	Gene manipulation	Mouse		18077357
+18128	Notch1	Differentiation	Precursor	Negative	Gene manipulation	Mouse		18077357
+18128	Notch1	Numbers	New neuron	Negative	Gene manipulation	Mouse		18077357
+18128	Notch1	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18077357
+16449	Jag1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		18077357
+16449	Jag1	Expression	Astrocyte	Positive	Protein or gene expression	Mouse		18077357
+18128	Notch1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18077357
+12566	Cdk2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		18073538
+12566	Cdk2	Numbers	New neuron	Neutral	Gene manipulation	Mouse		18073538
+270190	Ephb1	Numbers	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		18057206
+233081	Ffar1	Expression	Granule cell neuron	Positive	Protein or gene expression	Monkey		18064707
+233081	Ffar1	Expression	Precursor	Positive	Protein or gene expression	Monkey		18064707
+270190	Ephb1	Maturation	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Expression	Neuroblast-like cell (Type 3)	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Migration	Determined progenitor (Type 2b)	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Expression	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		18057206
+270190	Ephb1	Dendritogenesis	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18057206
+270190	Ephb1	Migration	Precursor	Negative	Gene manipulation	Mouse		18057206
+270190	Ephb1	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18057206
+270190	Ephb1	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18057206
+270190	Ephb1	Numbers	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18057206
+270190	Ephb1	Migration	Neuroblast-like cell (Type 3)	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Expression	Calretinin immunoreactive cell	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Expression	Calbindin immunoreactive cell	Positive	Gene manipulation	Mouse		18057206
+13845	Ephb3	Migration	Determined progenitor (Type 2b)	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Migration	Neuroblast-like cell (Type 3)	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Dendritogenesis	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Migration	Precursor	Negative	Gene manipulation	Mouse		18057206
+13845	Ephb3	Maturation	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		18057206
+13844	Ephb2	Expression	Neuroblast-like cell (Type 3)	Negative	Gene manipulation	Mouse		18057206
+13844	Ephb2	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		18057206
+13844	Ephb2	Expression	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		18057206
+13844	Ephb2	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		18057206
+13643	Efnb3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18057206
+13643	Efnb3	Migration	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18057206
+16176	Il1b	Numbers	New neuron	Positive	Protein manipulation	Rat		18001276
+13643	Efnb3	Dendritogenesis	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		18057206
+16176	Il1b	Differentiation	New neuron	Neutral	Protein manipulation	Rat		18001276
+12362	Casp1	Differentiation	New neuron	Neutral	Protein manipulation	Rat		18001276
+12362	Casp1	Numbers	New neuron	Negative	Protein manipulation	Rat		18001276
+381677	Vgf	Proliferation	Precursor	Positive	Protein manipulation	Rat		17989282
+12387	Ctnnb1	Differentiation	New neuron	Positive	Gene manipulation	Rat		17968353
+26570	Slc7a11	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17963724
+11423	Ache	Survival	Immature neuron	Negative	Gene manipulation	Mouse		17960645
+11423	Ache	Expression	Granule cell neuron	Positive	Gene manipulation	Mouse		17960645
+11423	Ache	Expression	Precursor	Positive	Gene manipulation	Mouse		17960645
+11423	Ache	Numbers	New neuron	Negative	Gene manipulation	Mouse		17960645
+11423	Ache	Proliferation	Precursor	Negative	Gene manipulation	Mouse		17960645
+21336	Tacr1	Proliferation	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		17886560
+11423	Ache	Expression	New neuron	Positive	Gene manipulation	Mouse		17960645
+21333	Tac1	Proliferation	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		17886560
+14173	Fgf2	Dendritogenesis	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		17883411
+14173	Fgf2	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		17883411
+14173	Fgf2	Proliferation	Precursor	Positive	Protein manipulation	Rat		17883411
+14173	Fgf2	Numbers	Immature neuron	Positive	Protein manipulation	Rat		17883411
+83431	Ndel1	Migration	Immature neuron	Negative	Gene manipulation	Mouse		17825401
+83431	Ndel1	Dendritogenesis	Immature neuron	Negative	Gene manipulation	Mouse		17825401
+244667	Disc1	Migration	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		17825401
+244667	Disc1	Maturation	Immature neuron	Negative	Gene manipulation	Mouse		17825401
+244667	Disc1	Dendritogenesis	Immature neuron	Negative	Gene manipulation	Mouse		17825401
+14810	Grin1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		17803978
+17172	Ascl1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		17727826
+17172	Ascl1	Differentiation	New neuron	Positive	Protein or gene expression	Mouse		17727826
+24088	Tlr2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		17704767
+24088	Tlr2	Differentiation	New neuron	Positive	Gene manipulation	Mouse		17704767
+24088	Tlr2	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		17704767
+24088	Tlr2	Differentiation	Astrocyte	Negative	Gene manipulation	Mouse		17704767
+21898	Tlr4	Proliferation	Precursor	Negative	Gene manipulation	Mouse		17704767
+21898	Tlr4	Numbers	New neuron	Negative	Gene manipulation	Mouse		17704767
+17874	Myd88	Numbers	New neuron	Negative	Gene manipulation	Mouse		17704767
+12369	Casp7	Expression	Precursor	Negative	Protein or gene expression	Rat		17644223
+17874	Myd88	Proliferation	Precursor	Negative	Gene manipulation	Mouse		17704767
+12368	Casp6	Expression	Precursor	Negative	Protein or gene expression	Rat		17644223
+19116	Prlr	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17603480
+16866	Lhb	Numbers	New neuron	Positive	Protein manipulation	Mouse		17603480
+16867	Lhcgr	Proliferation	Precursor	Neutral	Protein or gene expression	Mouse		17603480
+16866	Lhb	Proliferation	Precursor	Positive	Protein manipulation	Mouse		17603480
+16866	Lhb	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		17603480
+13856	Epo	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		17555554
+13856	Epo	Proliferation	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		17555554
+13856	Epo	Survival	New neuron	Neutral	Protein manipulation	Mouse		17555554
+13856	Epo	Numbers	New neuron	Neutral	Protein manipulation	Mouse		17555554
+13856	Epo	Proliferation	Precursor	Positive	Protein manipulation	Mouse		17555554
+14812	Grin2b	Function	New neuron	Positive	Gene manipulation	Mouse		17521569
+15567	Slc6a4	Survival	New neuron	Positive	Gene manipulation	Mouse		17510734
+14812	Grin2b	Maturation	Immature neuron	Positive	Gene manipulation	Mouse		17521569
+15567	Slc6a4	Numbers	New neuron	Positive	Gene manipulation	Mouse		17510734
+15567	Slc6a4	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17510734
+13796	Emx1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		17490651
+11924	Neurog2	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		17466019
+13796	Emx1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17490651
+16542	Kdr	Numbers	New neuron	Positive	Gene manipulation	Mouse		17360578
+18125	Nos1	Numbers	New neuron	Negative	Gene manipulation	Mouse		17459722
+18125	Nos1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		17459722
+16542	Kdr	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17360578
+12387	Ctnnb1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Rat		17348003
+18049	Ngf	Proliferation	Precursor	Neutral	Protein manipulation	Rat		17270453
+18049	Ngf	Numbers	New neuron	Positive	Protein manipulation	Rat		17270453
+18049	Ngf	Survival	New neuron	Positive	Protein manipulation	Rat		17270453
+18049	Ngf	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		17270453
+12767	Cxcr4	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		17183554
+14182	Fgfr1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17239352
+14182	Fgfr1	Numbers	New neuron	Positive	Gene manipulation	Mouse		17239352
+12767	Cxcr4	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		17183554
+12767	Cxcr4	Expression	Calbindin immunoreactive cell	Negative	Protein or gene expression	Mouse		17183554
+12767	Cxcr4	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Mouse		17183554
+12767	Cxcr4	Expression	Precursor	Positive	Protein or gene expression	Mouse		17183554
+14824	Grn	Proliferation	Precursor	Positive	Protein manipulation	Rat		17179653
+14810	Grin1	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		17157994
+16006	Igfbp1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		17169417
+14810	Grin1	Expression	Doublecortin immunoreactive cell	Negative	Protein or gene expression	Rat		17157994
+14810	Grin1	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Rat		17157994
+12704	Cit	Numbers	Precursor	Positive	Gene manipulation	Rat		17148954
+19712	Rest	Differentiation	Precursor	Negative	Gene manipulation	Mouse		17150646
+12704	Cit	Numbers	New neuron	Positive	Gene manipulation	Rat		17148954
+18472	Pafah1b1	Survival	Precursor	Positive	Gene manipulation	Mouse		17148952
+18472	Pafah1b1	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		17148952
+18472	Pafah1b1	Migration	Precursor	Negative	Gene manipulation	Mouse		17148952
+18472	Pafah1b1	Numbers	New neuron	Positive	Gene manipulation	Mouse		17148952
+20315	Cxcl12	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		17148948
+20315	Cxcl12	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		17148948
+12767	Cxcr4	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		17148948
+12767	Cxcr4	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Mouse		17148948
+12767	Cxcr4	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		17148948
+12767	Cxcr4	Expression	Precursor	Positive	Protein or gene expression	Mouse		17148948
+18390	Oprm1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		17055658
+12767	Cxcr4	Expression	Calbindin immunoreactive cell	Negative	Protein or gene expression	Mouse		17148948
+18390	Oprm1	Numbers	New neuron	Negative	Gene manipulation	Mouse		17055658
+18390	Oprm1	Survival	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		17055658
+18390	Oprm1	Numbers	Granule cell neuron	Negative	Gene manipulation	Mouse		17055658
+78405	Ntf5	Numbers	New neuron	Neutral	Gene manipulation	Mouse		17040481
+12064	Bdnf	Numbers	New neuron	Neutral	Gene manipulation	Mouse		17040481
+13983	Esr2	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Rat		17026970
+12802	Cnr2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		17015409
+16176	Il1b	Proliferation	Precursor	Positive	Protein manipulation	Rat		16999735
+12672	Chrm4	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		16999735
+12669	Chrm1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		16999735
+11444	Chrnb2	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		16999735
+11441	Chrna7	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		16999735
+11423	Ache	Survival	New neuron	Negative	Protein manipulation	Mouse		16999735
+11423	Ache	Numbers	New neuron	Negative	Protein manipulation	Mouse		16999735
+11423	Ache	Proliferation	Precursor	Neutral	Protein manipulation	Mouse		16999735
+21938	Tnfrsf1b	Numbers	New neuron	Neutral	Gene manipulation	Mouse		16988041
+21938	Tnfrsf1b	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		16988041
+21938	Tnfrsf1b	Expression	Precursor	Positive	Gene manipulation	Mouse		16988041
+21937	Tnfrsf1a	Expression	Precursor	Positive	Gene manipulation	Mouse		16988041
+21937	Tnfrsf1a	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16988041
+20674	Sox2	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		16958090
+21937	Tnfrsf1a	Numbers	New neuron	Negative	Gene manipulation	Mouse		16988041
+20674	Sox2	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		16958090
+18012	Neurod1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		16958090
+18012	Neurod1	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		16958090
+12140	Fabp7	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		16958090
+12140	Fabp7	Expression	Determined progenitor (Type 2b)	Negative	Protein or gene expression	Mouse		16958090
+15228	Foxg1	Dendritogenesis	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		16941454
+12140	Fabp7	Expression	Undetermined progenitor (Type 2a)	Negative	Protein or gene expression	Mouse		16958090
+15228	Foxg1	Numbers	Calretinin immunoreactive cell	Positive	Gene manipulation	Mouse		16941454
+15228	Foxg1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		16941454
+15228	Foxg1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16941454
+12669	Chrm1	Numbers	New neuron	Positive	Protein manipulation	Rat		16889901
+15228	Foxg1	Numbers	Granule cell neuron	Positive	Gene manipulation	Mouse		16941454
+12669	Chrm1	Proliferation	Precursor	Neutral	Protein manipulation	Rat		16889901
+12669	Chrm1	Survival	New neuron	Positive	Protein manipulation	Rat		16889901
+12669	Chrm1	Differentiation	New neuron	Neutral	Protein manipulation	Rat		16889901
+11423	Ache	Numbers	New neuron	Negative	Protein manipulation	Rat		16889901
+11423	Ache	Proliferation	Precursor	Neutral	Protein manipulation	Rat		16889901
+12801	Cnr1	Numbers	New neuron	Positive	Protein manipulation	Mouse		16831955
+12801	Cnr1	Proliferation	Precursor	Negative	Protein manipulation	Mouse		16831955
+111654	Ifna	Numbers	New neuron	Neutral	Protein manipulation	Rat		16823390
+111654	Ifna	Proliferation	Precursor	Negative	Protein manipulation	Rat		16823390
+21803	Tgfb1	Numbers	New neuron	Negative	Gene manipulation	Mouse		16816369
+21803	Tgfb1	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		16816369
+21803	Tgfb1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16816369
+18125	Nos1	Numbers	New neuron	Negative	Gene manipulation	Mouse		16735094
+18205	Ntf3	Numbers	New neuron	Positive	Gene manipulation	Mouse		16705139
+18125	Nos1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16735094
+21803	Tgfb1	Numbers	New neuron	Negative	Gene manipulation	Mouse		16691117
+18205	Ntf3	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		16705139
+21803	Tgfb1	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		16691117
+21803	Tgfb1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16691117
+20675	Sox3	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		16680766
+20675	Sox3	Expression	Precursor	Positive	Protein or gene expression	Mouse		16680766
+11305	Abca2	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		16539677
+19699	Reln	Migration	Doublecortin immunoreactive cell	Negative	Protein manipulation	Mouse		16641251
+19401	Rara	Numbers	New neuron	Positive	Protein manipulation	Mouse		16505366
+19401	Rara	Survival	New neuron	Positive	Protein manipulation	Mouse		16505366
+19401	Rara	Survival	Immature neuron	Positive	Protein manipulation	Mouse		16505366
+19401	Rara	Proliferation	Neuroblast-like cell (Type 3)	Positive	Protein manipulation	Mouse		16505366
+19401	Rara	Proliferation	Precursor	Neutral	Protein manipulation	Mouse		16505366
+19268	Ptprf	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16488625
+19401	Rara	Proliferation	Determined progenitor (Type 2b)	Positive	Protein manipulation	Mouse		16505366
+19268	Ptprf	Differentiation	New neuron	Negative	Gene manipulation	Mouse		16488625
+19268	Ptprf	Numbers	Granule cell neuron	Negative	Gene manipulation	Mouse		16488625
+19268	Ptprf	Expression	Precursor	Positive	Gene manipulation	Mouse		16488625
+19268	Ptprf	Numbers	New neuron	Negative	Gene manipulation	Mouse		16488625
+12801	Cnr1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16452678
+19268	Ptprf	Survival	Precursor	Neutral	Gene manipulation	Mouse		16488625
+12801	Cnr1	Expression	Granule cell neuron	Positive	Gene manipulation	Mouse		16452678
+12801	Cnr1	Expression	New neuron	Positive	Gene manipulation	Mouse		16452678
+19699	Reln	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		16438965
+12801	Cnr1	Numbers	New neuron	Negative	Gene manipulation	Mouse		16452678
+12801	Cnr1	Expression	Precursor	Positive	Gene manipulation	Mouse		16452678
+19699	Reln	Migration	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		16438965
+19699	Reln	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16438965
+16000	Igf1	Numbers	New neuron	Positive	Gene manipulation	Rat		16385581
+16000	Igf1	Differentiation	New neuron	Neutral	Gene manipulation	Rat		16385581
+16000	Igf1	Proliferation	Precursor	Neutral	Gene manipulation	Rat		16385581
+14599	Gh	Proliferation	Precursor	Neutral	Gene manipulation	Rat		16385581
+14599	Gh	Numbers	New neuron	Positive	Gene manipulation	Rat		16385581
+16000	Igf1	Survival	New neuron	Positive	Gene manipulation	Rat		16385581
+14599	Gh	Survival	New neuron	Positive	Gene manipulation	Rat		16385581
+57138	Slc12a5	Maturation	Immature neuron	Positive	Gene manipulation	Mouse		16341203
+14599	Gh	Differentiation	New neuron	Positive	Gene manipulation	Rat		16385581
+20496	Slc12a2	Expression	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		16341203
+20496	Slc12a2	Dendritogenesis	Immature neuron	Positive	Gene manipulation	Mouse		16341203
+22340	Vegfb	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16337622
+20496	Slc12a2	Function	Immature neuron	Positive	Gene manipulation	Mouse		16341203
+22340	Vegfb	Numbers	New neuron	Positive	Gene manipulation	Mouse		16337622
+22142	Tuba1a	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		16336967
+22142	Tuba1a	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		16336967
+12159	Bmp4	Differentiation	Astrocyte	Positive	Gene manipulation	Mouse		16314487
+12159	Bmp4	Numbers	Stem cell (Type 1)	Negative	Gene manipulation	Mouse		16314487
+18537	Pcmt1	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		16304629
+18537	Pcmt1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		16304629
+18537	Pcmt1	Numbers	Granule cell neuron	Negative	Gene manipulation	Mouse		16304629
+12043	Bcl2	Numbers	New neuron	Positive	Gene manipulation	Mouse		16262630
+12043	Bcl2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		16262630
+12043	Bcl2	Numbers	Granule cell neuron	Positive	Gene manipulation	Mouse		16262630
+22416	Wnt3a	Numbers	Immature neuron	Negative	Gene manipulation	Mouse		16251967
+12043	Bcl2	Survival	New neuron	Positive	Gene manipulation	Mouse		16262630
+22416	Wnt3a	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16251967
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		16197497
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		16197497
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Rat		16197497
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Rat		16197497
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Mouse		16197497
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Rat		16197497
+27386	Npas3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16172381
+27386	Npas3	Numbers	New neuron	Positive	Gene manipulation	Mouse		16172381
+27386	Npas3	Survival	Immature neuron	Positive	Gene manipulation	Mouse		16172381
+18508	Pax6	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Rat		16164600
+18508	Pax6	Numbers	Precursor	Positive	Gene manipulation	Rat		16164600
+18508	Pax6	Proliferation	Stem cell (Type 1)	Positive	Gene manipulation	Rat		16164600
+14394	Gabra1	Proliferation	Undetermined progenitor (Type 2a)	Positive	Protein manipulation	Mouse		16157276
+18508	Pax6	Expression	Doublecortin immunoreactive cell	Positive	Gene manipulation	Rat		16164600
+14394	Gabra1	Numbers	New neuron	Positive	Protein manipulation	Mouse		16157276
+14394	Gabra1	Proliferation	Stem cell (Type 1)	Neutral	Protein manipulation	Mouse		16157276
+14394	Gabra1	Proliferation	Determined progenitor (Type 2b)	Positive	Protein manipulation	Mouse		16157276
+15550	Htr1a	Proliferation	Precursor	Positive	Protein manipulation	Rat		16129565
+14815	Nr3c1	Proliferation	Precursor	Neutral	Protein manipulation	Rat		16115202
+110784	Nr3c2	Proliferation	Precursor	Positive	Protein manipulation	Rat		16115202
+14573	Gdnf	Numbers	New neuron	Positive	Protein manipulation	Rat		16112112
+14816	Grm1	Numbers	Calretinin immunoreactive cell	Positive	Protein manipulation	Rat		16023152
+12985	Csf3	Numbers	New neuron	Positive	Protein manipulation	Rat		16007267
+14073	Faah	Numbers	New neuron	Negative	Gene manipulation	Mouse		16037095
+108071	Grm5	Numbers	Calretinin immunoreactive cell	Neutral	Protein manipulation	Rat		16023152
+18166	Npy1r	Numbers	New neuron	Negative	Gene manipulation	Mouse		15836615
+20203	S100b	Numbers	New neuron	Positive	Protein manipulation	Rat		15941374
+20203	S100b	Proliferation	Precursor	Positive	Protein manipulation	Rat		15941374
+18166	Npy1r	Survival	New neuron	Negative	Gene manipulation	Mouse		15836615
+18166	Npy1r	Numbers	Granule cell neuron	Neutral	Gene manipulation	Mouse		15836615
+18166	Npy1r	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15836615
+18166	Npy1r	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		15836615
+109648	Npy	Proliferation	Precursor	Positive	Gene manipulation	Rat		15836615
+109648	Npy	Survival	New neuron	Neutral	Gene manipulation	Rat		15836615
+16183	Il2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		15829231
+11835	Ar	Proliferation	Precursor	Negative	Protein manipulation	Rat		15787693
+12064	Bdnf	Numbers	Calbindin immunoreactive cell	Positive	Protein manipulation	Rat		15755552
+12064	Bdnf	Numbers	New neuron	Positive	Protein manipulation	Rat		15755552
+12672	Chrm4	Expression	Precursor	Positive	Protein or gene expression	Rat		15718053
+12672	Chrm4	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		15718053
+12672	Chrm4	Expression	New neuron	Positive	Protein or gene expression	Rat		15718053
+12669	Chrm1	Expression	Precursor	Positive	Protein or gene expression	Rat		15718053
+12669	Chrm1	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		15718053
+12669	Chrm1	Expression	New neuron	Positive	Protein or gene expression	Rat		15718053
+11423	Ache	Proliferation	Precursor	Negative	Protein manipulation	Rat		15718053
+11423	Ache	Numbers	New neuron	Negative	Protein manipulation	Rat		15718053
+12028	Bax	Survival	New neuron	Negative	Gene manipulation	Mouse		15590937
+12028	Bax	Migration	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		15590937
+12028	Bax	Numbers	Granule cell neuron	Negative	Gene manipulation	Mouse		15590937
+12028	Bax	Numbers	New neuron	Neutral	Gene manipulation	Mouse		15590937
+12028	Bax	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15590937
+20617	Snca	Numbers	New neuron	Negative	Gene manipulation	Mouse		15581183
+12028	Bax	Numbers	Immature neuron	Negative	Gene manipulation	Mouse		15590937
+20617	Snca	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		15581183
+20617	Snca	Survival	New neuron	Negative	Gene manipulation	Mouse		15581183
+14815	Nr3c1	Expression	Calretinin immunoreactive cell	Negative	Protein or gene expression	Mouse		15569353
+14815	Nr3c1	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		15569353
+14815	Nr3c1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		15569353
+14815	Nr3c1	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Mouse		15569353
+14815	Nr3c1	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		15569353
+14815	Nr3c1	Expression	Determined progenitor (Type 2b)	Negative	Protein or gene expression	Mouse		15569353
+110784	Nr3c2	Expression	Precursor	Positive	Protein or gene expression	Mouse		15569353
+110784	Nr3c2	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		15569353
+16000	Igf1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15564324
+16000	Igf1	Numbers	New neuron	Positive	Gene manipulation	Mouse		15564324
+12445	Ccnd3	Expression	Precursor	Negative	Protein or gene expression	Mouse		15504908
+12444	Ccnd2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15504908
+12444	Ccnd2	Numbers	New neuron	Positive	Gene manipulation	Mouse		15504908
+12444	Ccnd2	Differentiation	New neuron	Positive	Gene manipulation	Mouse		15504908
+12444	Ccnd2	Differentiation	Astrocyte	Negative	Gene manipulation	Mouse		15504908
+22339	Vegfa	Numbers	New neuron	Positive	Protein manipulation	Rat		15446578
+12443	Ccnd1	Expression	Precursor	Negative	Protein or gene expression	Mouse		15504908
+11444	Chrnb2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15472930
+22339	Vegfa	Proliferation	Precursor	Neutral	Protein manipulation	Rat		15446578
+22339	Vegfa	Survival	New neuron	Positive	Protein manipulation	Rat		15446578
+18127	Nos3	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15305857
+12801	Cnr1	Numbers	New neuron	Positive	Protein manipulation	Mouse		15266010
+12801	Cnr1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15266010
+12801	Cnr1	Numbers	New neuron	Positive	Gene manipulation	Mouse		15266010
+22339	Vegfa	Numbers	New neuron	Positive	Gene manipulation	Mouse		15258583
+12801	Cnr1	Proliferation	Precursor	Negative	Protein manipulation	Mouse		15266010
+18654	Pgf	Proliferation	Precursor	Negative	Gene manipulation	Mouse		15258583
+22339	Vegfa	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15258583
+14254	Flt1	Proliferation	Precursor	Negative	Protein manipulation	Mouse		15258583
+16542	Kdr	Numbers	New neuron	Positive	Gene manipulation	Mouse		15258583
+16542	Kdr	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15258583
+19164	Psen1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		15246822
+19164	Psen1	Numbers	New neuron	Positive	Gene manipulation	Mouse		15246822
+20674	Sox2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		15240551
+20674	Sox2	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		15240551
+20674	Sox2	Numbers	New neuron	Positive	Gene manipulation	Mouse		15240551
+12669	Chrm1	Numbers	New neuron	Positive	Protein manipulation	Rat		15211583
+18125	Nos1	Proliferation	Doublecortin immunoreactive cell	Negative	Protein manipulation	Rat		15076742
+20315	Cxcl12	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		15048927
+18125	Nos1	Numbers	Doublecortin immunoreactive cell	Negative	Protein manipulation	Rat		15076742
+20315	Cxcl12	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		15048927
+11516	Adcyap1	Proliferation	Precursor	Positive	Protein manipulation	Mouse		15048918
+19712	Rest	Differentiation	Precursor	Negative	Gene manipulation	Mouse		15035981
+15560	Htr2c	Numbers	New neuron	Neutral	Protein manipulation	Rat		14872203
+15560	Htr2c	Proliferation	Precursor	Neutral	Protein manipulation	Rat		14872203
+15558	Htr2a	Proliferation	Precursor	Neutral	Protein manipulation	Rat		14872203
+15550	Htr1a	Proliferation	Precursor	Positive	Protein manipulation	Rat		14872203
+15551	Htr1b	Proliferation	Precursor	Neutral	Protein manipulation	Rat		14872203
+15550	Htr1a	Numbers	New neuron	Positive	Protein manipulation	Rat		14872203
+108068	Grm2	Proliferation	Precursor	Negative	Protein manipulation	Mouse		14766235
+20750	Spp1	Proliferation	Precursor	Negative	Protein manipulation	Rat		14753431
+18008	Nes	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		14730584
+18008	Nes	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		14730584
+18008	Nes	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		14730584
+12912	Creb1	Dendritogenesis	Immature neuron	Positive	Protein manipulation	Mouse		14724230
+12912	Creb1	Expression	Immature neuron	Positive	Protein manipulation	Mouse		14724230
+21907	Nr2e1	Numbers	New neuron	Positive	Gene manipulation	Mouse		14702088
+21907	Nr2e1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		14702088
+22059	Trp53	Numbers	Precursor	Positive	Gene manipulation	Mouse		14680400
+12308	Calb2	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Mouse		14664811
+22339	Vegfa	Numbers	New neuron	Positive	Protein manipulation	Mouse		14656329
+26556	Homer1	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		14656319
+22339	Vegfa	Proliferation	Precursor	Positive	Protein manipulation	Mouse		14656329
+14281	Fos	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		14656319
+18212	Ntrk2	Survival	New neuron	Positive	Protein manipulation	Rat		14563966
+13653	Egr1	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		14656319
+18212	Ntrk2	Numbers	New neuron	Positive	Protein manipulation	Rat		14563966
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		12971894
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Mouse		12971894
+20423	Shh	Numbers	Stem cell (Type 1)	Positive	Protein manipulation	Rat		12971894
+20423	Shh	Proliferation	Stem cell (Type 1)	Positive	Protein manipulation	Rat		12971894
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Rat		12971894
+20423	Shh	Proliferation	Precursor	Positive	Protein manipulation	Mouse		12971894
+20664	Sox1	Expression	Precursor	Positive	Protein or gene expression	Rat		12966222
+15208	Hes5	Expression	Vertical astrocyte (Type 0)	Positive	Protein or gene expression	Mouse		12882410
+15550	Htr1a	Proliferation	Precursor	Positive	Protein manipulation	Mouse		12907793
+15208	Hes5	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		12882410
+15208	Hes5	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		12882410
+15200	Hbegf	Proliferation	Precursor	Positive	Protein manipulation	Rat		12882410
+14173	Fgf2	Proliferation	Precursor	Positive	Protein manipulation	Rat		12882410
+18008	Nes	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Mouse		12837622
+18008	Nes	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		12837622
+18008	Nes	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Mouse		12837622
+14580	Gfap	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		12837622
+18125	Nos1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Guinea pig		12828422
+14799	Gria1	Proliferation	Precursor	Positive	Protein manipulation	Rat		12763094
+193813	Mcfd2	Proliferation	Precursor	Neutral	Protein manipulation	Rat		12748381
+193813	Mcfd2	Survival	Precursor	Positive	Protein manipulation	Rat		12748381
+17190	Mbd1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		12748381
+17190	Mbd1	Differentiation	New neuron	Positive	Gene manipulation	Mouse		12748381
+17190	Mbd1	Numbers	New neuron	Positive	Gene manipulation	Mouse		12748381
+12043	Bcl2	Numbers	New neuron	Positive	Gene manipulation	Mouse		12704808
+19225	Ptgs2	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		12704808
+18125	Nos1	Proliferation	Precursor	Negative	Protein manipulation	Rat		12618288
+19225	Ptgs2	Proliferation	Precursor	Positive	Protein manipulation	Rat		12499663
+18126	Nos2	Proliferation	Precursor	Negative	Gene manipulation	Rat		12514219
+12912	Creb1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		12427843
+12912	Creb1	Expression	Immature neuron	Positive	Protein or gene expression	Mouse		12427843
+12912	Creb1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Mouse		12427843
+13555	E2f1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		12401450
+13555	E2f1	Numbers	New neuron	Positive	Gene manipulation	Mouse		12401450
+22240	Dpysl3	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Rat		12391592
+14345	Fut4	Expression	Precursor	Positive	Protein or gene expression	Mouse		12372282
+14345	Fut4	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		12372282
+19164	Psen1	Numbers	Immature neuron	Positive	Gene manipulation	Mouse		12079399
+19164	Psen1	Expression	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		12079399
+19164	Psen1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		12079399
+19164	Psen1	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		12079399
+19164	Psen1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		12079399
+19164	Psen1	Expression	Immature neuron	Positive	Gene manipulation	Mouse		12079399
+12767	Cxcr4	Expression	Precursor	Positive	Protein or gene expression	Mouse		11983855
+12484	Cd24a	Proliferation	Precursor	Negative	Gene manipulation	Mouse		11978835
+19164	Psen1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		11796184
+19164	Psen1	Numbers	New neuron	Positive	Gene manipulation	Mouse		11796184
+16193	Il6	Numbers	New neuron	Negative	Gene manipulation	Mouse		11784794
+16193	Il6	Proliferation	Precursor	Negative	Gene manipulation	Mouse		11784794
+16000	Igf1	Proliferation	Precursor	Positive	Protein manipulation	Rat		11720784
+16000	Igf1	Numbers	New neuron	Positive	Protein manipulation	Rat		11720784
+12371	Casp9	Survival	Precursor	Negative	Protein manipulation	Rat		11595032
+12367	Casp3	Survival	Precursor	Negative	Protein manipulation	Rat		11595032
+14580	Gfap	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		11549726
+22059	Trp53	Numbers	Precursor	Positive	Gene manipulation	Mouse		11532341
+14812	Grin2b	Function	New neuron	Positive	Protein manipulation	Rat		11387388
+110784	Nr3c2	Proliferation	Precursor	Positive	Protein manipulation	Rat		11258486
+11920	Atm	Proliferation	Precursor	Negative	Gene manipulation	Mouse		11238376
+11920	Atm	Differentiation	New neuron	Positive	Gene manipulation	Mouse		11238376
+11920	Atm	Numbers	New neuron	Positive	Gene manipulation	Mouse		11238376
+11920	Atm	Expression	Precursor	Positive	Gene manipulation	Mouse		11238376
+16000	Igf1	Numbers	New neuron	Positive	Protein manipulation	Rat		11222653
+11920	Atm	Survival	New neuron	Positive	Gene manipulation	Mouse		11238376
+18508	Pax6	Expression	Undetermined progenitor (Type 2a)	Positive	Protein or gene expression	Rat		11168558
+16000	Igf1	Proliferation	Precursor	Positive	Protein manipulation	Rat		11222653
+18508	Pax6	Proliferation	Precursor	Positive	Protein or gene expression	Rat		11168558
+18508	Pax6	Expression	Neuroblast-like cell (Type 3)	Positive	Protein or gene expression	Rat		11168558
+18508	Pax6	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Rat		11168558
+13010	Cst3	Expression	Progenitor	Positive	Protein manipulation	Rat		11144350
+18508	Pax6	Expression	Determined progenitor (Type 2b)	Positive	Protein or gene expression	Rat		11168558
+16000	Igf1	Numbers	New neuron	Positive	Protein manipulation	Rat		10751442
+13010	Cst3	Numbers	Immature neuron	Positive	Protein manipulation	Rat		11144350
+26413	Mapk1	Proliferation	Precursor	Positive	Protein manipulation	Rat		19505325
+16000	Igf1	Proliferation	Precursor	Positive	Protein manipulation	Rat		10751442
+12801	Cnr1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		16452678
+20423	Shh	Differentiation	New neuron	Positive	Protein manipulation	Mouse		17460755
+11441	Chrna7	Expression	Precursor	Neutral	Protein expression	Rat		9712657
+27364	Srr	Expression	Undetermined progenitor (Type 2a)	Positive	Gene expression	Mouse		22280157
+27364	Srr	Expression	Stem cell (Type 1)	Positive	Gene expression	Mouse		22280157
+20674	Sox2	Expression	Precursor	Positive	Protein expression	Rat		19701198
+18012	Neurod1	Expression	BrdU immunoreactive cell	Positive	Protein expression	Rat		19701198
+18012	Neurod1	Expression	Precursor	Positive	Protein expression	Rat		19701198
+18012	Neurod1	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Rat		19701198
+18012	Neurod1	Expression	Calretinin immunoreactive cell	Positive	Protein expression	Rat		19701198
+12387	Ctnnb1	Numbers	New neuron	Positive	Gene manipulation	Mouse		19701198
+12387	Ctnnb1	Differentiation	Precursor	Positive	Gene manipulation	Mouse		19701198
+18012	Neurod1	Dendritogenesis	Precursor	Positive	Gene manipulation	Mouse		19701197
+18012	Neurod1	Differentiation	Precursor	Positive	Gene manipulation	Mouse		19701197
+18012	Neurod1	Numbers	Precursor	Neutral	Gene manipulation	Mouse		19701197
+18012	Neurod1	Numbers	New neuron	Positive	Gene manipulation	Mouse		19701197
+18012	Neurod1	Expression	Undetermined progenitor (Type 2a)	Neutral	Protein expression	Mouse		19701197
+18012	Neurod1	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Mouse		19701197
+13131	Dab1	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Rat		17314278
+142980	Tlr3	Differentiation	New neuron	Negative	Gene manipulation	Mouse		20713712
+15550	Htr1a	Proliferation	Precursor	Positive	Protein manipulation	Mouse		20721314
+15550	Htr1a	Proliferation	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		20721314
+15560	Htr2c	Numbers	Calretinin immunoreactive cell	Positive	Protein manipulation	Mouse		20721314
+15560	Htr2c	Proliferation	Neuroblast-like cell (Type 3)	Positive	Protein manipulation	Mouse		20721314
+15560	Htr2c	Proliferation	Stem cell (Type 1)	Negative	Protein manipulation	Mouse		20721314
+15560	Htr2c	Proliferation	Undetermined progenitor (Type 2a)	Negative	Protein manipulation	Mouse		20721314
+19130	Prox1	Numbers	Calretinin immunoreactive cell	Positive	Gene manipulation	Mouse		20808958
+19130	Prox1	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		20808958
+19130	Prox1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		20808958
+19130	Prox1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		20808958
+19130	Prox1	Numbers	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		20808958
+12985	Csf3	Proliferation	Precursor	Positive	Protein manipulation	Mouse		20854880
+19664	Rbpj	Numbers	Determined progenitor (Type 2b)	Positive	Gene manipulation	Mouse		20943920
+19664	Rbpj	Numbers	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		20943920
+19664	Rbpj	Numbers	Immature neuron	Negative	Gene manipulation	Mouse		20943920
+19664	Rbpj	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20943920
+19664	Rbpj	Numbers	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		20943920
+14652	Glp1r	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Rat		20951130
+14652	Glp1r	Proliferation	Precursor	Positive	Protein manipulation	Rat		20951130
+21834	Thrb	Differentiation	Determined progenitor (Type 2b)	Negative	Gene manipulation	Mouse		20959135
+21834	Thrb	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20959135
+21834	Thrb	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		20959135
+11516	Adcyap1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		20974227
+11516	Adcyap1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		20974227
+18212	Ntrk2	Proliferation	Precursor	Neutral	Protein manipulation	Rat		21048974
+14799	Gria1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21073553
+14799	Gria1	Differentiation	New neuron	Neutral	Gene manipulation	Mouse		21073553
+14799	Gria1	Survival	New neuron	Negative	Gene manipulation	Mouse		21073553
+22062	Trp73	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21076477
+18795	Plcb1	Migration	Immature neuron	Negative	Gene manipulation	Mouse		21080410
+18795	Plcb1	Numbers	New neuron	Negative	Gene manipulation	Mouse		21080410
+18795	Plcb1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		21080410
+11789	Apc	Differentiation	New neuron	Positive	Gene manipulation	Mouse		21089118
+11789	Apc	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21089118
+11789	Apc	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21089118
+11789	Apc	Survival	New neuron	Positive	Gene manipulation	Mouse		21089118
+11789	Apc	Numbers	Stem cell (Type 1)	Neutral	Gene manipulation	Mouse		21089118
+15499	Hsf1	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		21205885
+15499	Hsf1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21205885
+15499	Hsf1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		21205885
+12921	Crhr1	Proliferation	Precursor	Neutral	Protein manipulation	Rat		21220416
+16852	Lgals1	Numbers	New neuron	Negative	Gene manipulation	Mouse		21269521
+16852	Lgals1	Numbers	Stem cell (Type 1)	Negative	Gene manipulation	Mouse		21269521
+16852	Lgals1	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		21269521
+16852	Lgals1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		21269521
+16852	Lgals1	Expression	Undetermined progenitor (Type 2a)	Positive	Gene manipulation	Mouse		21269521
+16852	Lgals1	Expression	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		21269521
+12567	Cdk4	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		21319271
+12567	Cdk4	Expression	Precursor	Positive	Gene manipulation	Mouse		21319271
+12571	Cdk6	Numbers	New neuron	Positive	Gene manipulation	Mouse		21319271
+12571	Cdk6	Proliferation	Undetermined progenitor (Type 2a)	Neutral	Gene manipulation	Mouse		21319271
+12571	Cdk6	Proliferation	Stem cell (Type 1)	Neutral	Gene manipulation	Mouse		21319271
+12571	Cdk6	Numbers	Immature neuron	Positive	Gene manipulation	Mouse		21319271
+12571	Cdk6	Proliferation	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21319271
+12571	Cdk6	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21319271
+12571	Cdk6	Expression	Precursor	Positive	Gene manipulation	Mouse		21319271
+16542	Kdr	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Rat		21385309
+22339	Vegfa	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Rat		21385309
+22339	Vegfa	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21385942
+22339	Vegfa	Numbers	New neuron	Positive	Gene manipulation	Mouse		21385942
+234664	Nae1	Expression	Doublecortin immunoreactive cell	Positive	Protein or gene expression	Rat		21386696
+234664	Nae1	Expression	Precursor	Positive	Protein or gene expression	Rat		21386696
+19130	Prox1	Survival	Calbindin immunoreactive cell	Neutral	Gene manipulation	Mouse		21436036
+19130	Prox1	Numbers	New neuron	Positive	Gene manipulation	Mouse		21436036
+19130	Prox1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21436036
+13838	Epha4	Expression	Determined progenitor (Type 2b)	Negative	Protein or gene expression	Mouse		21444754
+13838	Epha4	Expression	Stem cell (Type 1)	Positive	Protein or gene expression	Mouse		21444754
+13838	Epha4	Expression	Undetermined progenitor (Type 2a)	Negative	Protein or gene expression	Mouse		21444754
+12443	Ccnd1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21482697
+12443	Ccnd1	Numbers	Immature neuron	Negative	Gene manipulation	Mouse		21482697
+12567	Cdk4	Numbers	Immature neuron	Negative	Gene manipulation	Mouse		21482697
+12567	Cdk4	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21482697
+11859	Phox2a	Numbers	BrdU immunoreactive cell	Neutral	Gene manipulation	Rat		21763404
+18935	Phox2b	Numbers	BrdU immunoreactive cell	Positive	Gene manipulation	Rat		21763404
+29811	Ndrg2	Expression	BrdU immunoreactive cell	Positive	Protein expression	Mouse		22143493
+29811	Ndrg2	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Mouse		22143493
+29811	Ndrg2	Expression	Astrocyte	Positive	Protein expression	Mouse		22143493
+12223	Btc	Proliferation	Precursor	Positive	Protein manipulation	Mouse		22232668
+12223	Btc	Numbers	New neuron	Positive	Gene manipulation	Mouse		22232668
+14173	Fgf2	Proliferation	Precursor	Positive	Protein manipulation	Rat		8581317
+107516	Neuna60	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		8604047
+107516	Neuna60	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		8604047
+107516	Neuna60	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Mouse		8604047
+107516	Neuna60	Expression	Calretinin immunoreactive cell	Positive	Protein or gene expression	Rat		8604047
+12307	Calb1	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		8604047
+12307	Calb1	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		8604047
+12307	Calb1	Expression	Granule cell neuron	Positive	Protein or gene expression	Rat		9087407
+12307	Calb1	Expression	Granule cell neuron	Positive	Protein or gene expression	Mouse		9087407
+13645	Egf	Differentiation	Astrocyte	Positive	Protein manipulation	Rat		9221780
+13645	Egf	Differentiation	New neuron	Negative	Protein manipulation	Rat		9221780
+13645	Egf	Proliferation	Precursor	Positive	Protein manipulation	Rat		9221780
+13645	Egf	Numbers	New neuron	Negative	Protein manipulation	Rat		9221780
+14173	Fgf2	Numbers	New neuron	Neutral	Protein manipulation	Rat		9221780
+14173	Fgf2	Proliferation	Precursor	Neutral	Protein manipulation	Rat		9221780
+16176	Il1b	Proliferation	Precursor	Negative	Protein manipulation	Mouse		9557094
+16193	Il6	Proliferation	Precursor	Negative	Gene manipulation	Mouse		9557094
+16193	Il6	Numbers	New neuron	Negative	Gene manipulation	Mouse		9557094
+21803	Tgfb1	Proliferation	Precursor	Negative	Protein manipulation	Mouse		20535034
+14573	Gdnf	Differentiation	New neuron	Negative	Protein manipulation	Rat		23603362
+56720	Tdo2	Numbers	New neuron	Negative	Gene manipulation	Mouse		19323847
+56720	Tdo2	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		19323847
+56720	Tdo2	Numbers	New neuron	Negative	Gene manipulation	Mouse		19323847
+22062	Trp73	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21074438
+22062	Trp73	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21074438
+22339	Vegfa	Proliferation	BrdU immunoreactive cell	Positive	Protein manipulation	Rat		22580375
+14573	Gdnf	Differentiation	Astrocyte	Positive	Protein manipulation	Rat		23603362
+20848	Stat3	Differentiation	Astrocyte	Positive	Gene manipulation	Rat		23603362
+18212	Ntrk2	Expression	Precursor	Positive	Gene expression	Mouse		18701066
+18212	Ntrk2	Expression	BrdU immunoreactive cell	Positive	Gene expression	Mouse		18701066
+18212	Ntrk2	Numbers	Granule cell neuron	Positive	Gene manipulation	Mouse		18701066
+18212	Ntrk2	Numbers	Immature neuron	Positive	Gene manipulation	Mouse		18701066
+18212	Ntrk2	Proliferation	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		18701066
+18212	Ntrk2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		18701066
+18212	Ntrk2	Survival	Immature neuron	Neutral	Gene manipulation	Mouse		18701066
+14775	Gpx1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		19170177
+14775	Gpx1	Differentiation	Early immature neuron	Neutral	Gene manipulation	Mouse		19170177
+14775	Gpx1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		19170177
+14775	Gpx1	Survival	New neuron	Neutral	Gene manipulation	Mouse		19170177
+56320	Dbn1	Expression	Progenitor	Positive	Protein expression	Rat		18304746
+56320	Dbn1	Expression	Immature neuron	Negative	Protein expression	Rat		18304746
+73181	Nfatc4	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		22586092
+73181	Nfatc4	Numbers	Calretinin immunoreactive cell	Positive	Gene manipulation	Mouse		22586092
+12064	Bdnf	Survival	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		22586092
+18429	Oxt	Proliferation	Precursor	Positive	Protein manipulation	Rat		21692136
+56149	Grasp	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		22396401
+56149	Grasp	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22396401
+23879	Fxr2	Expression	Stem cell (Type 1)	Positive	Protein expression	Mouse		21658585
+23879	Fxr2	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Mouse		21658585
+23879	Fxr2	Expression	Oligodendrocyte	Negative	Protein expression	Mouse		21658585
+23879	Fxr2	Expression	Astrocyte	Negative	Protein expression	Mouse		21658585
+18121	Nog	Proliferation	Stem cell (Type 1)	Positive	Gene expression	Mouse		21658585
+18121	Nog	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Survival	Precursor	Neutral	Gene manipulation	Mouse		21658585
+18121	Nog	Differentiation	Precursor	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Proliferation	Stem cell (Type 1)	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Expression	Precursor	Positive	Protein expression	Mouse		21658585
+23879	Fxr2	Proliferation	Stem cell (Type 1)	Negative	Gene manipulation	Mouse		21658585
+23879	Fxr2	Proliferation	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		21658585
+14173	Fgf2	Proliferation	BrdU immunoreactive cell	Positive	Protein manipulation	Rat		10486191
+13380	Dkk1	Proliferation	Precursor	Negative	Gene manipulation	Mouse		23395445
+13380	Dkk1	Survival	New neuron	Negative	Gene manipulation	Mouse		23395445
+13380	Dkk1	Dendritogenesis	Immature neuron	Negative	Gene manipulation	Mouse		23395445
+12321	Calu	Expression	New neuron	Neutral	Protein expression	Mouse		22178608
+12321	Calu	Expression	Doublecortin immunoreactive cell	Neutral	Protein expression	Mouse		22178608
+12321	Calu	Expression	Astrocyte	Neutral	Protein expression	Mouse		22178608
+20133	Rrm1	Expression	BrdU immunoreactive cell	Positive	Protein expression	Rat		12834878
+18212	Ntrk2	Numbers	Stem cell (Type 1)	Neutral	Gene manipulation	Mouse		18832146
+18212	Ntrk2	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		18832146
+18212	Ntrk2	Numbers	Mature neuron	Positive	Gene manipulation	Mouse		18832146
+18212	Ntrk2	Dendritogenesis	Immature neuron	Positive	Gene manipulation	Mouse		18832146
+18212	Ntrk2	Function	New neuron	Positive	Gene manipulation	Mouse		18832146
+73181	Nfatc4	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		22586092
+22339	Vegfa	Proliferation	Precursor	Positive	Protein manipulation	Rat		22580375
+22018	Tpo	Numbers	New neuron	Positive	Protein manipulation	Mouse		19233274
+22018	Tpo	Numbers	Granule cell neuron	Positive	Protein manipulation	Mouse		19233274
+18125	Nos1	Proliferation	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		22027181
+18127	Nos3	Proliferation	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		22027181
+13844	Ephb2	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21832177
+13844	Ephb2	Proliferation	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21832177
+18126	Nos2	Proliferation	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22027181
+270190	Ephb1	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21832177
+270190	Ephb1	Proliferation	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		21832177
+11848	Rhoa	Proliferation	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		21956892
+18508	Pax6	Proliferation	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		22162276
+18508	Pax6	Numbers	Oligodendrocyte	Negative	Gene manipulation	Mouse		22162276
+18508	Pax6	Survival	New neuron	Negative	Gene manipulation	Mouse		22162276
+18508	Pax6	Numbers	New neuron	Neutral	Gene manipulation	Mouse		22162276
+18508	Pax6	Dendritogenesis	Immature neuron	Negative	Gene manipulation	Mouse		22162276
+18508	Pax6	Numbers	Immature neuron	Positive	Gene manipulation	Mouse		22162276
+50913	Olig2	Numbers	New neuron	Positive	Gene manipulation	Mouse		22162276
+50913	Olig2	Differentiation	New neuron	Positive	Gene manipulation	Mouse		22162276
+50913	Olig2	Dendritogenesis	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		22162276
+50913	Olig2	Differentiation	Astrocyte	Negative	Gene manipulation	Mouse		22162276
+50913	Olig2	Numbers	Oligodendrocyte	Negative	Gene manipulation	Mouse		22162276
+50913	Olig2	Proliferation	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		22162276
+58991	Ghrl	Proliferation	Precursor	Positive	Protein manipulation	Rat		18218693
+58991	Ghrl	Survival	BrdU immunoreactive cell	Neutral	Protein expression	Mouse		18218693
+15114	Hap1	Expression	Precursor	Negative	Protein expression	Rat		22421101
+15114	Hap1	Expression	Doublecortin immunoreactive cell	Negative	Protein expression	Rat		22421101
+15114	Hap1	Expression	Granule cell neuron	Neutral	Protein expression	Rat		22421101
+11516	Adcyap1	Numbers	BrdU immunoreactive cell	Positive	Protein manipulation	Mouse		16941483
+11516	Adcyap1	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		16941483
+56149	Grasp	Neuritogenesis	New neuron	Neutral	Gene manipulation	Mouse		22396401
+56149	Grasp	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		22396401
+18008	Nes	Expression	Stem cell (Type 1)	Positive	Gene expression	Mouse		18003841
+18008	Nes	Expression	Undetermined progenitor (Type 2a)	Positive	Gene expression	Mouse		18003841
+18008	Nes	Expression	Determined progenitor (Type 2b)	Positive	Gene expression	Mouse		18003841
+18429	Oxt	Survival	Precursor	Neutral	Protein manipulation	Rat		21692136
+18015	Nf1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		22399775
+21803	Tgfb1	Numbers	Precursor	Negative	Protein manipulation	Mouse		20535034
+11909	Atf2	Expression	Granule cell neuron	Positive	Protein expression	Human		15878807
+227753	Gsn	Expression	Precursor	Positive	Protein expression	Mouse		20203201
+13193	Dcx	Migration	Neuroblast-like cell (Type 3)	Positive	Protein expression	Mouse		16168988
+13193	Dcx	Proliferation	Precursor	Positive	Protein expression	Mouse		16168988
+13193	Dcx	Proliferation	Progenitor	Positive	Protein expression	Mouse		16168988
+11848	Rhoa	Survival	New neuron	Negative	Gene manipulation	Rat		21956892
+20617	Snca	Expression	Granule cell neuron	Positive	Gene expression	Human		14978671
+14632	Gli1	Expression	Stem cell (Type 1)	Positive	Gene expression	Mouse		16208373
+14632	Gli1	Proliferation	Late progenitor	Positive	Gene expression	Mouse		16208373
+16000	Igf1	Proliferation	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		11340640
+16000	Igf1	Numbers	Granule cell neuron	Positive	Gene manipulation	Mouse		11340640
+20133	Rrm1	Expression	Calbindin immunoreactive cell	Negative	Protein expression	Rat		12834878
+18127	Nos3	Numbers	New neuron	Neutral	Gene manipulation	Mouse		22027181
+227753	Gsn	Numbers	Astrocyte	Negative	Gene manipulation	Mouse		20203201
+17172	Ascl1	Expression	Undetermined progenitor (Type 2a)	Positive	Gene expression	Mouse		18032648
+24099	Tnfsf13b	Proliferation	Precursor	Negative	Gene manipulation	Mouse		20185032
+24099	Tnfsf13b	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20185032
+24099	Tnfsf13b	Dendritogenesis	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20185032
+18012	Neurod1	Differentiation	Precursor	Positive	Gene manipulation	Rat		15537713
+19122	Prnp	Proliferation	BrdU immunoreactive cell	Positive	Gene manipulation	Mouse		22529900
+19122	Prnp	Proliferation	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		22529900
+19122	Prnp	Numbers	New neuron	Positive	Gene manipulation	Mouse		22529900
+14173	Fgf2	Proliferation	Precursor	Positive	Protein manipulation	Rat		16859812
+14173	Fgf2	Proliferation	BrdU immunoreactive cell	Positive	Protein manipulation	Rat		16859812
+14173	Fgf2	Differentiation	New neuron	Negative	Protein manipulation	Rat		16859812
+14173	Fgf2	Differentiation	Oligodendrocyte	Neutral	Protein manipulation	Rat		16859812
+14173	Fgf2	Differentiation	Astrocyte	Neutral	Protein manipulation	Rat		16859812
+16002	Igf2	Differentiation	New neuron	Positive	Protein manipulation	Rat		16859812
+14573	Gdnf	Differentiation	New neuron	Positive	Protein manipulation	Rat		16859812
+16000	Igf1	Differentiation	New neuron	Positive	Protein manipulation	Rat		16859812
+12803	Cntf	Differentiation	New neuron	Positive	Protein manipulation	Rat		16859812
+73181	Nfatc4	Expression	Early immature neuron	Positive	Protein expression	Mouse		22586092
+13433	Dnmt1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		22347173
+13433	Dnmt1	Numbers	New neuron	Positive	Gene manipulation	Mouse		22347173
+13433	Dnmt1	Numbers	Astrocyte	Neutral	Gene manipulation	Mouse		22347173
+20452	St8sia4	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20206239
+227753	Gsn	Survival	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		20203201
+227753	Gsn	Numbers	New neuron	Negative	Gene manipulation	Mouse		20203201
+20450	St8sia2	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		20206239
+12496	Entpd2	Expression	Stem cell (Type 1)	Positive	Protein expression	Mouse		15884037
+12496	Entpd2	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Mouse		15884037
+12496	Entpd2	Expression	Astrocyte	Negative	Protein expression	Mouse		15884037
+12496	Entpd2	Expression	Granule cell neuron	Negative	Protein expression	Mouse		15884037
+12496	Entpd2	Expression	Precursor	Positive	Protein expression	Mouse		15884037
+227753	Gsn	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		20203201
+227753	Gsn	Numbers	BrdU immunoreactive cell	Negative	Gene manipulation	Mouse		20203201
+227753	Gsn	Numbers	Calretinin immunoreactive cell	Negative	Gene manipulation	Mouse		20203201
+13813	Eomes	Expression	Precursor	Positive	Protein expression	Monkey		22473896
+18508	Pax6	Expression	Precursor	Positive	Protein expression	Monkey		22473896
+66725	Lrrk2	Proliferation	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22647713
+66725	Lrrk2	Numbers	Doublecortin immunoreactive cell	Neutral	Gene manipulation	Mouse		22647713
+52463	Tet1	Proliferation	Progenitor	Positive	Gene manipulation	Mouse		23770080
+52463	Tet1	Numbers	Doublecortin immunoreactive cell	Positive	Gene manipulation	Mouse		23770080
+52463	Tet1	Numbers	New neuron	Positive	Gene manipulation	Mouse		23770080
+13490	Drd3	Proliferation	Precursor	Negative	Gene manipulation	Mouse		22957735
+13490	Drd3	Proliferation	Precursor	Negative	Protein manipulation	Mouse		22957735
+13490	Drd3	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		22957735
+13490	Drd3	Survival	New neuron	Neutral	Gene manipulation	Mouse		22957735
+21926	Tnf	Numbers	New neuron	Negative	Gene manipulation	Mouse		23402793
+21926	Tnf	Numbers	New neuron	Negative	Protein manipulation	Mouse		23402793
+21937	Tnfrsf1a	Numbers	New neuron	Negative	Gene manipulation	Mouse		23402793
+21938	Tnfrsf1b	Numbers	New neuron	Positive	Gene manipulation	Mouse		23402793
+56637	Gsk3b	Proliferation	Precursor	Neutral	Protein manipulation	Mouse		22048960
+56637	Gsk3b	Survival	New neuron	Neutral	Protein manipulation	Mouse		22048960
+56637	Gsk3b	Survival	Astrocyte	Neutral	Protein manipulation	Mouse		22048960
+14265	Fmr1	Survival	New neuron	Neutral	Gene manipulation	Mouse		22048960
+14265	Fmr1	Survival	Astrocyte	Negative	Gene manipulation	Mouse		22048960
+14265	Fmr1	Dendritogenesis	New neuron	Positive	Gene manipulation	Mouse		22048960
+22018	Tpo	Numbers	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		19233274
+93759	Sirt1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		23404532
+93759	Sirt1	Differentiation	New neuron	Negative	Gene manipulation	Mouse		23404532
+93759	Sirt1	Differentiation	New neuron	Negative	Gene manipulation	Mouse		23404532
+93759	Sirt1	Differentiation	Astrocyte	Neutral	Gene manipulation	Mouse		23404532
+93759	Sirt1	Proliferation	Precursor	Neutral	Gene manipulation	Mouse		23404532
+56720	Tdo2	Proliferation	Precursor	Negative	Gene manipulation	Mouse		19323847
+56720	Tdo2	Numbers	Doublecortin immunoreactive cell	Negative	Gene manipulation	Mouse		19323847
+17172	Ascl1	Expression	Stem cell (Type 1)	Positive	Protein expression	Mouse		21483754
+17172	Ascl1	Expression	Stem cell (Type 1)	Positive	Gene expression	Mouse		21483754
+17172	Ascl1	Expression	Undetermined progenitor (Type 2a)	Positive	Protein expression	Mouse		21483754
+73181	Nfatc4	Expression	Calretinin immunoreactive cell	Positive	Protein expression	Mouse		22586092
+73181	Nfatc4	Expression	Doublecortin immunoreactive cell	Positive	Protein expression	Mouse		22586092
+18128	Notch1	Numbers	Astrocyte	Positive	Protein manipulation	Rat		11182080
+18128	Notch1	Numbers	New neuron	Negative	Protein manipulation	Rat		11182080
+18129	Notch2	Numbers	Astrocyte	Positive	Protein manipulation	Rat		11182080
+18129	Notch2	Numbers	New neuron	Negative	Protein manipulation	Rat		11182080
+14573	Gdnf	Proliferation	Precursor	Neutral	Protein manipulation	Rat		23603362
+18126	Nos2	Numbers	New neuron	Neutral	Gene manipulation	Mouse		22027181
+23879	Fxr2	Proliferation	Precursor	Negative	Protein manipulation	Mouse		21658585
+23879	Fxr2	Numbers	New neuron	Negative	Protein manipulation	Mouse		21658585
+23879	Fxr2	Numbers	Astrocyte	Positive	Protein manipulation	Mouse		21658585
+23879	Fxr2	Expression	Stem cell (Type 1)	Positive	Gene expression	Mouse		21658585
+18125	Nos1	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22027181
+18126	Nos2	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22027181
+18127	Nos3	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		22027181
+18125	Nos1	Numbers	New neuron	Neutral	Gene manipulation	Mouse		22027181
+23879	Fxr2	Proliferation	Precursor	Negative	Gene manipulation	Mouse		21658585
+23879	Fxr2	Numbers	New neuron	Negative	Gene manipulation	Mouse		21658585
+23879	Fxr2	Numbers	Astrocyte	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Proliferation	Precursor	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Numbers	New neuron	Positive	Gene manipulation	Mouse		21658585
+18121	Nog	Numbers	Astrocyte	Negative	Gene manipulation	Mouse		21658585
+23879	Fxr2	Expression	Precursor	Positive	Protein expression	Mouse		21658585
+23879	Fxr2	Survival	BrdU immunoreactive cell	Neutral	Gene manipulation	Mouse		21658585
+23879	Fxr2	Differentiation	Precursor	Negative	Gene manipulation	Mouse		21658585
+73181	Nfatc4	Survival	Precursor	Positive	Gene manipulation	Mouse		22586092
+73181	Nfatc4	Survival	New neuron	Neutral	Gene manipulation	Mouse		22586092
+73181	Nfatc4	Numbers	Late progenitor	Neutral	Gene manipulation	Mouse		22586092
+12064	Bdnf	Survival	Doublecortin immunoreactive cell	Positive	Protein manipulation	Mouse		22586092
+12064	Bdnf	Survival	New neuron	Neutral	Protein manipulation	Mouse		22586092
+93759	Sirt1	Expression	Precursor	Positive	Protein expression	Mouse		23404532
+93759	Sirt1	Expression	Precursor	Positive	Protein expression	Mouse		23404532
+93759	Sirt1	Expression	Precursor	Positive	Gene expression	Mouse		23404532

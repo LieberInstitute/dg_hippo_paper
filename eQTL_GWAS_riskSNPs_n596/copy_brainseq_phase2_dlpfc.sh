@@ -1,0 +1,1 @@
+cp /dcl01/lieber/ajaffe/lab/brainseq_phase2/eQTL_GWAS_riskSNPs/eqtl_tables/matrixEqtl_output_dlpfc_raggr_4features.rda eqtl_tables/

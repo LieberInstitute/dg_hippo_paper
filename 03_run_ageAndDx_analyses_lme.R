@@ -15,7 +15,7 @@ load("count_data/merged_dg_hippo_allSamples_n596.rda")
 colnames(rse_deg_joint) = colnames(rse_gene_joint)
 
 ##### get MDS #####
-mds_dg = read.table("../genotype_data/Astellas_DG_Genotypes_n263_maf05_geno10_hwe1e6.mds",
+mds_dg = read.table("genotype_data/Astellas_DG_Genotypes_n263_maf05_geno10_hwe1e6.mds",
 	header=TRUE,as.is=TRUE,row.names=1)[,-(1:2)]
 mds_dg = mds_dg[rse_gene_joint$BrNum[rse_gene_joint$Dataset == "DG"],1:5]
 

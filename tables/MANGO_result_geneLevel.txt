@@ -1,0 +1,260 @@
+GeneID	Symbol	Name	Description
+11305	Abca2	ATP-binding cassette, sub-family A (ABC1), member 2	
+11423	Ache	acetylcholinesterase	
+11516	Adcyap1	adenylate cyclase activating polypeptide 1	
+11551	Adra2a	adrenergic receptor, alpha 2a	
+11553	Adra2c	adrenergic receptor, alpha 2c	
+11607	Agtr1a	angiotensin II receptor, type 1a	
+11651	Akt1	thymoma viral proto-oncogene 1	
+11789	Apc	adenomatosis polyposis coli	
+11816	Apoe	apolipoprotein E	
+11820	App	amyloid beta (A4) precursor protein	
+11829	Aqp4	aquaporin 4	
+11835	Ar	androgen receptor	
+11838	Arc	activity regulated cytoskeletal-associated protein	
+17172	Ascl1	achaete-scute complex homolog 1 (Drosophila)	
+11909	Atf2	activating transcription factor 2	
+11920	Atm	ataxia telangiectasia mutated homolog (human)	
+12028	Bax	BCL2-associated X protein	
+12043	Bcl2	B cell leukemia/lymphoma 2	
+12048	Bcl2l1	BCL2-like 1	
+12064	Bdnf	brain derived neurotrophic factor	
+12159	Bmp4	bone morphogenetic protein 4	
+12166	Bmpr1a	bone morphogenetic protein receptor, type 1A	
+12223	Btc	betacellulin, epidermal growth factor family member	
+12307	Calb1	calbindin 1	
+12308	Calb2	calbindin 2	
+12321	Calu	calumenin	
+12362	Casp1	caspase 1	
+12367	Casp3	caspase 3	
+12368	Casp6	caspase 6	
+12369	Casp7	caspase 7	
+12371	Casp9	caspase 9	
+108686	Ccdc88a	coiled coil domain containing 88A	
+12443	Ccnd1	cyclin D1	
+12444	Ccnd2	cyclin D2	
+12445	Ccnd3	cyclin D3	
+12484	Cd24a	CD24a antigen	
+12566	Cdk2	cyclin-dependent kinase 2	
+12567	Cdk4	cyclin-dependent kinase 4	
+12568	Cdk5	cyclin-dependent kinase 5	
+12569	Cdk5r1	cyclin-dependent kinase 5, regulatory subunit 1 (p35)	
+12571	Cdk6	cyclin-dependent kinase 6	
+12575	Cdkn1a	cyclin-dependent kinase inhibitor 1A (P21)	
+12669	Chrm1	cholinergic receptor, muscarinic 1, CNS	
+12672	Chrm4	cholinergic receptor, muscarinic 4	
+11441	Chrna7	cholinergic receptor, nicotinic, alpha polypeptide 7	
+11444	Chrnb2	cholinergic receptor, nicotinic, beta polypeptide 2 (neuronal)	
+12704	Cit	citron	
+12801	Cnr1	cannabinoid receptor 1 (brain)	
+12802	Cnr2	cannabinoid receptor 2 (macrophage)	
+12803	Cntf	ciliary neurotrophic factor	
+12912	Creb1	cAMP responsive element binding protein 1	
+12921	Crhr1	corticotropin releasing hormone receptor 1	
+12985	Csf3	colony stimulating factor 3 (granulocyte)	
+13010	Cst3	cystatin C	
+12387	Ctnnb1	catenin (cadherin associated protein), beta 1	
+20315	Cxcl12	chemokine (C-X-C motif) ligand 12	
+12767	Cxcr4	chemokine (C-X-C motif) receptor 4	
+13131	Dab1	disabled 1	
+13166	Dbh	dopamine beta hydroxylase	
+56320	Dbn1	drebrin 1	
+13193	Dcx	doublecortin	
+244667	Disc1	disrupted in schizophrenia 1	
+13380	Dkk1	dickkopf homolog 1 (Xenopus laevis)	
+13382	Dld	dihydrolipoamide dehydrogenase	
+78920	Dlst	dihydrolipoamide S-succinyltransferase (E2 component of 2-oxo-glutarate complex)	
+13405	Dmd	dystrophin, muscular dystrophy	
+13433	Dnmt1	DNA methyltransferase (cytosine-5) 1	
+22240	Dpysl3	dihydropyrimidinase-like 3	
+13490	Drd3	dopamine receptor D3	
+21648	Dynlt1b	dynein light chain Tctex-type 1B	
+13555	E2f1	E2F transcription factor 1	
+13643	Efnb3	ephrin B3	
+13645	Egf	epidermal growth factor	
+13653	Egr1	early growth response 1	
+13796	Emx1	empty spiracles homeobox 1	
+12496	Entpd2	ectonucleoside triphosphate diphosphohydrolase 2	
+13813	Eomes	eomesodermin homolog (Xenopus laevis)	
+13838	Epha4	Eph receptor A4	
+13839	Epha5	Eph receptor A5	
+270190	Ephb1	Eph receptor B1	
+13844	Ephb2	Eph receptor B2	
+13845	Ephb3	Eph receptor B3	
+13856	Epo	erythropoietin	
+13983	Esr2	estrogen receptor 2 (beta)	
+14073	Faah	fatty acid amide hydrolase	
+12140	Fabp7	fatty acid binding protein 7, brain	
+14102	Fas	Fas (TNF receptor superfamily member 6)	
+233081	Ffar1	free fatty acid receptor 1	
+14164	Fgf1	fibroblast growth factor 1	
+14173	Fgf2	fibroblast growth factor 2	
+14182	Fgfr1	fibroblast growth factor receptor 1	
+14254	Flt1	FMS-like tyrosine kinase 1	
+14265	Fmr1	fragile X mental retardation syndrome 1	
+14281	Fos	FBJ osteosarcoma oncogene	
+15228	Foxg1	forkhead box G1	
+14345	Fut4	fucosyltransferase 4	
+23879	Fxr2	fragile X mental retardation, autosomal homolog 2	
+14394	Gabra1	gamma-aminobutyric acid (GABA) A receptor, subunit alpha 1	
+17873	Gadd45b	growth arrest and DNA-damage-inducible 45 beta	
+14573	Gdnf	glial cell line derived neurotrophic factor	
+14580	Gfap	glial fibrillary acidic protein	
+14599	Gh	growth hormone	
+14600	Ghr	growth hormone receptor	
+58991	Ghrl	ghrelin	
+14632	Gli1	GLI-Kruppel family member GLI1	
+14652	Glp1r	glucagon-like peptide 1 receptor	
+14775	Gpx1	glutathione peroxidase 1	
+56149	Grasp	GRP1 (general receptor for phosphoinositides 1)-associated scaffold protein	
+14799	Gria1	glutamate receptor, ionotropic, AMPA1 (alpha 1)	
+14810	Grin1	glutamate receptor, ionotropic, NMDA1 (zeta 1)	
+14812	Grin2b	glutamate receptor, ionotropic, NMDA2B (epsilon 2)	
+14816	Grm1	glutamate receptor, metabotropic 1	
+108068	Grm2	glutamate receptor, metabotropic 2	
+108071	Grm5	glutamate receptor, metabotropic 5	
+14824	Grn	granulin	
+56637	Gsk3b	glycogen synthase kinase 3 beta	
+227753	Gsn	gelsolin	
+15114	Hap1	huntingtin-associated protein 1	
+15200	Hbegf	heparin-binding EGF-like growth factor	
+15208	Hes5	hairy and enhancer of split 5 (Drosophila)	
+26556	Homer1	homer homolog 1 (Drosophila)	
+74318	Hopx	HOP homeobox	
+15499	Hsf1	heat shock factor 1	
+15550	Htr1a	5-hydroxytryptamine (serotonin) receptor 1A	
+15551	Htr1b	5-hydroxytryptamine (serotonin) receptor 1B	
+15558	Htr2a	5-hydroxytryptamine (serotonin) receptor 2A	
+15560	Htr2c	5-hydroxytryptamine (serotonin) receptor 2C	
+15901	Id1	inhibitor of DNA binding 1	
+111654	Ifna	interferon alpha	
+16000	Igf1	insulin-like growth factor 1	
+16002	Igf2	insulin-like growth factor 2	
+16006	Igfbp1	insulin-like growth factor binding protein 1	
+16176	Il1b	interleukin 1 beta	
+16183	Il2	interleukin 2	
+16193	Il6	interleukin 6	
+53626	Insm1	insulinoma-associated 1	
+16449	Jag1	jagged 1	
+16542	Kdr	kinase insert domain protein receptor	
+16568	Kif3a	kinesin family member 3A	
+16601	Klf9	Kruppel-like factor 9	
+16846	Lep	leptin	
+16847	Lepr	leptin receptor	
+16852	Lgals1	lectin, galactose binding, soluble 1	
+16866	Lhb	luteinizing hormone beta	
+16867	Lhcgr	luteinizing hormone/choriogonadotropin receptor	
+16878	Lif	leukemia inhibitory factor	
+66725	Lrrk2	leucine-rich repeat kinase 2	
+26413	Mapk1	mitogen-activated protein kinase 1	
+17190	Mbd1	methyl-CpG binding domain protein 1	
+193813	Mcfd2	multiple coagulation factor deficiency 2	
+17257	Mecp2	methyl CpG binding protein 2	
+17390	Mmp2	matrix metallopeptidase 2	
+17395	Mmp9	matrix metallopeptidase 9	
+74026	Msl1	male-specific lethal 1 homolog (Drosophila)	
+56717	Mtor	mechanistic target of rapamycin (serine/threonine kinase)	
+17874	Myd88	myeloid differentiation primary response gene 88	
+234664	Nae1	NEDD8 activating enzyme E1 subunit 1	
+83431	Ndel1	nuclear distribution gene E-like homolog 1 (A. nidulans)	
+29811	Ndrg2	N-myc downstream regulated gene 2	
+18008	Nes	nestin	
+107516	Neuna60	neuronal nuclear antigen A60	
+18012	Neurod1	neurogenic differentiation 1	
+11924	Neurog2	neurogenin 2	
+18015	Nf1	neurofibromatosis 1	
+73181	Nfatc4	nuclear factor of activated T cells, cytoplasmic, calcineurin dependent 4	
+18033	Nfkb1	nuclear factor of kappa light polypeptide gene enhancer in B cells 1, p105	
+18049	Ngf	nerve growth factor	
+18121	Nog	noggin	
+18125	Nos1	nitric oxide synthase 1, neuronal	
+18126	Nos2	nitric oxide synthase 2, inducible	
+18127	Nos3	nitric oxide synthase 3, endothelial cell	
+18128	Notch1	notch 1	
+18129	Notch2	notch 2	
+27386	Npas3	neuronal PAS domain protein 3	
+109648	Npy	neuropeptide Y	
+18166	Npy1r	neuropeptide Y receptor Y1	
+21907	Nr2e1	nuclear receptor subfamily 2, group E, member 1	
+14815	Nr3c1	nuclear receptor subfamily 3, group C, member 1	
+110784	Nr3c2	nuclear receptor subfamily 3, group C, member 2	
+18205	Ntf3	neurotrophin 3	
+78405	Ntf5	neurotrophin 5	
+18212	Ntrk2	neurotrophic tyrosine kinase, receptor, type 2	
+50913	Olig2	oligodendrocyte transcription factor 2	
+18390	Oprm1	opioid receptor, mu 1	
+18429	Oxt	oxytocin	
+18472	Pafah1b1	platelet-activating factor acetylhydrolase, isoform 1b, subunit 1	
+18508	Pax6	paired box gene 6	
+18537	Pcmt1	protein-L-isoaspartate (D-aspartate) O-methyltransferase 1	
+18627	Per2	period circadian clock 2	
+18654	Pgf	placental growth factor	
+18667	Pgr	progesterone receptor	
+11859	Phox2a	paired-like homeobox 2a	
+18935	Phox2b	paired-like homeobox 2b	
+18792	Plau	plasminogen activator, urokinase	
+18795	Plcb1	phospholipase C, beta 1	
+18803	Plcg1	phospholipase C, gamma 1	
+19109	Prl	prolactin	
+19116	Prlr	prolactin receptor	
+19122	Prnp	prion protein	
+19130	Prox1	prospero-related homeobox 1	
+19164	Psen1	presenilin 1	
+19225	Ptgs2	prostaglandin-endoperoxide synthase 2	
+19268	Ptprf	protein tyrosine phosphatase, receptor type, F	
+19401	Rara	retinoic acid receptor, alpha	
+19664	Rbpj	recombination signal binding protein for immunoglobulin kappa J region	
+19699	Reln	reelin	
+19712	Rest	RE1-silencing transcription factor	
+11848	Rhoa	ras homolog gene family, member A	
+20133	Rrm1	ribonucleotide reductase M1	
+20203	S100b	S100 protein, beta polypeptide, neural	
+20720	Serpine2	serine (or cysteine) peptidase inhibitor, clade E, member 2	
+20423	Shh	sonic hedgehog	
+93759	Sirt1	sirtuin 1	
+20496	Slc12a2	solute carrier family 12, member 2	
+57138	Slc12a5	solute carrier family 12, member 5	
+20512	Slc1a3	solute carrier family 1 (glial high affinity glutamate transporter), member 3	
+22784	Slc30a3	solute carrier family 30 (zinc transporter), member 3	
+15567	Slc6a4	solute carrier family 6 (neurotransmitter transporter, serotonin), member 4	
+26570	Slc7a11	solute carrier family 7 (cationic amino acid transporter, y+ system), member 11	
+17131	Smad7	SMAD family member 7	
+319757	Smo	smoothened homolog (Drosophila)	
+20617	Snca	synuclein, alpha	
+216233	Socs2	suppressor of cytokine signaling 2	
+20660	Sorl1	sortilin-related receptor, LDLR class A repeats-containing	
+20664	Sox1	SRY-box containing gene 1	
+20666	Sox11	SRY-box containing gene 11	
+20674	Sox2	SRY-box containing gene 2	
+20675	Sox3	SRY-box containing gene 3	
+20750	Spp1	secreted phosphoprotein 1	
+27364	Srr	serine racemase	
+20450	St8sia2	ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase 2	
+20452	St8sia4	ST8 alpha-N-acetyl-neuraminide alpha-2,8-sialyltransferase 4	
+20848	Stat3	signal transducer and activator of transcription 3	
+27204	Syn3	synapsin III	
+21333	Tac1	tachykinin 1	
+21336	Tacr1	tachykinin receptor 1	
+21354	Tap1	transporter 1, ATP-binding cassette, sub-family B (MDR/TAP)	
+21375	Tbr1	T-box brain gene 1	
+56720	Tdo2	tryptophan 2,3-dioxygenase	
+52463	Tet1	tet methylcytosine dioxygenase 1	
+21803	Tgfb1	transforming growth factor, beta 1	
+21833	Thra	thyroid hormone receptor alpha	
+21834	Thrb	thyroid hormone receptor beta	
+24088	Tlr2	toll-like receptor 2	
+142980	Tlr3	toll-like receptor 3	
+21898	Tlr4	toll-like receptor 4	
+21926	Tnf	tumor necrosis factor	
+21937	Tnfrsf1a	tumor necrosis factor receptor superfamily, member 1a	
+21938	Tnfrsf1b	tumor necrosis factor receptor superfamily, member 1b	
+24099	Tnfsf13b	tumor necrosis factor (ligand) superfamily, member 13b	
+22018	Tpo	thyroid peroxidase	
+22059	Trp53	transformation related protein 53	
+22062	Trp73	transformation related protein 73	
+22142	Tuba1a	tubulin, alpha 1A	
+22215	Ube3a	ubiquitin protein ligase E3A	
+22339	Vegfa	vascular endothelial growth factor A	
+22340	Vegfb	vascular endothelial growth factor B	
+381677	Vgf	VGF nerve growth factor inducible	
+22416	Wnt3a	wingless-related MMTV integration site 3A	

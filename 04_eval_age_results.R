@@ -4,6 +4,7 @@ library(clusterProfiler)
 library(jaffelab)
 library(VennDiagram)
 library(RColorBrewer)
+library(limma)
 
 ## load results
 load("rdas/geneLevel_ageAndSzInteraction.rda")
@@ -316,6 +317,88 @@ for(i in exampleIndexInt) {
 }
 dev.off()
 
+###############################
+## adult neurogenesis genes ###
+
+# http://mango.adult-neurogenesis.de/
+ng = read.delim("tables/MANGO_result_annotationLevel.txt",
+	as.is=TRUE,header=FALSE)
+colnames(ng) =c("ID", "Gene", "Process", "CellStage", "Effect","Evidence", "Species", "Type", "Ref")	
+
+## match up
+ng$inHuman = toupper(ng$Gene) %in% geneAgeStats$Symbol
+table(ng$Species[!duplicated(ng$Gene)], ng$inHuman[!duplicated(ng$Gene)])
+
+## try this data: https://www.genenames.org/tools/hcop/
+orth = read.delim("tables/human_all_hcop_seven_column.txt.gz", as.is=TRUE)
+orth = orth[grepl("ENSMUS", orth$ortholog_species_ensembl_gene),]
+
+ng$inOrth = ng$ID %in% orth$ortholog_species_entrez_gene
+ng$humanEnsembl = orth$human_ensembl_gene[match(ng$ID, orth$ortholog_species_entrez_gene)]
+ng$exprsHuman = ng$humanEnsembl %in% geneAgeStats$ensemblID
+
+table(ng$inOrth[!duplicated(ng$Gene)], ng$exprsHuman[!duplicated(ng$Gene)])
+
+geneAgeStats$inMango = geneAgeStats$ensemblID %in% ng$humanEnsembl
+geneAgeStats$matchMango = match(geneAgeStats$ensemblID, ng$humanEnsembl) 
+geneAgeStats$dirMango = ng$Effect[geneAgeStats$matchMango]
+
+table(geneAgeStats$dirMango)
+
+## do gene set tests ##
+
+## chisq
+ttDg = table(geneAgeStats$adj.P.Val_Age_DG < 0.05, geneAgeStats$inMango)
+getOR(ttDg)
+chisq.test(ttDg) # 3.34e-6
+ttHippo = table(geneAgeStats$adj.P.Val_Age_Hippo < 0.05, geneAgeStats$inMango)
+getOR(ttHippo)
+chisq.test(ttHippo) # 0.008
+ttInt = table(geneAgeStats$adj.P.Val_Age_Inter < 0.05, geneAgeStats$inMango)
+chisq.test(ttInt) # 0.06
+
+## wilcox
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_DG, alternative="either")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_DG, alternative="mixed")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_DG, alternative="up")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_DG, alternative="down")
+
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_Hippo, alternative="either")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_Hippo, alternative="mixed")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_Hippo, alternative="up")
+geneSetTest(geneAgeStats$inMango, geneAgeStats$t_Age_Hippo, alternative="down")
+
+pdf("plots/mango_enrichment.pdf")
+par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
+plot(density(geneAgeStats$t_Age_DG[!geneAgeStats$inMango]), col="black",lwd=3,
+	xlab = "T-statistic", main = "DG - Age Effect", ylim = c(0,0.3))
+lines(density(geneAgeStats$t_Age_DG[geneAgeStats$inMango]), col="red", lwd=3)
+legend("topleft", c("MANGO", "Not"), col = c("red", "black"), pch = 15,cex=2)
+
+plot(density(geneAgeStats$t_Age_Hippo[!geneAgeStats$inMango]), col="black",lwd=3,
+	xlab = "T-statistic", main = "HIPPO - Age Effect", ylim = c(0,0.3))
+lines(density(geneAgeStats$t_Age_Hippo[geneAgeStats$inMango]), col="red", lwd=3)
+legend("topleft", c("MANGO", "Not"), col = c("red", "black"), pch = 15,cex=2)
+
+
+indNeg = geneAgeStats$inMango & geneAgeStats$dirMango == "Negative"
+indPos = geneAgeStats$inMango & geneAgeStats$dirMango == "Positive"
+geneSetTest(indNeg, geneAgeStats$t_Age_DG, alternative = "down")
+plot(density(geneAgeStats$t_Age_DG[!indNeg | !indNeg]), col="black",lwd=3,
+	xlab = "T-statistic", main = "DG - Age Effect", ylim = c(0,0.3))
+lines(density(geneAgeStats$t_Age_DG[indNeg]), col="blue", lwd=3)
+lines(density(geneAgeStats$t_Age_DG[indPos]), col="green", lwd=3)
+legend("topleft", c("MANGO-Pos","MANGO-Neg", "Not"), 
+	col = c("green","blue", "black"), pch = 15,cex=1.5)
+
+dev.off()
+
+geneSetTest(indNeg, geneAgeStats$t_Age_Hippo, alternative = "down")
+geneSetTest(indPos , geneAgeStats$t_Age_Hippo, alternative = "up")
+
+## examples
+xx = geneAgeStats[indNeg,]
+xx[order(xx$t_Age_DG),]
 #############################
 ## other features ###########
 #############################

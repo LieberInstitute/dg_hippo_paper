@@ -6,29 +6,38 @@ library(SummarizedExperiment)
 library(RColorBrewer)
 
 ## load eQTLs
-load("eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
+load("eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_withDlpfc_fdr05any.rda")
 
 sigEqtl$Type = factor(sigEqtl$Type, levels = c("Gene", "Exon",  "Jxn", "Tx"))
 sigEqtl$EnsemblGeneID = ss(sigEqtl$EnsemblGeneID, "\\.")
 
 ## write out
 sigEqtlOut = as.data.frame(sigEqtl)
+sigEqtlOut$gencodeTx = sapply(sigEqtlOut$gencodeTx , paste, collapse=";")
+write.csv(sigEqtlOut, file = gzfile("tables/suppTable_sczdEqtl.csv.gz"), row.names=FALSE)
 
+####
 ## get the region-specific ones
 dgEqtl = sigEqtl[sigEqtl$FDR < 0.01,]
 hippoEqtl = sigEqtl[sigEqtl$hippo_FDR < 0.01,]
+dlpfcEqtl = sigEqtl[which(sigEqtl$dlpfc_FDR < 0.01),]
+
+length(unique(sigEqtl$Index_Name)) # 136, @ FDR< 5%
 
 length(unique(dgEqtl$Index_Name)) # 78
 length(unique(hippoEqtl$Index_Name)) # 82
-sum(unique(dgEqtl$Index_Name) %in% hippoEqtl$Index_Name)
-length(unique(c(dgEqtl$Index_Name, hippoEqtl$Index_Name))) ## 100 
+length(unique(dlpfcEqtl$Index_Name)) # 94
+sum(unique(dgEqtl$Index_Name) %in% hippoEqtl$Index_Name) # 60
+
+table(unique(dlpfcEqtl$Index_Name) %in% unique(c(dgEqtl$Index_Name, hippoEqtl$Index_Name)))
+length(unique(c(dgEqtl$Index_Name, dlpfcEqtl$Index_Name, hippoEqtl$Index_Name)))
 
 dgEqtlOnly = dgEqtl[! dgEqtl$Index_Name %in% hippoEqtl$Index_Name,]
 dgEqtlOnly = dgEqtlOnly[order(dgEqtlOnly$pvalue),]
 as.data.frame(dgEqtlOnly[dgEqtlOnly$Distance == 0,])
 
 options(width=150)
-colName = c("gene", "Symbol", "pvalue", "hippo_pvalue",
+colName = c("gene", "Symbol", "pvalue", "hippo_pvalue","dlpfc_pvalue",
 	"inter_pvalue", "Index_Name", "R_squared")
 as.data.frame(dgEqtlOnly)[dgEqtlOnly$Distance == 0,colName]
 dgEqtlOnly[dgEqtlOnly$Index_Name == "rs2007044:2344960:A:G",colName]
@@ -36,9 +45,13 @@ dgEqtlOnly[dgEqtlOnly$Index_Name == "rs2007044:2344960:A:G",colName]
 dgEqtlOnlyTop = dgEqtlOnly[!duplicated(dgEqtlOnly$Index_Name),]
 dgEqtlOnlyTop$lab = paste0("R^2=",signif(dgEqtlOnlyTop$R_squared,2), ", ",dgEqtlOnlyTop$Type, 
 	": DGp=", signif(dgEqtlOnlyTop$pvalue,3), " Hp=",
-	signif(dgEqtlOnlyTop$hippo_pvalue, 3))
+	signif(dgEqtlOnlyTop$hippo_pvalue, 3), " PFCp=",signif(dgEqtlOnlyTop$dlpfc_pvalue, 3))
 dgEqtlOnlyTop$ind = which(!duplicated(dgEqtlOnly$Index_Name))
 as.data.frame(dgEqtlOnlyTop[,c("Symbol", "lab","ind")])
+
+## check with DLPFC
+byLocus = split(sigEqtl, sigEqtl$Index_Name)
+
 #############################
 ########## plots ############
 #############################

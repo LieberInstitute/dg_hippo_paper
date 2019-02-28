@@ -81,6 +81,43 @@ intStats = intStats[,3:6]
 colnames(intStats) = paste0("inter_", colnames(intStats))
 
 allEqtl = cbind(allEqtl, intStats)
+
+##########################
+#### add in DLPFC #######
+load("eqtl_tables/matrixEqtl_output_dlpfc_raggr_4features.rda",verbose=TRUE)
+
+# extract
+geneEqtlPfc = meGene$cis$eqtls
+geneEqtlPfc$gene = as.character(geneEqtlPfc$gene)
+geneEqtlPfc$snps = as.character(geneEqtlPfc$snps)
+geneEqtlPfc$ID = paste0(geneEqtlPfc$snps, ";", geneEqtlPfc$gene)
+geneEqtlPfc = geneEqtlPfc[geneEqtlPfc$ID %in% allEqtl$ID,]
+
+exonEqtlPfc = meExon$cis$eqtls
+exonEqtlPfc$gene = as.character(exonEqtlPfc$gene)
+exonEqtlPfc$snps = as.character(exonEqtlPfc$snps)
+exonEqtlPfc$ID = paste0(exonEqtlPfc$snps, ";", exonEqtlPfc$gene)
+exonEqtlPfc = exonEqtlPfc[exonEqtlPfc$ID %in% allEqtl$ID,]
+
+jxnEqtlPfc = meJxn$cis$eqtls
+jxnEqtlPfc$gene = as.character(jxnEqtlPfc$gene)
+jxnEqtlPfc$snps = as.character(jxnEqtlPfc$snps)
+jxnEqtlPfc$ID = paste0(jxnEqtlPfc$snps, ";", jxnEqtlPfc$gene)
+jxnEqtlPfc = jxnEqtlPfc[jxnEqtlPfc$ID %in% allEqtl$ID,]
+
+txEqtlPfc = meTx$cis$eqtls
+txEqtlPfc$gene = as.character(txEqtlPfc$gene)
+txEqtlPfc$snps = as.character(txEqtlPfc$snps)
+txEqtlPfc$ID = paste0(txEqtlPfc$snps, ";", txEqtlPfc$gene)
+txEqtlPfc = txEqtlPfc[txEqtlPfc$ID %in% allEqtl$ID,]
+
+## join
+allEqtlPfc = rbind(geneEqtlPfc, exonEqtlPfc, jxnEqtlPfc, txEqtlPfc)
+dlpfcStats = allEqtlPfc[match(allEqtl$ID, allEqtlPfc$ID),]
+dlpfcStats = dlpfcStats[,3:6]
+colnames(dlpfcStats) = paste0("dlpfc_", colnames(dlpfcStats))
+
+allEqtl = cbind(allEqtl, dlpfcStats)
 allEqtl$ID = NULL
 
 #####################
@@ -141,5 +178,4 @@ fdrMat = as.data.frame(allEqtlMerge[,grep("FDR", colnames(allEqtlMerge))]) < 0.0
 sigEqtl = allEqtlMerge[which(rowSums(fdrMat, na.rm=TRUE) > 0),]
 
 ### save
-save(sigEqtl, file = "eqtl_tables/mergedEqtl_output_withHippo_fdr05any.rda")
-
+save(sigEqtl, file = "eqtl_tables/mergedEqtl_output_withHippo_withDlpfc_fdr05any.rda")
