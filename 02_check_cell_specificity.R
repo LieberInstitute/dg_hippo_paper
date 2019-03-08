@@ -140,9 +140,26 @@ goEnr <- compareCluster(geneListSplit, universe = geneUniverse,
 goDf = as.data.frame(goEnr)
 save(goEnr,goDf, file = "rdas/geneSetEnrichment_Robjs_lmer.rda")
 
+goBP <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "BP", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+goMF <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "MF", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+goCC <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "CC", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+
+
 pdf("plots/geneSetEnrichment_cellType.pdf",
 	useDingbats=FALSE, h=8,w=7)
-dotplot(goEnr, showCategory=10)				
+dotplot(goBP, showCategory=10)				
 dotplot(goMF, showCategory=10)				
 dotplot(goCC, showCategory=10)				
 dev.off()
@@ -159,4 +176,61 @@ goOut = goOut[order(goOut$Cluster, goOut$pvalue),]
 write.csv(goOut, file="tables/geneSetEnrichment_suppTable_lmer.csv",
 	row.names=FALSE, quote=FALSE)
 
-##### gage data? ####
+#####################
+##### MANGO data ####
+#####################
+
+# http://mango.adult-neurogenesis.de/
+ng = read.delim("tables/MANGO_result_annotationLevel.txt",
+	as.is=TRUE,header=FALSE)
+colnames(ng) =c("ID", "Gene", "Process", "CellStage", "Effect","Evidence", "Species", "Type", "Ref")	
+
+## try this data: https://www.genenames.org/tools/hcop/
+orth = read.delim("tables/human_all_hcop_seven_column.txt.gz", as.is=TRUE)
+orth = orth[grepl("ENSMUS", orth$ortholog_species_ensembl_gene),]
+
+ng$inOrth = ng$ID %in% orth$ortholog_species_entrez_gene
+ng$humanEnsembl = orth$human_ensembl_gene[match(ng$ID, orth$ortholog_species_entrez_gene)]
+ng$exprsHuman = ng$humanEnsembl %in% outGene$ensemblID
+
+table(ng$inOrth[!duplicated(ng$Gene)], ng$exprsHuman[!duplicated(ng$Gene)])
+
+## add effects
+outGene$inMango = outGene$ensemblID %in% ng$humanEnsembl
+outGene$matchMango = match(outGene$ensemblID, ng$humanEnsembl) 
+outGene$dirMango = ng$Effect[outGene$matchMango]
+
+## chisq
+tt = table(outGene$adj.P.Val < 0.05, outGene$inMango)
+getOR(tt) # 3.245
+chisq.test(tt) # 1.79e-12
+
+with(outGene[outGene$adj.P.Val < 0.05 & outGene$inMango,], 
+	table(dirMango, t > 0, dnn = c("Dir", "DG_up")))
+
+## overall
+plot(density(outGene$t[!outGene$inMango]), col="black",lwd=3,
+	xlab = "T-statistic", main = "DG vs Hippo Effect", ylim = c(0,0.15))
+lines(density(outGene$t[outGene$inMango]), col="red", lwd=3)
+legend("topleft", c("MANGO", "Not"), col = c("red", "black"), pch = 15,cex=2)
+
+## by direction
+indNeg = outGene$inMango & outGene$dirMango == "Negative"
+indPos = outGene$inMango & outGene$dirMango == "Positive"
+geneSetTest(indNeg, outGene$t, alternative = "down")
+plot(density(outGene$t[!indNeg | !indNeg]), col="black",lwd=3,
+	xlab = "(HIPPO > DG) T-statistic (HIPPO < DG)", main = "", 
+	xlim = c(-20,20), ylim = c(0,0.15))
+lines(density(outGene$t[indNeg]), col="blue", lwd=3)
+lines(density(outGene$t[indPos]), col="green", lwd=3)
+legend("topleft", c("MANGO-Pos","MANGO-Neg", "Not"), 
+	col = c("green","blue", "black"), pch = 15,cex=1.5)
+	
+## wilcox
+geneSetTest(outGene$inMango, outGene$t, alternative="either")
+geneSetTest(indNeg, outGene$t, alternative="down")
+geneSetTest(indPos, outGene$t, alternative="up")
+
+geneSetTest(outGene$inMango, outGene$t, alternative="mixed")
+geneSetTest(outGene$inMango, outGene$t, alternative="up")
+geneSetTest(outGene$inMango, outGene$t, alternative="down")

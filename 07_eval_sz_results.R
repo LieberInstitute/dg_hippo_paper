@@ -293,9 +293,29 @@ table(names(geneDxStats_dg)[geneDxStats_dg$SZ_sig] %in% rownames(ap_sig))
 
 save(ap_sig, ssri_sig, file = "rdas/de_drug_effects.rda")
 
-## write out
+###################################
+###### neurogenesis overlap #######
+
+# http://mango.adult-neurogenesis.de/
+ng = read.delim("tables/MANGO_result_annotationLevel.txt",
+	as.is=TRUE,header=FALSE)
+colnames(ng) =c("ID", "Gene", "Process", "CellStage", "Effect","Evidence", "Species", "Type", "Ref")	
+
+## try this data: https://www.genenames.org/tools/hcop/
+orth = read.delim("tables/human_all_hcop_seven_column.txt.gz", as.is=TRUE)
+orth = orth[grepl("ENSMUS", orth$ortholog_species_ensembl_gene),]
+
+ng$inOrth = ng$ID %in% orth$ortholog_species_entrez_gene
+ng$humanEnsembl = orth$human_ensembl_gene[match(ng$ID, orth$ortholog_species_entrez_gene)]
 
 
+ap_sig$inMango = ap_sig$ensemblID %in% ng$humanEnsembl 
+ssri_sig$inMango = ssri_sig$ensemblID %in% ng$humanEnsembl 
+
+table(ap_sig$inMango)
+ap_sig[which(ap_sig$inMango),]
+table(ssri_sig$inMango)
+ssri_sig[which(ssri_sig$inMango),]
 #############
 ## expression
 geneExprs = log2(getRPKM(rse_gene_joint, "Length")+1)
