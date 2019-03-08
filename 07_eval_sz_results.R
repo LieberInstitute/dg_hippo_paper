@@ -316,8 +316,5 @@ table(ap_sig$inMango)
 ap_sig[which(ap_sig$inMango),]
 table(ssri_sig$inMango)
 ssri_sig[which(ssri_sig$inMango),]
-#############
-## expression
-geneExprs = log2(getRPKM(rse_gene_joint, "Length")+1)
-geneExprs = geneExprs[names(geneAgeStats),]
+
 
