@@ -273,6 +273,8 @@ tt_Hippo = tt_both[tt_both$Region == "HIPPO",]
 tt_DG_fdr = tt_DG[tt_DG$TWAS.FDR < 0.05,]
 tt_DG_bonf = tt_DG[tt_DG$TWAS.Bonf < 0.05,]
 
+## write out
+write.csv(tt_DG_fdr, file="tables/tableS6_DG-GCL_TWAS_FDR05_SCZD_PGC2CLOZUK.csv")
 ## for big table
 nrow(tt_DG)
 table(tt_DG$feature)
