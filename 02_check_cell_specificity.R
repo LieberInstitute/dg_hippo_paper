@@ -140,26 +140,9 @@ goEnr <- compareCluster(geneListSplit, universe = geneUniverse,
 goDf = as.data.frame(goEnr)
 save(goEnr,goDf, file = "rdas/geneSetEnrichment_Robjs_lmer.rda")
 
-goBP <- compareCluster(geneListSplit, universe = geneUniverse,
-				fun = "enrichGO", ont = "BP", 
-				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
-                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
-				readable= TRUE)
-goMF <- compareCluster(geneListSplit, universe = geneUniverse,
-				fun = "enrichGO", ont = "MF", 
-				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
-                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
-				readable= TRUE)
-goCC <- compareCluster(geneListSplit, universe = geneUniverse,
-				fun = "enrichGO", ont = "CC", 
-				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
-                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
-				readable= TRUE)
-
-
 pdf("plots/geneSetEnrichment_cellType.pdf",
 	useDingbats=FALSE, h=8,w=7)
-dotplot(goBP, showCategory=10)				
+dotplot(goEnr, showCategory=10)				
 dotplot(goMF, showCategory=10)				
 dotplot(goCC, showCategory=10)				
 dev.off()
