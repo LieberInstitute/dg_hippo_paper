@@ -47,7 +47,7 @@ sigEqtl = cbind(sigEqtl, hippoStats)
 ### interaction ##################
 ##################################
 
-load("/dcl01/ajaffe/data/lab/dg_hippo/eQTL_all_SNPs_n596/eqtl_tables/matrixEqtl_output_interaction_4features_dgMatched.rda")
+load("eqtl_tables/matrixEqtl_output_interaction_4features_dgMatched.rda")
 
 # extract
 geneEqtlInt = meGene$cis$eqtls
@@ -84,5 +84,44 @@ sigEqtl = cbind(sigEqtl, intStats)
 sigEqtl$ID = NULL
 
 ### save
-save(sigEqtl, file = "/dcl01/ajaffe/data/lab/dg_hippo/eQTL_all_SNPs_n596/eqtl_tables/mergedEqtl_output_dg_4features_fdr01_withHippo.rda")
+save(sigEqtl, file = "eqtl_tables/mergedEqtl_output_dg_4features_fdr01_withHippo.rda")
 
+#####################
+# export text file ##
+#####################
+
+## for feature coordinates
+load("../rdas/exon_names_hg19_hg38.rda", verbose=TRUE)
+
+## load SNP info
+load("../genotype_data/BrainSeq_Phase2_RiboZero_Genotypes_n551.rda")
+snpMap$pos_hg19 = paste0(snpMap$CHR, ":", snpMap$POS)
+snpMap_hippo = snpMap
+
+load("../genotype_data/astellas_dg_genotype_data_n263.rda")
+snpMap_dg = snpMap
+snpMap_dg$pos_hg19 = paste0("chr", snpMap_dg$CHR, ":", snpMap_dg$POS)
+snpMap_dg$pos_hg38 = paste0(snpMap_dg$chr_hg38, ":", snpMap_dg$pos_hg38)
+
+rm(snpMap, snp,mds)
+
+sigEqtlDf = as.data.frame(sigEqtl)
+sigEqtlDf$gencodeTx = NULL
+sigEqtlDf$snpRsNum = snpMap_dg$name[match(sigEqtlDf$snps, snpMap_dg$SNP)]
+sigEqtlDf$snpCoord_hg19 = snpMap_dg$pos_hg19[match(sigEqtlDf$snps, snpMap_dg$SNP)]
+sigEqtlDf$snpCoord_hg38 = snpMap_dg$pos_hg38[match(sigEqtlDf$snps, snpMap_dg$SNP)]
+sigEqtlDf$alleleCounted = snpMap_dg$newCount[match(sigEqtlDf$snps, snpMap_dg$SNP)]
+sigEqtlDf$alleleRef = snpMap_dg$newRef[match(sigEqtlDf$snps, snpMap_dg$SNP)]
+
+## clean up
+colnames(sigEqtlDf)[1:2] = c("SNP", "Feature")
+sigEqtlDf$exonInternalID = sigEqtlDf$Feature
+sigEqtlDf$exonInternalID[sigEqtlDf$Type != "Exon"] = NA
+
+sigEqtlDf$Feature[sigEqtlDf$Type == "Exon"] = hg38_exons$gencode_exonID[
+	match(sigEqtlDf$Feature[sigEqtlDf$Type == "Exon"], hg38_exons$hg38_eID)]
+sigEqtlDf = sigEqtlDf[order(sigEqtlDf$pvalue),]
+rownames(sigEqtlDf) = NULL
+
+write.csv(sigEqtlDf, row.names=FALSE,
+	file = gzfile("../genotype_data/DataS1_DGGCL_eQTLs_plusHippo.csv.gz"))
