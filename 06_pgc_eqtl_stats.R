@@ -28,6 +28,7 @@ length(unique(dgEqtl$Index_Name)) # 78
 length(unique(hippoEqtl$Index_Name)) # 82
 length(unique(dlpfcEqtl$Index_Name)) # 94
 sum(unique(dgEqtl$Index_Name) %in% hippoEqtl$Index_Name) # 60
+sum(! unique(dgEqtl$Index_Name) %in% c(hippoEqtl$Index_Name,dlpfcEqtl$Index_Name)) # 8
 
 table(unique(dlpfcEqtl$Index_Name) %in% unique(c(dgEqtl$Index_Name, hippoEqtl$Index_Name)))
 length(unique(c(dgEqtl$Index_Name, dlpfcEqtl$Index_Name, hippoEqtl$Index_Name)))

@@ -111,6 +111,12 @@ tt = table(abs(sigEqtlHippo_FDR$beta) > abs(sigEqtlHippo_FDR$hippo_beta),
 	dnn = c("DG-bigger", "DG-sigger"))
 prop.table(tt,2)
 
+########################################
+## examples of different transcripts ###
+########################################
+
+gList = split(sigEqtl, sigEqtl$Symbol)
+gList = gList[sapply(gList, function(x) sum(
 #######################
 ### plots #############
 #######################

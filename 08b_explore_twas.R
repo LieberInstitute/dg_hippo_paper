@@ -6,6 +6,7 @@ library('dplyr')
 library('limma')
 library('readr')
 library('jaffelab')
+library('RColorBrewer')
 
 ## Load twas data (from read_twas.R)
 load('rdas/twas.Rdata', verbose = TRUE)
@@ -266,6 +267,8 @@ save(tt_both, riskLoci, file = 'rdas/twas_exp_DGandHippoMerged_GWASannotated.Rda
 ####################
 ## explore #########
 ####################
+load('rdas/twas_exp_DGandHippoMerged_GWASannotated.Rdata') 
+
 tt_both = as.data.frame(tt_both)
 tt_DG = tt_both[tt_both$Region == "DG",]
 tt_Hippo = tt_both[tt_both$Region == "HIPPO",]
@@ -345,20 +348,31 @@ table(tt_DG_bonf$hippo_TWAS_FDR, useNA="ifany")
 
 # #######################
 # ### add  sz control? ##
-# load("rdas/jxLevel_ageAndSzInteraction.rda")
-# jxSzStats = jxSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
-# load("rdas/exonLevel_ageAndSzInteraction.rda")
-# exonSzStats = exonSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
-# load("rdas/geneLevel_ageAndSzInteraction.rda")
-# geneSzStats = geneSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
-# load("rdas/txLevel_ageAndSzInteraction.rda")
-# txSzStats=txSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
-# szStats = c(geneSzStats, exonSzStats, jxSzStats, txSzStats)
+load("rdas/jxLevel_ageAndSzInteraction.rda")
+jxSzStats = jxSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
+load("rdas/exonLevel_ageAndSzInteraction.rda")
+exonSzStats = exonSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
+load("rdas/geneLevel_ageAndSzInteraction.rda")
+geneSzStats = geneSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
+load("rdas/txLevel_ageAndSzInteraction.rda")
+txSzStats=txSzStats[,c("t_SZ_DG", "P.Value_SZ_DG")]
+szStats = c(geneSzStats, exonSzStats, jxSzStats, txSzStats)
 
-# tt_DG$SZ_t = szStats$t_SZ_DG[match(tt_DG$ID, names(szStats))]
+tt_DG$SZ_t = szStats$t_SZ_DG[match(tt_DG$ID, names(szStats))]
 
 # ## anything?
-# plot(tt_DG$SZ_t, tt_DG$TWAS.Z)
+pdf("plots/twas_vs_de.pdf")
+par(mar = c(5,6,3,2), cex.axis=2.5,cex.lab=2.5,cex.main=2.5)
+palette(brewer.pal(6, "Dark2"))
+plot(tt_DG$SZ_t, tt_DG$TWAS.Z,
+	xlim = c(-8,8), ylim = c(-8,8),
+	xlab = "SZ DE T-stat", ylab = "TWAS T-stat",
+	main = "All Heritable Features",
+	pch = 21, bg=factor(tt_DG$feature))
+legend("topleft", levels(factor(tt_DG$feature)),
+	pch = 15, col = 1:4, cex=1.6)
+dev.off()
+cor(tt_DG$SZ_t, tt_DG$TWAS.Z)
 # plot(tt_DG$SZ_t[tt_DG$TWAS.FDR<0.05], tt_DG$TWAS.Z[tt_DG$TWAS.FDR<0.05])
 # cor(tt_DG$SZ_t[tt_DG$TWAS.FDR<0.05], tt_DG$TWAS.Z[tt_DG$TWAS.FDR<0.05],use="comp")
 # plot(tt_DG$SZ_t[tt_DG$TWAS.Bonf<0.05], tt_DG$TWAS.Z[tt_DG$TWAS.Bonf<0.05])
