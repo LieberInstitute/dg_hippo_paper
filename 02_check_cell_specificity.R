@@ -63,6 +63,11 @@ max(sigGene$P.Value)
 ## write out
 save(outGene, file = "rdas/DE_output_cellType_lmer.rda")
 
+## subset
+theGenes = c("PROX1", "KCNK1", "SOX9","MBP", "MOBP","CAMK1","GABRD")
+outGene[match(theGenes, outGene$Symbol),]
+
+## filter
 sigGeneDf = as.data.frame(sigGene)
 sigGeneDf$gencodeTx = sapply(sigGeneDf$gencodeTx, paste, collapse=";")
 
@@ -88,7 +93,6 @@ legend("bottomright", levels(rse_gene_joint$Dataset),
 dev.off()
 
 ### target genes #######
-theGenes = c("PROX1", "KCNK1", "GFAP","MBP", "MOBP","CAMK1","GABRD")
 pdf("plots/markerGene_enrichment.pdf")
 palette(brewer.pal(5,"Set1"))
 par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
@@ -111,9 +115,13 @@ for(i in seq(along=theGenes)) {
 }		
 dev.off()
 
-2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] 
-1/(2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] )
+up = 2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] 
+names(up) = theGenes
+up
 
+down = 1/(2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] )
+names(down) = theGenes
+down
 ## volano
 pdf("plots/volanoPlot_cellType.pdf")
 palette(brewer.pal(5, "Dark2"))

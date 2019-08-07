@@ -1,3 +1,4 @@
+library(limma)
 
 ## load DG
 load("twas/DentateGyrus/gene/heritability/hsq_info.Rdata")
@@ -27,7 +28,25 @@ hsq_all$hsq_dg[is.na(hsq_all$hsq_dg)] = -0.25
 hsq_all$hsq_hippo[is.na(hsq_all$hsq_hippo)] = -0.25
 hsq_all$hsq_dlpfc[is.na(hsq_all$hsq_dlpfc)] = -0.25
 
-#########
+# number sig
+hsq_all$hsq.bh_dg = p.adjust(hsq_all$hsq.pv_dg,"fdr")
+hsq_all$hsq.bh_hippo = p.adjust(hsq_all$hsq.pv_hippo,"fdr")
+hsq_all$hsq.bh_dlpfc = p.adjust(hsq_all$hsq.pv_dlpfc,"fdr")
+
+fdrs = hsq_all[,grep("bh", colnames(hsq_all))]
+colnames(fdrs) = c("DG-GCL", "HIPPO", "DLPFC")
+vennDiagram(vennCounts(fdrs < 0.05))
+colSums(fdrs < 0.05,na.rm=TRUE)
+## filter
+hsq_sig = hsq_all[hsq_all$hsq.bh_dg < 0.05,]
+table(hsq_sig$hsq.pv_hippo < 0.05)
+mean(hsq_sig$hsq.pv_hippo > 0.05,na.rm=TRUE)
+table(hsq_sig$hsq.pv_dlpfc < 0.05)
+
+hsq_dlpfc_sig =  hsq_all[hsq_all$hsq.bh_dlpfc < 0.05,]
+table(hsq_dlpfc_sig$hsq.pv_hippo < 0.05)
+mean(hsq_dlpfc_sig$hsq.pv_hippo > 0.05,na.rm=TRUE)
+ #########
 ## MA ###
 #########
 pdf("plots/heritability_comparisons_MA.pdf",h=6,w=8)
