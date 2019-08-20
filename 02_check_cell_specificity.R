@@ -19,11 +19,12 @@ dir.create("tables")
 load("count_data/dgPlusHippo_hg38_rseGene_n224.rda")
 
 ## make factor
+colData(rse_gene_joint)$Dataset = ifelse(colData(rse_gene_joint)$Dataset == "DG", "DG-GCL", "HIPPO")
 colData(rse_gene_joint)$Dataset = factor(colData(rse_gene_joint)$Dataset)
-colData(rse_gene_joint)$Dataset = relevel(colData(rse_gene_joint)$Dataset , "Hippo")
+colData(rse_gene_joint)$Dataset = relevel(colData(rse_gene_joint)$Dataset , "HIPPO")
 
 ## filter on RPKM level
-geneIndex = rowMeans(getRPKM(rse_gene_joint[,rse_gene_joint$Dataset == "DG"], "Length")) > 0.5
+geneIndex = rowMeans(getRPKM(rse_gene_joint[,rse_gene_joint$Dataset == "DG-GCL"], "Length")) > 0.5
 rse_gene_joint = rse_gene_joint[geneIndex,]
 
 ##### DGE ######
@@ -39,7 +40,7 @@ mod = model.matrix(~Dataset + mitoRate + rRNA_rate + overallMapRate + totalAssig
 	data=colData(rse_gene_joint))
 
 ## mean-variance
-vGene = voom(dge,mod,plot=TRUE)
+vGene = voom(dge,mod,plot=FALSE)
 # gene_dupCorr = duplicateCorrelation(vGene$E, mod, block=rse_gene_joint$BrNum)
 # save(gene_dupCorr, file = "rdas/geneLevel_duplicateCorrelation_regionVsCell.rda")
 load("rdas/geneLevel_duplicateCorrelation_regionVsCell.rda")
@@ -122,6 +123,7 @@ up
 down = 1/(2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] )
 names(down) = theGenes
 down
+
 ## volano
 pdf("plots/volanoPlot_cellType.pdf")
 palette(brewer.pal(5, "Dark2"))

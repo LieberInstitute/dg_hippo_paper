@@ -46,6 +46,15 @@ dev.off()
 ## effect size
 sapply(sigEqtlList, function(x) quantile(abs(x$beta)))
 
+###############################
+## overall hippo replication ##
+###############################
+mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic),na.rm=TRUE)
+mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) & 
+	sigEqtl$hippo_pvalue < 0.05,na.rm=TRUE)
+mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) & 
+	sigEqtl$hippo_FDR < 0.01,na.rm=TRUE)
+
 #######################
 ## gene specific
 uGene = unique(sigEqtl$EnsemblGeneID)

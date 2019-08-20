@@ -33,6 +33,11 @@ sum(! unique(dgEqtl$Index_Name) %in% c(hippoEqtl$Index_Name,dlpfcEqtl$Index_Name
 table(unique(dlpfcEqtl$Index_Name) %in% unique(c(dgEqtl$Index_Name, hippoEqtl$Index_Name)))
 length(unique(c(dgEqtl$Index_Name, dlpfcEqtl$Index_Name, hippoEqtl$Index_Name)))
 
+## make venn diagram
+
+###########
+## dg only
+
 dgEqtlOnly = dgEqtl[! dgEqtl$Index_Name %in% hippoEqtl$Index_Name,]
 dgEqtlOnly = dgEqtlOnly[order(dgEqtlOnly$pvalue),]
 as.data.frame(dgEqtlOnly[dgEqtlOnly$Distance == 0,])
