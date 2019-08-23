@@ -28,6 +28,7 @@ load("../count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
 # grid.draw(v)
 # dev.off()
 
+## number of SNPs tested per gene
 
 ## keep adult samples & correct region
 # min(rse_gene_joint$Age)
@@ -54,6 +55,11 @@ keepSnps = which(!is.na(snpMap$pos_hg38))
 snpMap = snpMap[keepSnps,]
 snp = snp[keepSnps,]
 
+#### number of tested SNPs for each feature
+snpMap_gr = GRanges(snpMap$chr_hg38, IRanges(snpMap$pos_hg38,width=1))
+gOverlap = countOverlaps(rse_gene_joint, snpMap_gr, maxgap=5e5)
+save(gOverlap, file = "../rdas/num_snps_per_gene_eqtl.rda")
+
 #####################
 # filter brain region
 # make mds and snp dimensions equal to N
@@ -70,7 +76,6 @@ pd$Dx = factor(pd$Dx,
 
 mod = model.matrix(~Dx + Sex + as.matrix(mds[,1:5]), data = pd)
 colnames(mod)[4:8] = colnames(mds)[1:5]
-
 
 ######################
 # create SNP objects #
@@ -194,7 +199,6 @@ meTx = Matrix_eQTL_main(snps=theSnps, gene = txSlice,
 
 save(meGene, meExon, meJxn, meTx,
 	file="eqtl_tables/matrixEqtl_output_dg_4features.rda")
-
 	
 ######################
 ###### annotate ######

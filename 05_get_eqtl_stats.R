@@ -6,6 +6,11 @@ library(SummarizedExperiment)
 library(RColorBrewer)
 library(readxl)
 
+## load data
+load("count_data/merged_dg_hippo_allSamples_n596.rda")
+num_feature = c(Gene=nrow(rse_gene_joint), Exon = nrow(rse_exon_joint),
+	Jxn = nrow(rse_jxn_joint), Tx = nrow(rse_tx_joint))
+
 ## load eQTLs
 load("eQTL_all_SNPs_n596/eqtl_tables/mergedEqtl_output_dg_4features_fdr01_withHippo.rda")
 sigEqtl$Type = factor(sigEqtl$Type, levels = c("Gene", "Exon",  "Jxn", "Tx"))
@@ -21,7 +26,12 @@ length(unique(sigEqtl$EnsemblGeneID))
 sapply(sigEqtlList, nrow)
 
 ## num unique features
-sapply(sigEqtlList, function(x) length(unique(x$gene)))
+num_eFeature = sapply(sigEqtlList, function(x) length(unique(x$gene)))
+num_eFeature
+ # Gene  Exon   Jxn    Tx
+# 10141 67799 28319 17417
+frac_eFeature = num_eFeature/num_feature
+
 
 ## unannoated
 sigEqtlUnann = sigEqtl[sigEqtl$Class != "InGen",]
@@ -54,6 +64,19 @@ mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) &
 	sigEqtl$hippo_pvalue < 0.05,na.rm=TRUE)
 mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) & 
 	sigEqtl$hippo_FDR < 0.01,na.rm=TRUE)
+
+## maybe correlation of stats by feature
+sigEqtlFeatureList =split(sigEqtl, sigEqtl$gene)
+corFeature = sapply(sigEqtlFeatureList[sapply(sigEqtlFeatureList,nrow) > 1],
+	function(x) cor(x$statistic, x$hippo_statistic,use="pair"))
+	
+d = data.frame(FeatureID = names(corFeature), cor = corFeature,
+	stringsAsFactors = FALSE)
+d$Type = sigEqtl$Type[match(d$FeatureID, sigEqtl$gene)]
+d$EnsemblGeneID = sigEqtl$EnsemblGeneID[match(d$FeatureID, sigEqtl$gene)]
+
+g = ggplot(d, aes(x=Type, y=cor)) + geom_violin()
+ggsave(g, file="plots/eqtl_corr.pdf")
 
 #######################
 ## gene specific

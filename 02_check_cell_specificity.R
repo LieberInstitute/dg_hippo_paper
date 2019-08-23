@@ -10,6 +10,7 @@ library(clusterProfiler)
 library(org.Hs.eg.db)
 library(readxl)
 library(RColorBrewer)
+library(TeachingDemos)
 
 ## make tables
 dir.create("plots")
@@ -66,7 +67,7 @@ save(outGene, file = "rdas/DE_output_cellType_lmer.rda")
 
 ## subset
 theGenes = c("PROX1", "KCNK1", "SOX9","MBP", "MOBP","CAMK1","GABRD")
-outGene[match(theGenes, outGene$Symbol),]
+gStats = outGene[match(theGenes, outGene$Symbol),]
 
 ## filter
 sigGeneDf = as.data.frame(sigGene)
@@ -83,53 +84,60 @@ bIndexes = splitit(rse_gene_joint$BrNum)
 pca = prcomp(t(vGene$E))
 pcaVars = getPcaVars(pca)
 
-pdf("plots/pcaPlot_enrichment.pdf")
+pdf("plots/pcaPlot_enrichment_n224_paired.pdf")
 par(mar=c(5,6,2,2),cex.axis=2,cex.lab=2)
 palette(brewer.pal(5,"Set1"))
 plot(pca$x, pch = 21, bg = rse_gene_joint$Dataset,cex=1.5,
 	xlab=paste0("PC1: ", pcaVars[1], "% Var Expl"),
 	ylab=paste0("PC2: ", pcaVars[2], "% Var Expl"))
-legend("bottomright", levels(rse_gene_joint$Dataset), 
-	col=1:2,pch=15,cex=2,nc=2)
+for(j in seq(along=bIndexes)) {
+	ii = bIndexes[[j]]
+	lines(pca$x[ii,1], pca$x[ii,2], col ="grey",lwd=0.4)
+}
+# legend("bottomright", levels(rse_gene_joint$Dataset), 
+	# col=1:2,pch=15,cex=2,nc=2)
 dev.off()
 
 ### target genes #######
 pdf("plots/markerGene_enrichment.pdf")
+exprs = vGene$E[match(theGenes, vGene$genes$Symbol),]
 palette(brewer.pal(5,"Set1"))
 par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
 for(i in seq(along=theGenes)) {
-	matchInd = match(theGenes[i], vGene$genes$Symbol)
-	boxplot(vGene$E[matchInd,] ~ rse_gene_joint$Dataset, 
+	boxplot(exprs[i,] ~ rse_gene_joint$Dataset, 
 			outline=FALSE,	ylab = "Normalized Expression",
-			main = theGenes[i], ylim = range(vGene$E[matchInd,]))
+			main = theGenes[i], ylim = range(exprs[i,]))
 	xx = jitter(as.numeric(rse_gene_joint$Dataset),amount=0.1)
 	for(j in seq(along=bIndexes)) {
-		lines(vGene$E[matchInd,] ~ xx, data=colData(rse_gene_joint),
+		lines(exprs[i,] ~ xx, data=colData(rse_gene_joint),
 			subset=bIndexes[[j]], col ="grey",lwd=0.4)
 	}
-	points(vGene$E[matchInd,] ~ xx,	pch = 21, bg = rse_gene_joint$Dataset)
-	ll = ifelse(fitGene$coef[matchInd,2] > 0, "topleft", "topright")
-	pv = paste0("p ", ifelse(outGene$P.Value[matchInd] < 1e-20, "< 1e-20", 
-		paste0("= ", signif( outGene$P.Value[matchInd],3))))
+	points(exprs[i,] ~ xx,	pch = 21, bg = rse_gene_joint$Dataset)
+	ll = ifelse(gStats$logFC[i] > 0, "topleft", "topright")
+	pv = paste0("p=",signif( gStats$P.Value[i],3))
 	legend(ll, pv, cex=1.6)
-
 }		
 dev.off()
 
-up = 2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] 
+up = 2^gStats$logFC  
 names(up) = theGenes
 up
 
-down = 1/(2^fitGene$coef[match(theGenes,vGene$genes$Symbol),2] )
+down = 1/ 2^gStats$logFC  
 names(down) = theGenes
 down
 
 ## volano
+theGenes2 = c("PROX1", "SOX9","MBP")
+m2 = match(theGenes2, outGene$Symbol)
+
 pdf("plots/volanoPlot_cellType.pdf")
 palette(brewer.pal(5, "Dark2"))
 par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
 plot(-log10(P.Value) ~ logFC, pch = 21, bg=sigColor,
 	cex=0.8,data = outGene, xlab = "DG vs HIPPO log2FC")
+shadowtext(outGene$logFC[m2]+0.35, -log10(outGene$P.Value[m2]),
+	LETTERS[1:3],font=2,cex=1.25,col="grey")
 dev.off()
 
 ####################
@@ -137,24 +145,52 @@ dev.off()
 ## split by sign
 sigGeneSplit = split(sigGene, sign(sigGene$logFC))
 geneListSplit = sapply(sigGeneSplit, function(x) as.character(x$EntrezID[!is.na(x$EntrezID)]))
-names(geneListSplit) = c("HIPPO", "DG")
+names(geneListSplit) = c("HIPPO", "DG-GCL")
 
 geneUniverse = as.character(outGene$EntrezID)
 geneUniverse = geneUniverse[!is.na(geneUniverse)]
 
-goEnr <- compareCluster(geneListSplit, universe = geneUniverse,
-				fun = "enrichGO", ont = "ALL", 
+goMF <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "MF", 
 				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
-                pvalueCutoff  = 0.1, qvalueCutoff  = 0.05,
+                pvalueCutoff  = 1, qvalueCutoff  = 1,
 				readable= TRUE)
-goDf = as.data.frame(goEnr)
-save(goEnr,goDf, file = "rdas/geneSetEnrichment_Robjs_lmer.rda")
+goBP <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "BP", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = 1, qvalueCutoff  = 1,
+				readable= TRUE)	
+goCC <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "CC", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = 1, qvalueCutoff  = 1,
+				readable= TRUE)
+
+goMF_sig <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "MF", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = .1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+goBP_sig <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "BP", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = .1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+goCC_sig <- compareCluster(geneListSplit, universe = geneUniverse,
+				fun = "enrichGO", ont = "CC", 
+				OrgDb = org.Hs.eg.db, pAdjustMethod = "BH",
+                pvalueCutoff  = .1, qvalueCutoff  = 0.05,
+				readable= TRUE)
+				
+save(goMF,goBP,goCC, goMF_sig, goBP_sig, goCC_sig,
+	file = "rdas/geneSetEnrichment_Robjs_lmer.rda")
+
 
 pdf("plots/geneSetEnrichment_cellType.pdf",
 	useDingbats=FALSE, h=8,w=7)
-dotplot(goEnr, showCategory=10)				
-dotplot(goMF, showCategory=10)				
-dotplot(goCC, showCategory=10)				
+dotplot(goMF_sig, showCategory=10)				
+dotplot(goBP_sig, showCategory=10)				
+dotplot(goCC_sig, showCategory=10)				
 dev.off()
 
 ## write out
