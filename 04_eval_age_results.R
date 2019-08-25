@@ -5,6 +5,7 @@ library(jaffelab)
 library(VennDiagram)
 library(RColorBrewer)
 library(limma)
+library(lmerTest)
 
 ## load results
 load("rdas/geneLevel_ageAndSzInteraction.rda")
@@ -316,6 +317,23 @@ for(i in exampleIndexInt) {
 	legend("topright", rowData(rse_gene_joint)$Symbol[i], bty="n",cex=2.5)
 }
 dev.off()
+
+###################
+## rna fractions ##
+###################
+
+## load data
+load("rdas/cell_type_fractions.rda")
+cellPropEsts = cellPropEsts[colnames(rse_gene_joint),]
+cellPropEstsScaled = prop.table(as.matrix(cellPropEsts),1)
+
+## lmerTest
+cellTypeList = lapply(as.data.frame(cellPropEstsScaled), function(y) {
+	summary(lmer(y ~ Age*Dataset + (1|BrNum), data=as.data.frame(colData(rse_gene_joint))))$coef
+})
+
+cellPvalMat = t(sapply(cellTypeList, function(x) x[,5]))[,-1]
+write.csv(cellPvalMat, file = "tables/rna_fractions_across_age_pvalues.csv")
 
 ###############################
 ## adult neurogenesis genes ###

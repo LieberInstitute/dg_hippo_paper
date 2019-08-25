@@ -293,6 +293,24 @@ table(names(geneDxStats_dg)[geneDxStats_dg$SZ_sig] %in% rownames(ap_sig))
 
 save(ap_sig, ssri_sig, file = "rdas/de_drug_effects.rda")
 
+######################
+### rna fractions ####
+######################
+
+## load data
+load("rdas/cell_type_fractions.rda")
+cellPropEsts = cellPropEsts[colnames(rse_gene_joint),]
+cellPropEstsScaled = prop.table(as.matrix(cellPropEsts),1)
+
+## dx
+rse_gene_joint$Dx = factor(rse_gene_joint$Dx, levels=c("Control", "Schizo", "MDD", "Bipolar"))
+cellTypeListDx = lapply(as.data.frame(cellPropEstsScaled), function(y) {
+	summary(lmer(y ~ Dx*Dataset + (1|BrNum), data=as.data.frame(colData(rse_gene_joint))))$coef
+})
+cellPvalMatDx = t(sapply(cellTypeListDx, function(x) x[,5]))[,-1]
+write.csv(cellPvalMatDx, file = "tables/rna_fractions_across_dx_pvalues.csv")
+
+
 ###################################
 ###### neurogenesis overlap #######
 

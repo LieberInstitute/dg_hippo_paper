@@ -206,9 +206,9 @@ goOut = goOut[order(goOut$Cluster, goOut$pvalue),]
 write.csv(goOut, file="tables/geneSetEnrichment_suppTable_lmer.csv",
 	row.names=FALSE, quote=FALSE)
 
-############################
-## cell type enrichments ###
-############################
+###############################
+## rna fraction enrichments ###
+###############################
 
 load("rdas/cell_type_fractions.rda")
 
