@@ -4,6 +4,7 @@ library(VennDiagram)
 library(jaffelab)
 library(SummarizedExperiment)
 library(RColorBrewer)
+library(VennDiagram)
 
 ## load eQTLs
 load("eQTL_GWAS_riskSNPs_n596/eqtl_tables/mergedEqtl_output_withHippo_withDlpfc_fdr05any.rda")
@@ -33,7 +34,19 @@ sum(! unique(dgEqtl$Index_Name) %in% c(hippoEqtl$Index_Name,dlpfcEqtl$Index_Name
 table(unique(dlpfcEqtl$Index_Name) %in% unique(c(dgEqtl$Index_Name, hippoEqtl$Index_Name)))
 length(unique(c(dgEqtl$Index_Name, dlpfcEqtl$Index_Name, hippoEqtl$Index_Name)))
 
-## make venn diagram
+## dg eqtl by faeture
+dgEqtlList = split(dgEqtl, dgEqtl$Type)
+sapply(dgEqtlList, function(x) length(unique(x$Index_Name)))
+
+## venn diagram
+indexList = lapply(dgEqtlList, function(x) x$Index_Name)
+v = venn.diagram(indexList, fill = brewer.pal(4,"Set1"), 
+	main="", main.pos = c(.5, .2), cat.cex = 1.8, cex=2,
+	margin = 0.4, filename = NULL)
+pdf("plots/eQTL_PGC_indexByFeatureType.pdf")
+grid.draw(v)
+dev.off()
+
 
 ###########
 ## dg only

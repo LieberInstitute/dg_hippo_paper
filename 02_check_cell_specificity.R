@@ -11,6 +11,7 @@ library(org.Hs.eg.db)
 library(readxl)
 library(RColorBrewer)
 library(TeachingDemos)
+library(lmerTest)
 
 ## make tables
 dir.create("plots")
@@ -205,6 +206,93 @@ goOut = goOut[order(goOut$Cluster, goOut$pvalue),]
 write.csv(goOut, file="tables/geneSetEnrichment_suppTable_lmer.csv",
 	row.names=FALSE, quote=FALSE)
 
+############################
+## cell type enrichments ###
+############################
+
+load("rdas/cell_type_fractions.rda")
+
+cellPropEsts = cellPropEsts[colnames(rse_gene_joint),]
+cellPropEstsScaled = prop.table(as.matrix(cellPropEsts),1)
+
+## lmerTest
+cellTypeDiffs = t(apply(cellPropEstsScaled, 2, function(y) {
+	summary(lmer(y ~ Dataset + (1|BrNum), data=as.data.frame(colData(rse_gene_joint))))$coef[2,c(1,4,5)]
+}))
+colnames(cellTypeDiffs) = c("PropDiff", "statistic", "P.Value")
+cellTypeDiffs = as.data.frame(cellTypeDiffs)
+
+## make plots
+cn = c("Excitatory Neurons", "Inhibitory Neurons", "Mixed Neurons",
+	"Neural Progenitors", "Oligodendrocytes", "OPCs", "Astrocytes", "Microglia")
+	
+pdf("plots/cell_fractions_by_dataset.pdf",width=5)
+par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2,cex.main=2)
+palette(brewer.pal(5,"Set1"))
+for(i in 1:ncol(cellPropEstsScaled)) {
+	boxplot(cellPropEstsScaled[,i] ~ rse_gene_joint$Dataset, 
+			outline=FALSE,	ylab = "RNA Fraction (Scaled)",
+			main = cn[i], ylim = c(0,1))
+	xx = jitter(as.numeric(rse_gene_joint$Dataset),amount=0.1)
+	for(j in seq(along=bIndexes)) {
+		lines(cellPropEstsScaled[,i] ~ xx, data=colData(rse_gene_joint),
+			subset=bIndexes[[j]], col ="grey",lwd=0.4)
+	}
+	points(cellPropEstsScaled[,i] ~ xx,	pch = 21, bg = rse_gene_joint$Dataset)
+	# ll = ifelse(cellTypeDiffs$PropDiff[i] > 0, "topleft", "topright")
+	pv = paste0("p=",signif( cellTypeDiffs$P.Value[i],3))
+	legend("topright", pv, cex=1.6)
+}
+dev.off()
+
+####################
+## drug gene sets ##
+####################
+
+## drugable genome
+drugGenome = read.csv("tables/drug_dbs/IDG_TargetList_20190124.csv",as.is=TRUE)
+drugGenome$IDG.Family = factor(drugGenome$IDG.Family, 
+	levels = c("GPCR","IC","Kinase"))
+drugGeneList = split(drugGenome$HGNC.Symbol, drugGenome$IDG.Family)
+names(drugGeneList) = paste0(names(drugGeneList) , "_IDG")
+
+## other sets
+minGene = 50
+dsigdb = read.delim("tables/drug_dbs/DSigDB_All_detailed.txt",as.is=TRUE)
+drugSigList = split(dsigdb$Gene, dsigdb$Drug)
+names(drugSigList) = gsub(" ", "-", names(drugSigList))
+drugSigList = drugSigList[lengths(drugSigList) > minGene]
+names(drugSigList) = paste0(names(drugSigList),"_dsigdb")
+
+dgidb = read.delim("tables/drug_dbs/DGIdb_interactions.tsv", as.is=TRUE)
+drugDgiList = split(dgidb$gene_name, dgidb$drug_claim_name)
+drugDgiList = drugDgiList[lengths(drugDgiList) > minGene]
+names(drugDgiList) = paste0(gsub(" ", "-", names(drugDgiList)), "_DGI")
+
+## overlap to ours
+drugInSet = sapply(c(drugGeneList, drugSigList,drugDgiList), function(x) outGene$Symbol %in% x)
+rownames(drugInSet) = rownames(outGene)
+drugInSet = as.data.frame(drugInSet)
+
+drugTabList = lapply(drugInSet, function(x) tt = table(x, outGene$sigColor))
+## stats
+chisqList = lapply(drugTabList, chisq.test)
+
+## extract
+drugEnr = data.frame(OR = sapply(drugTabList, getOR),
+				pval = sapply(chisqList, function(x) x$p.value))
+drugEnr$FDR = p.adjust(drugEnr$pval, "fdr")
+drugEnr$Bonf = p.adjust(drugEnr$pval, "bonf")
+drugEnr$Drug = ss(names(drugTabList), "_")
+drugEnr$Database = ss(names(drugTabList), "_",2)
+drugEnr$numGenesSet = colSums(drugInSet)
+drugEnr$numGenesSig = sapply(drugTabList, function(x) x[2,2])
+drugEnr = drugEnr[order(drugEnr$pval),]
+write.csv(drugEnr, file = "tables/drug_enrichment_dggclVsHippo.csv",row.names=FALSE)
+
+head(drugEnr[drugEnr$numGenesSet < 1000,],10)
+
+
 #####################
 ##### MANGO data ####
 #####################
@@ -263,3 +351,4 @@ geneSetTest(indPos, outGene$t, alternative="up")
 geneSetTest(outGene$inMango, outGene$t, alternative="mixed")
 geneSetTest(outGene$inMango, outGene$t, alternative="up")
 geneSetTest(outGene$inMango, outGene$t, alternative="down")
+

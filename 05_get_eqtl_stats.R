@@ -5,6 +5,7 @@ library(jaffelab)
 library(SummarizedExperiment)
 library(RColorBrewer)
 library(readxl)
+library(ggplot2)
 
 ## load data
 load("count_data/merged_dg_hippo_allSamples_n596.rda")
@@ -24,6 +25,7 @@ length(unique(sigEqtl$EnsemblGeneID))
 
 ## number eQTLs
 sapply(sigEqtlList, nrow)
+sapply(sigEqtlList, function(x) max(x$pvalue))
 
 ## num unique features
 num_eFeature = sapply(sigEqtlList, function(x) length(unique(x$gene)))
@@ -31,7 +33,10 @@ num_eFeature
  # Gene  Exon   Jxn    Tx
 # 10141 67799 28319 17417
 frac_eFeature = num_eFeature/num_feature
+paste0(round(100*frac_eFeature,2), "%")
 
+num_eSNP = sapply(sigEqtlList, function(x) length(unique(x$snps)))
+num_eSNP
 
 ## unannoated
 sigEqtlUnann = sigEqtl[sigEqtl$Class != "InGen",]
@@ -44,6 +49,7 @@ table(unique(sigEqtlUnann$EnsemblGeneID) %in% sigEqtl$EnsemblGeneID[sigEqtl$Clas
 sapply(sigEqtlList, function(x) length(unique(x$EnsemblGeneID)))
 sapply(sigEqtlList, function(x) length(unique(x$Symbol)))
 
+
 ## nicer venn diagram
 ensPlot = sapply(sigEqtlList, function(x) unique(x$EnsemblGeneID))
 v = venn.diagram(ensPlot, fill = brewer.pal(4,"Dark2"), 
@@ -55,6 +61,7 @@ dev.off()
 
 ## effect size
 sapply(sigEqtlList, function(x) quantile(abs(x$beta)))
+sapply(sigEqtlList, function(x) mean(abs(x$beta)))
 
 ###############################
 ## overall hippo replication ##
@@ -65,18 +72,58 @@ mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) &
 mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) & 
 	sigEqtl$hippo_FDR < 0.01,na.rm=TRUE)
 
+## by split
+
+sapply(sigEqtlList, function(x) mean(sign(x$statistic) == sign(x$hippo_statistic),na.rm=TRUE))
+sapply(sigEqtlList, function(x) mean(sign(x$statistic) == sign(x$hippo_statistic) & 
+	x$hippo_pvalue < 0.05,na.rm=TRUE))
+sapply(sigEqtlList, function(x) 	mean(sign(x$statistic) == sign(x$hippo_statistic) & 
+	x$hippo_FDR < 0.01,na.rm=TRUE))
+	
 ## maybe correlation of stats by feature
 sigEqtlFeatureList =split(sigEqtl, sigEqtl$gene)
-corFeature = sapply(sigEqtlFeatureList[sapply(sigEqtlFeatureList,nrow) > 1],
-	function(x) cor(x$statistic, x$hippo_statistic,use="pair"))
-	
+# corFeature = sapply(sigEqtlFeatureList[sapply(sigEqtlFeatureList,nrow) > 1],
+	# function(x) cor(x$statistic, x$hippo_statistic,use="pair"))
+# save(corFeature, file = "rdas/corr_feature_eQTLs.rda")
+load("rdas/corr_feature_eQTLs.rda")
+
 d = data.frame(FeatureID = names(corFeature), cor = corFeature,
 	stringsAsFactors = FALSE)
 d$Type = sigEqtl$Type[match(d$FeatureID, sigEqtl$gene)]
 d$EnsemblGeneID = sigEqtl$EnsemblGeneID[match(d$FeatureID, sigEqtl$gene)]
+d$numSnps = lengths(sigEqtlFeatureList)[d$FeatureID]
+d$minP = sigEqtl$pvalue[match(d$FeatureID, sigEqtl$gene)]
 
-g = ggplot(d, aes(x=Type, y=cor)) + geom_violin()
-ggsave(g, file="plots/eqtl_corr.pdf")
+table(d$cor > 0.8)
+
+boxplot(d$cor ~ cut( d$numSnps, c(0,2,5,10,20,50,100,500,2500,5000)),varwidth=TRUE)
+plot(d$cor ~ cut(-log10(d$minP), c(3,5,8,10,15,20,30,50,150)))
+
+g1 = ggplot(d, aes(x=Type, y=cor)) + geom_violin() + 
+	theme(text = element_text(size=20)) + xlab("Feature Type") +
+	ylab("Correlation between DG-GCL and HIPPO eQTLs")
+ggsave(g1, file="plots/eqtl_corr.pdf")
+
+g2 = ggplot(d, aes(x=cut( d$numSnps, c(1,5,10,20,50,100,500,2500,5000),
+	labels=c("1-5","5-10","10-20","20-50","50-100","100-500","500-2.5k","2.5k-5k"), 
+		include.lowest=TRUE),y=cor)) + geom_violin() + 
+	theme(text = element_text(size=20),
+		axis.text.x = element_text(angle = 90, hjust = 1))	+ 
+	xlab("# of eSNPs") + ylab("Correlation between DG-GCL and HIPPO eQTLs")
+ggsave(g2, file="plots/eqtl_corr_numSnps.pdf")
+
+g3 = ggplot(d, aes(x=cut(-log10(d$minP), c(3,5,8,10,15,30,150)),y=cor)) + 
+	geom_violin() + theme(text = element_text(size=20),
+		axis.text.x = element_text(angle = 90, hjust = 1))	+ 
+	xlab("-log10(eQTL P-value)") + ylab("Correlation between DG-GCL and HIPPO eQTLs")
+ggsave(g3, file="plots/eqtl_corr_logPvals.pdf")
+
+d$corCategory = cut(d$cor, c(1,0.75,0.3,0,-0.3,-1))
+table(d$corCategory)
+prop.table(table(d$corCategory))
+table(d$corCategory,cut( d$numSnps, c(1,5,10,20,50,100,500,2500,5000))
+table(d$corCategory,cut(-log10(d$minP), c(3,5,8,10,15,30,150)))
+prop.table(table(d$corCategory,cut(-log10(d$minP), c(3,5,8,10,15,30,150))),1)
 
 #######################
 ## gene specific

@@ -80,11 +80,20 @@ plot( x = hsq_all$hsq_dlpfc, y = hsq_all$hsq_hippo,
 		xlab = 'DLPFC' ,  ylab = 'HIPPO', pch = 21, bg="grey",
 		xlim = c(-0.1, 1),ylim = c(-0.1, 1),
 		main = 'Heritability (cis +/- 500kb)')		
+abline(a=0.2, b=1, lty=2,col="blue",lwd=2)
+abline(a=0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.2, b=1, lty=2,col="blue",lwd=2)
+
 ## DG vs HIPPO
 plot( x = hsq_all$hsq_dg, y = hsq_all$hsq_hippo,
 		xlab = 'DG' ,  ylab = 'HIPPO',  pch = 21, bg="grey",
 		xlim = c(-0.1, 1),ylim = c(-0.1, 1),
 		main = 'Heritability (cis +/- 500kb)')
+abline(a=0.2, b=1, lty=2,col="blue",lwd=2)
+abline(a=0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.2, b=1, lty=2,col="blue",lwd=2)
 dev.off()
 
 ## counts
