@@ -32,29 +32,26 @@ bonfMat[is.na(bonfMat)] = 1
 rownames(tMat) = rownames(pMat) = rownames(fdrMat) = rownames(bonfMat) = g
 
 ## tstats
-pairs(tMat)
+pdf("plots/suppFigure7_hippoVsDGvsDlpfc_TWASz.pdf")
+par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2,cex.main=2)
+pairs(tMat, pch =21,bg="grey",main = "TWAS Z")
+dev.off()
+
 cor(tMat, use="pair")
 
 #########################
 ## hippo vs dg plot
 
-## colors
-cols = rep(NA, nrow(tMat))
-cols[fdrMat[,"DG-GCL"] > 0.05 & fdrMat[,"HIPPO"] > 0.05] = 1
-cols[fdrMat[,"DG-GCL"] > 0.05 & fdrMat[,"HIPPO"] < 0.05] = 2
-cols[fdrMat[,"DG-GCL"] < 0.05 & fdrMat[,"HIPPO"] > 0.05] = 3
-cols[fdrMat[,"DG-GCL"] < 0.05 & fdrMat[,"HIPPO"] < 0.05] = 4
-
-names(cols)[cols==1] = "None"
-names(cols)[cols==2] = "HIPPO"
-names(cols)[cols==3] = "DG-GCL"
-names(cols)[cols==4] = "Both"
-
-pdf("plots/suppFigure_hippoVsDG_TWASz.pdf")
 palette(c("grey", brewer.pal(3, "Set1")))
 par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2)
 plot(tMat[,"HIPPO"], tMat[,"DG-GCL"], xlab="HIPPO TWAS Z",
-	ylab="DG-GCL TWAS Z",pch=21,bg=cols,
+	ylab="DG-GCL TWAS Z",pch=21,bg="grey",
+	ylim = c(-8,8),xlim=c(-8,8))
+plot(tMat[,"DLPFC"], tMat[,"DG-GCL"], xlab="DLPFC TWAS Z",
+	ylab="DG-GCL TWAS Z",pch=21,bg="grey",
+	ylim = c(-8,8),xlim=c(-8,8))
+plot(tMat[,"DLPFC"], tMat[,"HIPPO"], xlab="DLPFC TWAS Z",
+	ylab="HIPPO TWAS Z",pch=21,bg="grey",
 	ylim = c(-8,8),xlim=c(-8,8))
 dev.off()
 
