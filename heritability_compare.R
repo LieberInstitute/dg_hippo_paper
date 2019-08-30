@@ -1,6 +1,6 @@
 library(limma)
 
-## load DG
+## load DG-GCL
 load("twas/DentateGyrus/gene/heritability/hsq_info.Rdata")
 hsq_dg = hsq_info
 
@@ -37,6 +37,7 @@ fdrs = hsq_all[,grep("bh", colnames(hsq_all))]
 colnames(fdrs) = c("DG-GCL", "HIPPO", "DLPFC")
 vennDiagram(vennCounts(fdrs < 0.05))
 colSums(fdrs < 0.05,na.rm=TRUE)
+
 ## filter
 hsq_sig = hsq_all[hsq_all$hsq.bh_dg < 0.05,]
 table(hsq_sig$hsq.pv_hippo < 0.05)
@@ -60,11 +61,11 @@ plot( x = (hsq_all$hsq_dlpfc + hsq_all$hsq_hippo)/2,
 		ylab = 'DLPFC - HIPPO',	pch = 21,  
 		main = 'Heritability (cis +/- 500kb)')
 		
-# DG and HIPPO		
+# DG-GCL and HIPPO		
 plot( x = (hsq_all$hsq_dg+ hsq_all$hsq_hippo)/2,
 		y = hsq_all$hsq_dg - hsq_all$hsq_hippo,
-		xlab = '(DG + HIPPO) / 2',
-		ylab = 'DG - HIPPO',bg = "grey",
+		xlab = '(DG-GCL + HIPPO) / 2',
+		ylab = 'DG-GCL - HIPPO',bg = "grey",
 		ylim = c(-0.7,0.7), xlim = c(-0.1, 1),
 		pch = 21,  main = 'Heritability (cis +/- 500kb)')
 dev.off()
@@ -85,9 +86,9 @@ abline(a=0.1, b=1, lty=1,col="blue",lwd=2)
 abline(a=-0.1, b=1, lty=1,col="blue",lwd=2)
 abline(a=-0.2, b=1, lty=2,col="blue",lwd=2)
 
-## DG vs HIPPO
+## DG-GCL vs HIPPO
 plot( x = hsq_all$hsq_dg, y = hsq_all$hsq_hippo,
-		xlab = 'DG' ,  ylab = 'HIPPO',  pch = 21, bg="grey",
+		xlab = 'DG-GCL' ,  ylab = 'HIPPO',  pch = 21, bg="grey",
 		xlim = c(-0.1, 1),ylim = c(-0.1, 1),
 		main = 'Heritability (cis +/- 500kb)')
 abline(a=0.2, b=1, lty=2,col="blue",lwd=2)

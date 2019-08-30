@@ -179,6 +179,7 @@ library(sva)
 library(jaffelab)
 library(edgeR)
 library(limma)
+library(lmerTest)
 
 ## load counts
 load("count_data/merged_dg_hippo_allSamples_n596.rda", verbose=TRUE)
@@ -309,7 +310,6 @@ cellTypeListDx = lapply(as.data.frame(cellPropEstsScaled), function(y) {
 })
 cellPvalMatDx = t(sapply(cellTypeListDx, function(x) x[,5]))[,-1]
 write.csv(cellPvalMatDx, file = "tables/rna_fractions_across_dx_pvalues.csv")
-
 
 ###################################
 ###### neurogenesis overlap #######

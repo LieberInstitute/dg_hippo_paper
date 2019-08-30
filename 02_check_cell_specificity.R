@@ -231,7 +231,7 @@ par(mar=c(5,6,2,2), cex.axis=2,cex.lab=2,cex.main=2)
 palette(brewer.pal(5,"Set1"))
 for(i in 1:ncol(cellPropEstsScaled)) {
 	boxplot(cellPropEstsScaled[,i] ~ rse_gene_joint$Dataset, 
-			outline=FALSE,	ylab = "RNA Fraction (Scaled)",
+			outline=FALSE,	ylab = "RNA Fraction",
 			main = cn[i], ylim = c(0,1))
 	xx = jitter(as.numeric(rse_gene_joint$Dataset),amount=0.1)
 	for(j in seq(along=bIndexes)) {
