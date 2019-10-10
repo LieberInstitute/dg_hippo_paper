@@ -95,6 +95,16 @@ abline(a=0.2, b=1, lty=2,col="blue",lwd=2)
 abline(a=0.1, b=1, lty=1,col="blue",lwd=2)
 abline(a=-0.1, b=1, lty=1,col="blue",lwd=2)
 abline(a=-0.2, b=1, lty=2,col="blue",lwd=2)
+
+## DG-GCL vs DLPFC
+plot( x = hsq_all$hsq_dg, y = hsq_all$hsq_dlpfc,
+		xlab = 'DG-GCL' ,  ylab = 'DLPFC',  pch = 21, bg="grey",
+		xlim = c(-0.1, 1),ylim = c(-0.1, 1),
+		main = 'Heritability (cis +/- 500kb)')
+abline(a=0.2, b=1, lty=2,col="blue",lwd=2)
+abline(a=0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.1, b=1, lty=1,col="blue",lwd=2)
+abline(a=-0.2, b=1, lty=2,col="blue",lwd=2)
 dev.off()
 
 ## counts
@@ -104,3 +114,8 @@ table(abs(hsq_all$dg_hippo_diff) > 0.1)
 table(abs(hsq_all$dlpfc_hippo_diff) > 0.1)
 table(abs(hsq_all$dg_hippo_diff) > 0.2)
 table(abs(hsq_all$dlpfc_hippo_diff) > 0.2)
+
+## supp
+hsq_all$dg_dlpfc_diff = hsq_all$hsq_dg - hsq_all$hsq_dlpfc
+table(abs(hsq_all$dg_dlpfc_diff) > 0.1)
+table(abs(hsq_all$dg_dlpfc_diff) > 0.2)

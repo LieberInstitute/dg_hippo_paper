@@ -6,6 +6,7 @@ library(SummarizedExperiment)
 library(RColorBrewer)
 library(readxl)
 library(ggplot2)
+library(qvalue) # for \pi_1
 
 ## load data
 load("count_data/merged_dg_hippo_allSamples_n596.rda")
@@ -71,6 +72,8 @@ mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) &
 	sigEqtl$hippo_pvalue < 0.05,na.rm=TRUE)
 mean(sign(sigEqtl$statistic) == sign(sigEqtl$hippo_statistic) & 
 	sigEqtl$hippo_FDR < 0.01,na.rm=TRUE)
+qv_hippo = qvalue(sigEqtl$hippo_pvalue)
+1 - qv_hippo$pi0 # 84.0
 
 ## by split
 
@@ -79,7 +82,12 @@ sapply(sigEqtlList, function(x) mean(sign(x$statistic) == sign(x$hippo_statistic
 	x$hippo_pvalue < 0.05,na.rm=TRUE))
 sapply(sigEqtlList, function(x) 	mean(sign(x$statistic) == sign(x$hippo_statistic) & 
 	x$hippo_FDR < 0.01,na.rm=TRUE))
-	
+
+sapply(sigEqtlList, function(x) 1-qvalue(x$hippo_pvalue)$pi0)
+# > sapply(sigEqtlList, function(x) 1-qvalue(x$hippo_pvalue)$pi0)
+     # Gene      Exon       Jxn        Tx
+# 0.8327205 0.8245283 0.8602118 0.8729056
+
 ## maybe correlation of stats by feature
 sigEqtlFeatureList =split(sigEqtl, sigEqtl$gene)
 # corFeature = sapply(sigEqtlFeatureList[sapply(sigEqtlFeatureList,nrow) > 1],
