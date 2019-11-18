@@ -304,20 +304,20 @@ corfit_tx <- duplicateCorrelation(txExprsJoint, mod_joint_age, block=rse_tx_join
 save(corfit_tx, file = "duplCorr_objects/txLevel_dgPlusHippo_age17.rda")
 
 ## dup corr
-txFit_joint = lmFit(vTx_joint, mod_joint_age, block=rse_tx_joint$BrNum,
+txFit_joint = lmFit(txExprsJoint, mod_joint_age, block=rse_tx_joint$BrNum,
         correlation = corfit_tx$consensus.correlation)
 
 txFit_joint = eBayes(txFit_joint)
 txAgeStats_int = topTable(txFit_joint, coef = ncol(mod_joint_age), 
-	n = nrow(vTx_joint), sort="none")
+	n = nrow(txExprsJoint), sort="none")
 
 ## dup corr
-txFit_joint_dx = lmFit(vTx_joint, mod_joint_dx, block=rse_tx_joint$BrNum,
+txFit_joint_dx = lmFit(txExprsJoint, mod_joint_dx, block=rse_tx_joint$BrNum,
         correlation = corfit_tx$consensus.correlation)
 
 txFit_joint_dx = eBayes(txFit_joint_dx)
 txSzStats_int = topTable(txFit_joint_dx, coef = 24, 
-	n = nrow(vTx_joint), sort="none")
+	n = nrow(txExprsJoint), sort="none")
 
 ### merge
 vars = c(1,3,4,5)
