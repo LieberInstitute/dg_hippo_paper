@@ -45,9 +45,9 @@ fcs = mcols(geneDxStats_dg)[,grep("logFC", colnames(mcols(geneDxStats_dg)))]
 cor(as.matrix(fcs))
 
 pdf("plots/dxPairs.pdf", h=10,w=10)
-pairs(fcs,pch=21,bg="grey", cex.axis=2,cex.main=1.4,
+pairs(fcs,pch=21,bg="grey", cex.axis=3,cex.main=1.8,
 	ylim=c(-1.5,1.5),xlim=c(-1.5,1.5),
-	main = "Cross-Disorders Overlap: Expressed Genes")
+	main = "Cross-Disorders log2 FC Overlap: Expressed Genes")
 dev.off()
 
 ## plots
@@ -83,7 +83,7 @@ par(mar=c(5,6,3,2),cex.axis=2,cex.lab=2)
 palette(c("grey", brewer.pal(3, "Set1")))
 plot(geneSzStats$t_SZ_DG, geneSzStats$t_SZ_Hippo,
 	ylim = c(-6, 6), xlim = c(-6, 6), pch = 21,bg=cols,
-	xlab = "DG (SCZD T-stat)", ylab = "HIPPO (SCZD T-stat)")
+	xlab = "DG-GCL (SCZD T-stat)", ylab = "HIPPO (SCZD T-stat)")
 plot(geneSzStats$logFC_SZ_DG, geneSzStats$logFC_SZ_Hippo,
 	ylim = c(-1, 1), xlim = c(-1, 1), pch = 21,
 	bg=cols, xlab = "DG (log2FC)", ylab = "HIPPO (log2FC)")

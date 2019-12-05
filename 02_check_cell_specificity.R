@@ -136,7 +136,7 @@ pdf("plots/volanoPlot_cellType.pdf")
 palette(brewer.pal(5, "Dark2"))
 par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
 plot(-log10(P.Value) ~ logFC, pch = 21, bg=sigColor,
-	cex=0.8,data = outGene, xlab = "DG vs HIPPO log2FC")
+	cex=0.8,data = outGene, xlab = "DG-GCL vs HIPPO log2FC")
 shadowtext(outGene$logFC[m2]+0.35, -log10(outGene$P.Value[m2]),
 	LETTERS[1:3],font=2,cex=1.25,col="grey")
 dev.off()
