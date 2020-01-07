@@ -165,7 +165,7 @@ dgEqtlOnly$SnpLabel = dgEqtlOnly$Proxy_Name
 dgEqtlOnly$SnpLabel[grep("^rs", dgEqtlOnly$SnpLabel)] = ss(dgEqtlOnly$SnpLabel[grep("^rs", dgEqtlOnly$SnpLabel)], ":")
 mainTxt = paste0("Index: ", ss(dgEqtlOnly$Index_Name, ":"), 
 	" (R^2=",signif(dgEqtlOnly$R_squared,3),")\n",
-	dgEqtlOnly$Symbol, " (", dgEqtlOnly$Type, ")")
+	dgEqtlOnly$FeatLabel, ": " , dgEqtlOnly$Symbol)
 
 pdf("plots/gwas_eqtl_boxplots_dgOnly.pdf",w=8)
 par(mar=c(5,6,4,2), cex.axis=2,cex.lab=2, cex.main = 2)
@@ -185,7 +185,7 @@ for(i in 1:nrow(e)) {
 			":", rep(c("DG-GCL", "HIPPO"), each=3)))
 	boxplot(e[i,] ~ l, outline=FALSE, 
 		ylim= range(e[i,])*c(0.95,1.05), 
-		ylab= dgEqtlOnly$FeatLabel[i],
+		ylab= "Adj log2(Exprs)",
 		xlab=dgEqtlOnly$SnpLabel[i], main = mainTxt[i],
 		names = ss(levels(l),":"))
 	points(e[i,] ~ jitter(as.numeric(l),amount=0.1),

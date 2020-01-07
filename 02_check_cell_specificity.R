@@ -103,20 +103,19 @@ dev.off()
 pdf("plots/markerGene_enrichment.pdf")
 exprs = vGene$E[match(theGenes, vGene$genes$Symbol),]
 palette(brewer.pal(5,"Set1"))
-par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
+par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=3)
 for(i in seq(along=theGenes)) {
 	boxplot(exprs[i,] ~ rse_gene_joint$Dataset, 
-			outline=FALSE,	ylab = "Normalized Expression",
-			main = theGenes[i], ylim = range(exprs[i,]))
+		xlab = "", outline=FALSE,	ylab = "Normalized Expression",
+		main = theGenes[i], ylim = c(0,max(exprs[i,])))
 	xx = jitter(as.numeric(rse_gene_joint$Dataset),amount=0.1)
 	for(j in seq(along=bIndexes)) {
 		lines(exprs[i,] ~ xx, data=colData(rse_gene_joint),
 			subset=bIndexes[[j]], col ="grey",lwd=0.4)
 	}
 	points(exprs[i,] ~ xx,	pch = 21, bg = rse_gene_joint$Dataset)
-	ll = ifelse(gStats$logFC[i] > 0, "topleft", "topright")
 	pv = paste0("p=",signif( gStats$P.Value[i],3))
-	legend(ll, pv, cex=1.6)
+	legend("bottom", pv, cex=1.6)
 }		
 dev.off()
 
@@ -138,7 +137,9 @@ par(mar=c(5,6,3,2), cex.axis=2,cex.lab=2,cex.main=2)
 plot(-log10(P.Value) ~ logFC, pch = 21, bg=sigColor,
 	cex=0.8,data = outGene, xlab = "DG-GCL vs HIPPO log2FC")
 shadowtext(outGene$logFC[m2]+0.35, -log10(outGene$P.Value[m2]),
-	LETTERS[1:3],font=2,cex=1.25,col="grey")
+	LETTERS[3:5],font=2,cex=1.25,col="grey")
+legend("top", c("FDR>0.05", "FDR<0.05"), 
+	pch =15, col = 1:2,cex=1.5)
 dev.off()
 
 ####################

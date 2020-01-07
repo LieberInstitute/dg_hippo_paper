@@ -67,13 +67,19 @@ names(cols)[cols==4] = "Both"
 
 pdf("plots/ageAnalysis_dgVsHippo_geneLevel.pdf")
 par(mar=c(5,6,3,2),cex.axis=2,cex.lab=2)
-palette(c("grey", brewer.pal(3, "Set1")))
+palette(c("grey", brewer.pal(3, "Set1")[1:2], "purple"))
 plot(geneAgeStats$t_Age_DG, geneAgeStats$t_Age_Hippo,
 	ylim = c(-8, 8), xlim = c(-8, 8), pch = 21,bg=cols,
-	xlab = "DG (Age T-stat)", ylab = "HIPPO (Age T-stat)", main = "T-statistics")
+	xlab = "DG-GCL (Age T-stat)", ylab = "HIPPO (Age T-stat)", 
+	main = "T-statistics")
+legend("bottomright", c("HIPPO", "DG-GCL", "Both"),
+	pch=15,col=2:4,cex=1.5)
+
 plot(geneAgeStats$logFC_Age_DG, geneAgeStats$logFC_Age_Hippo,
 	ylim = c(-0.04, 0.04), xlim = c(-0.04, 0.04), pch = 21,
-	bg=cols, xlab = "DG", ylab = "HIPPO", main = "log2 Fold Changes")
+	bg=cols, xlab = "DG-GCL", ylab = "HIPPO", main = "log2 Fold Changes")
+legend("bottomright", c("HIPPO", "DG-GCL", "Both"),
+	pch=15,col=2:4,cex=1.5)
 dev.off()
 
 table(abs(geneAgeStats$logFC_Age_DG) > abs(geneAgeStats$logFC_Age_Hippo))
@@ -290,6 +296,7 @@ palette(brewer.pal(5,"Set1"))
 for(i in exampleIndex) {
 	plot(geneExprs[i,] ~ rse_gene_joint$Age,
 		pch=21,bg = rse_gene_joint$Dataset,
+		ylim = c(0, max(geneExprs[i,])),
 		xlab= "Age", ylab = "Expression (log2)")
 	for(j in seq(along=rIndexes)) {
 		abline(lm(geneExprs[i,] ~ rse_gene_joint$Age, 

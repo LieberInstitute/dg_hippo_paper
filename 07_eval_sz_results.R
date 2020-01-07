@@ -80,13 +80,17 @@ names(cols)[cols==4] = "Both"
 
 pdf("plots/szAnalysis_dgVsHippo_geneLevel.pdf")
 par(mar=c(5,6,3,2),cex.axis=2,cex.lab=2)
-palette(c("grey", brewer.pal(3, "Set1")))
+palette(c("grey", brewer.pal(3, "Set1")[1:2], "purple"))
 plot(geneSzStats$t_SZ_DG, geneSzStats$t_SZ_Hippo,
 	ylim = c(-6, 6), xlim = c(-6, 6), pch = 21,bg=cols,
 	xlab = "DG-GCL (SCZD T-stat)", ylab = "HIPPO (SCZD T-stat)")
+legend("topleft", c("HIPPO", "DG-GCL", "Both"),
+	pch=15,col=2:4,cex=1.5)
 plot(geneSzStats$logFC_SZ_DG, geneSzStats$logFC_SZ_Hippo,
 	ylim = c(-1, 1), xlim = c(-1, 1), pch = 21,
-	bg=cols, xlab = "DG (log2FC)", ylab = "HIPPO (log2FC)")
+	bg=cols, xlab = "DG-GCL (log2FC)", ylab = "HIPPO (log2FC)")
+legend("topleft", c("HIPPO", "DG-GCL", "Both"),
+	pch=15,col=2:4,cex=1.5)
 dev.off()
 
 table(abs(geneSzStats$logFC_SZ_DG) > abs(geneSzStats$logFC_SZ_Hippo))
