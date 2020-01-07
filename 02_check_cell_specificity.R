@@ -204,8 +204,8 @@ goOut$Ontology = rep(c("BP", "MF","CC"),
 	c(nrow(goBP), nrow(goMF), nrow(goCC)))
 goOut$Cluster = relevel(goOut$Cluster, "DG-GCL")
 goOut = goOut[order(goOut$Cluster, goOut$pvalue),]	
-write.csv(goOut, file="tables/geneSetEnrichment_suppTable_lmer.csv",
-	row.names=FALSE, quote=FALSE)
+write.table(goOut, file="tables/geneSetEnrichment_suppTable_lmer.tsv",
+	sep = "\t", row.names=FALSE, quote=TRUE)
 
 ###############################
 ## rna fraction enrichments ###

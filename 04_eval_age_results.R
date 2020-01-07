@@ -176,7 +176,11 @@ save(gsDat, gsDatQ, keggEnr, goEnr, file = "rdas/age_gene_set_results.rda")
 ## make plots ###
 #################
 load( "rdas/age_gene_set_results.rda")
-write.csv(gsDat, file = "tables/ageStats_Pvalues_geneSet_results.csv")
+outDat = gsDat
+outDat$SetID = rownames(outDat)
+outDat = outDat[,c(10,1:9)]
+write.table(outDat,  file = "tables/ageStats_Pvalues_geneSet_results.tsv",
+	sep = "\t",row.names=FALSE)
 
 colSums(gsDatQ[,-ncol(gsDatQ)] < 0.05,na.rm=TRUE)
 table(rowSums(gsDatQ[,-ncol(gsDatQ)] < 0.05,na.rm=TRUE))
