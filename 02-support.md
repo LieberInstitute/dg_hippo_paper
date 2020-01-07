@@ -8,7 +8,7 @@ permalink: "support.html"
 
 #### Support or Contact
 
-Having trouble accessing the data pr questions about the paper? Contact [Andrew E Jaffe](mailto:andrew.jaffe@libd.org) and we’ll help you sort it out.  
+Having trouble accessing the data or questions about the paper? Contact [Andrew E Jaffe](mailto:andrew.jaffe@libd.org) and we’ll help you sort it out.  
 
 ------------------
 <a href="http://libd.org">
