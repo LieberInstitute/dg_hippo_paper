@@ -72,3 +72,5 @@ JB :
   tags_path : /tags.html
   atom_path : /atom.xml
   rss_path : /rss.xml
+
+theme: jekyll-theme-minimal
