@@ -6,7 +6,7 @@ permalink: "index.html"
 ---
 {% include JB/setup %}
 
-Profiling gene expression in the granule cell layer of the human dentate gyrus reveals biological insights about schizophrenia not found in bulk hippocampus
+Profiling gene expression in the human dentate gyrus granule cell layer reveals insights into schizophrenia and its genetic risk
 ==============
 
 ### Authors: 
@@ -19,9 +19,8 @@ Specific cell populations may have unique contributions to schizophrenia, but ma
 
 ### Links
 
-**Nature Neuroscience**
+[Nature Neuroscience](https://www.nature.com/articles/s41593-020-0604-z)
 
-**PubMed**
 
 ------------------
 <a href="http://libd.org">
