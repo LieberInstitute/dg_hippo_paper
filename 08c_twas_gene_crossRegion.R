@@ -9,6 +9,7 @@ load("rdas/twas_exp_gene.Rdata",verbose=TRUE)
 load("rdas/tt_objects_gene.Rdata",verbose=TRUE)
 
 tt = as.data.frame(tt) 
+write.csv(tt, file = "suppTables/TWAS_allRegions_geneLevel_noH2filter.csv",row.names=FALSE)
 
 ## split by region
 ttList = split(tt, tt$region)
