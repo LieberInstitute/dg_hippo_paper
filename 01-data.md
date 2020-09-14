@@ -24,6 +24,15 @@ Data Availability
 
 Raw data is available through the Sequence Read Archive (SRA) at accession [SRP241159](https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP241159)
 
+### TWAS Weights
+
+
+|     Dataset    |   Feature  |                                                  URL                                                 |
+|:--------------:|:----------:|:----------------------------------------------------------------------------------------------------:|
+|     DG-GCL     |    Gene    |  [Link](https://jaffe-nat-neuro-dggcl.s3.us-east-2.amazonaws.com/DGGCL_weights.tar.gz)  |
+|     HIPPO      |    Gene    |  [Link](https://jaffe-nat-neuro-dggcl.s3.us-east-2.amazonaws.com/jaffe_natNeuro_2020_HIPPO_gene_TWAS.tar.gz)  |
+|     DLPFC      |    Gene    |   [Link](https://jaffe-nat-neuro-dggcl.s3.us-east-2.amazonaws.com/jaffe_natNeuro_2020_DLPFC_gene_TWAS.tar.gz)  |
+
 ### Code
 
 Code supporting this project is available on [GitHub](https://github.com/LieberInstitute/dg_hippo_paper/)
